@@ -1,22 +1,19 @@
-import { Outlet } from "react-router-dom";
-import NotFound from "../components/NotFound";
-import Main from "../pages/Main";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ShowWeather from "../pages/ShowWeather";
+import Main from "../pages/Main";
+import NotFound from "../components/NotFound";
 
-export const AppRouter = () => [
-  {
-    element: <Outlet />,
-    errorElement: <NotFound />,
-    children: [
-      {
-        path: "/",
-        element: <Main />,
-        exact: true,
-      },
-      {
-        path: "/weather",
-        element: <ShowWeather />,
-      },
-    ],
-  },
-];
+const AppRouter = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Main />} />
+        <Route path="/weather" element={<ShowWeather />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default AppRouter;

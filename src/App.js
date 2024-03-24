@@ -1,13 +1,12 @@
-import { BrowserRouter } from "react-router-dom";
-import { AppRouter } from "./router/AppRouter";
+import AppRouter from "./router/AppRouter";
 import "./App.css";
-import CitiesProvider from "./context/CitiesProvider";
+import WeatherProvider from "./context/WeatherProvider";
 
 function App() {
   return (
-    <CitiesProvider>
-      <BrowserRouter router={AppRouter} />
-    </CitiesProvider>
+    <WeatherProvider>
+      <AppRouter />
+    </WeatherProvider>
   );
 }
 

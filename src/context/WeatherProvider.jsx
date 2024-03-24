@@ -2,9 +2,9 @@ import axios from "axios";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 //! Create Context
-export const CitiesContext = createContext();
+export const WeatherContext = createContext();
 
-const CitiesProvider = ({ children }) => {
+const WeatherProvider = ({ children }) => {
   const [cities, setCities] = useState(
     JSON.parse(localStorage.getItem("cities")) || []
   );
@@ -50,14 +50,14 @@ const CitiesProvider = ({ children }) => {
   }, []);
 
   return (
-    <CitiesContext.Provider value={{ cities, setCities }}>
+    <WeatherContext.Provider value={{ cities, setCities }}>
       {children}
-    </CitiesContext.Provider>
+    </WeatherContext.Provider>
   );
 };
 
-export const CitiesContextComp = () => {
-  return useContext(CitiesContext);
+export const WeatherContextComp = () => {
+  return useContext(WeatherContext);
 };
 
-export default CitiesProvider;
+export default WeatherProvider;

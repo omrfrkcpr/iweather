@@ -1,8 +1,8 @@
 import React from "react";
-import { CitiesContextComp } from "../context/CitiesProvider";
+import { WeatherContextComp } from "../context/WeatherProvider";
 
 const ShowWeather = () => {
-  const { cities, setCities } = CitiesContextComp();
+  const { cities, setCities } = WeatherContextComp();
   return <div>ShowWeather</div>;
 };
 
