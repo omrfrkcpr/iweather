@@ -1,62 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
-:root {
-  /* colors */
-  --product-color: #8fb2f5;
-  --base-gray-900: #13131a;
-  --base-gray-800: #16161f;
-  --base-gray-700: #1c1c27;
-  --base-gray-600: #22222f;
-  --base-gray-500: #3b3b54;
-  --base-gray-400: #7f7f98;
-  --base-gray-300: #ababc4;
-  --base-gray-200: #bfbfd4;
-  --base-gray-100: #fafafa;
-  --base-white: #ffffff;
-
-  /* font-family */
-  --font-family: "Nunito", sans-serif;
-
-  /* font-size */
-  --fs-heading-hg: "96px"
-  --fs-heading-xl: "48px"
-  --fs-heading-lg: "32px"
-  --fs-heading-md: "20px"
-  --fs-heading-sm: "16px"
-  --fs-heading-xs: "14px"
-
-  --fs-text-lg: "20px"
-  --fs-text-md: "16px"
-  --fs-text-sm: "14px"
-  --fs-text-xs: "12px"
-
-  /* line height */
-  --lh-heading-hg: "100%"
-  --lh-heading-xl: "120%"
-  --lh-heading-lg: "140%"
-  --lh-heading-md: "140%"
-  --lh-heading-sm: "140%"
-  --lh-heading-xs: "140%"
-
-  --lh-text-lg: "140%"
-  --lh-text-md: "140%"
-  --lh-text-sm: "140%"
-  --lh-text-xs: "140%"
-
-  /* font weight */
-  --fw-heading-hg: 700
-  --fw-heading-xl: 700
-  --fw-heading-lg: 600
-  --fw-heading-md: 600
-  --fw-heading-sm: 600
-  --fw-heading-xs: 600
-
-  --fw-text-lg: 400
-  --fw-text-md: 400
-  --fw-text-sm: 400
-  --fw-text-xs: 500
-
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   box-sizing: border-box;
@@ -65,3 +11,6 @@
   font-weight: 800;
 }
 
+.bg-main-container {
+  background-image: url(./assets/Background.svg);
+}
