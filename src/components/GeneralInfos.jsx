@@ -1,17 +1,21 @@
 import React from "react";
 import WeatherIcon from "../assets/weather-icons/Few-Clouds_Night.svg";
+import { formatToLocalTime } from "../services/AppService";
 
-const GeneralInfos = () => {
+const GeneralInfos = ({ weather: { dt, timezone, name, country } }) => {
   return (
     <div className="bg-base-800 w-full p-4 text-lg rounded-12">
       <div className="general-infos p-4 rounded-8">
         <div className="time-and-location mb-8 ms-8 mt-8">
           <div className="location flex flex-row gap-3 mb-3">
-            <h1 className="mt-2">Istanbul, TR</h1>
-            <img src="https://flagsapi.com/TR/flat/64.png" alt="country-flag" />
+            <h1 className="mt-2">{`${name}, ${country}`}</h1>
+            <img
+              src={`https://flagsapi.com/${country}/flat/64.png`}
+              alt="country-flag"
+            />
           </div>
           <div className="time">
-            <p className="text-md">Sunday, May 24, 2024</p>
+            <p className="text-md">{formatToLocalTime(dt, timezone)}</p>
           </div>
         </div>
         <div className="general-weather flex flex-row justify-between">

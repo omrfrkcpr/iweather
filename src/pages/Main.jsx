@@ -5,7 +5,7 @@ import Messages from "../components/Messages";
 import Search from "../components/Search";
 
 const Main = () => {
-  const { cities, setCities } = WeatherContextComp();
+  const { query, setQuery } = WeatherContextComp();
   return (
     <div className="bg-main-container py-5 flex justify-center items-center h-screen">
       <div className="absolute top-0 left-0 w-full">

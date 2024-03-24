@@ -5,13 +5,18 @@ import WeatherDetails from "../components/WeatherDetails";
 import Forecast from "../components/Forecast";
 
 const ShowWeather = () => {
-  const { cities, setCities } = WeatherContextComp();
+  const { query, setQuery, weather } = WeatherContextComp();
   return (
-    <div className="bg-main-container p-3  flex flex-col justify-between align-middle text-white ">
-      <GeneralInfos />
-      <WeatherDetails />
-      <Forecast />
-    </div>
+    <>
+      {weather && (
+        <div className="bg-main-container p-3  flex flex-col justify-between align-middle text-white">
+          <GeneralInfos weather={weather} />
+          <WeatherDetails weather={weather} />
+          <Forecast title="daily forecast" />
+          {/* <Forecast title="hourly forecast"/> */}
+        </div>
+      )}
+    </>
   );
 };
 
