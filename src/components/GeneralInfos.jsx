@@ -2,7 +2,18 @@ import React from "react";
 import WeatherIcon from "../assets/weather-icons/Few-Clouds_Night.svg";
 import { formatToLocalTime } from "../services/AppService";
 
-const GeneralInfos = ({ weather: { dt, timezone, name, country } }) => {
+const GeneralInfos = ({
+  weather: {
+    dt,
+    timezone,
+    name,
+    country,
+    description,
+    temp,
+    temp_min,
+    temp_max,
+  },
+}) => {
   return (
     <div className="bg-base-800 w-full p-4 text-lg rounded-12">
       <div className="general-infos p-4 rounded-8">
@@ -20,9 +31,11 @@ const GeneralInfos = ({ weather: { dt, timezone, name, country } }) => {
         </div>
         <div className="general-weather flex flex-row justify-between">
           <div className="w-1/2 flex flex-col justify-center ms-8">
-            <h1 className="text-xl">28°C</h1>
-            <p>26°C / 32°C</p>
-            <p className="text-md">Few Clouds</p>
+            <h1 className="text-xl">{Math.trunc(temp)}°C</h1>
+            <p>{`${Math.trunc(temp_min)}°C / ${Math.trunc(temp_max)}°C`}</p>
+            <p className="text-md">
+              {description.charAt(0).toUpperCase() + description.slice(1)}
+            </p>
           </div>
           <div className="w-1/2">
             <img src={WeatherIcon} alt="" className="ms-auto" />

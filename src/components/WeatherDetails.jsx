@@ -7,7 +7,9 @@ import {
 } from "@phosphor-icons/react";
 import React from "react";
 
-const WeatherDetails = () => {
+const WeatherDetails = ({
+  weather: { hourly, feels_like, humidity, speed },
+}) => {
   return (
     <ul className="bg-base-800 py-2 rounded-12 ">
       <li className="justify-between px-1 py-2 rounded-t-12 ">
@@ -17,7 +19,7 @@ const WeatherDetails = () => {
             <p className="text-base-200">Thermal sensation</p>
           </div>
           <div className="me-3 text-base-100">
-            <p>26°C</p>
+            <p>{Math.trunc(feels_like)}°C</p>
           </div>
         </div>
       </li>
@@ -41,7 +43,7 @@ const WeatherDetails = () => {
           </div>
 
           <div className="me-3 text-base-100">
-            <p>8 km/h</p>
+            <p>{Math.trunc(speed)} km/h</p>
           </div>
         </div>
       </li>
@@ -53,7 +55,7 @@ const WeatherDetails = () => {
           </div>
 
           <div className="me-3 text-base-100">
-            <p>40%</p>
+            <p>{humidity}%</p>
           </div>
         </div>
       </li>
@@ -65,7 +67,7 @@ const WeatherDetails = () => {
           </div>
 
           <div className="me-3 text-base-100">
-            <p>5</p>
+            <p>{hourly[0].uvi}</p>
           </div>
         </div>
       </li>

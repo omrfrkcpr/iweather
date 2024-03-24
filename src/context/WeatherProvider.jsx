@@ -4,7 +4,7 @@ import getFormattedWeatherData from "../services/AppService";
 export const WeatherContext = createContext();
 
 const WeatherProvider = ({ children }) => {
-  const [query, setQuery] = useState({ q: "berlin" });
+  const [query, setQuery] = useState({ q: "gottingen" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
 
