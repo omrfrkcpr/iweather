@@ -3,13 +3,18 @@ import WeatherIcon from "../assets/weather-icons/Few-Clouds_Night.svg";
 
 const GeneralInfos = () => {
   return (
-    <div className="general-infos flex flex-col justify-between w-full p-4 text-lg">
-      <div className="time-and-location mb-10 ms-10">
-        <h1>Istanbul, TR</h1>
-        <p className="text-md">Sunday, May 24, 2024</p>
+    <div className="general-infos flex flex-col justify-between w-full p-4 text-lg rounded-12">
+      <div className="time-and-location mb-8 ms-8 mt-8">
+        <div className="location flex flex-row gap-3 mb-3">
+          <h1 className="mt-2">Istanbul, TR</h1>
+          <img src="https://flagsapi.com/TR/flat/64.png" alt="country-flag" />
+        </div>
+        <div className="time">
+          <p className="text-md">Sunday, May 24, 2024</p>
+        </div>
       </div>
       <div className="general-weather flex flex-row justify-between">
-        <div className="w-1/2 flex flex-col justify-center ms-10">
+        <div className="w-1/2 flex flex-col justify-center ms-8">
           <h1 className="text-xl">28°C</h1>
           <p>26°C / 32°C</p>
           <p className="text-md">Few Clouds</p>
