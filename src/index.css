@@ -14,3 +14,7 @@
 .bg-main-container {
   background-image: url(./assets/Background.svg);
 }
+
+.general-infos {
+  background-image: url(./assets/bg-images/Clear_Day.svg);
+}
