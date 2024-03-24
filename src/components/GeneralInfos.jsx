@@ -3,7 +3,7 @@ import WeatherIcon from "../assets/weather-icons/Few-Clouds_Night.svg";
 
 const GeneralInfos = () => {
   return (
-    <div className="bg-base-800 mb-3 w-full p-4 text-lg rounded-12">
+    <div className="bg-base-800 w-full p-4 text-lg rounded-12">
       <div className="general-infos p-4 rounded-8">
         <div className="time-and-location mb-8 ms-8 mt-8">
           <div className="location flex flex-row gap-3 mb-3">

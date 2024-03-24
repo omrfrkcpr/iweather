@@ -4,8 +4,8 @@ import Loading from "../assets/Loading.svg";
 
 const Search = () => {
   return (
-    <div className="search-box my-6 flex flex-row justify-center ">
-      <div className="flex flex-row w-2/4 items-center justify-center space-x-4 ms-10 relative">
+    <div className="search-box my-6 flex flex-row justify-center w-100">
+      <div className="flex flex-row items-center justify-center space-x-4 relative w-96">
         <input
           type="text"
           className="text-cl font-light p-2 w-full shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize "

@@ -7,10 +7,14 @@ import Search from "../components/Search";
 const Main = () => {
   const { cities, setCities } = WeatherContextComp();
   return (
-    <div className="bg-main-container mx-auto max-w-screen-lg mt-4 py-5 px-32 h-fit shadow-wl-shadgray flex flex-col justify-between align-middle">
-      <Logo />
-      <Messages />
-      <Search />
+    <div className="bg-main-container py-5 flex justify-center items-center h-screen">
+      <div className="absolute top-0 left-0 w-full">
+        <Logo />
+      </div>
+      <div className="flex flex-col items-center w-full">
+        <Messages />
+        <Search />
+      </div>
     </div>
   );
 };

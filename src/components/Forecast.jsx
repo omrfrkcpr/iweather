@@ -3,7 +3,7 @@ import WeatherIcons from "../assets/weather-icons/Rain_Day.svg";
 
 const Forecast = () => {
   return (
-    <ul className="bg-base-800 p-2 rounded-12 flex flex-row mt-3">
+    <ul className="bg-base-800 p-2 rounded-12 flex flex-row">
       <li className="p-3 flex flex-col text-center">
         <div>
           <p className="text-md text-base-200">Mon</p>
