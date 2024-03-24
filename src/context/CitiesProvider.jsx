@@ -8,12 +8,11 @@ const CitiesProvider = ({ children }) => {
   const [cities, setCities] = useState(
     JSON.parse(localStorage.getItem("cities")) || []
   );
-  const [city, setCity] = useState();
 
   // Variables
   const apiKey = "19fadf383f77445c7ead85a8d7ccce88";
   const apiUrl = "https://api.openweathermap.org/data/3.0/onecall?";
-  let latitude = 50.34;
+  let latitude = 80;
   let longitude = 44;
 
   // const apiKey = process.env.REACT_APP_MY_API_KEY;
@@ -29,30 +28,22 @@ const CitiesProvider = ({ children }) => {
         console.log("Error");
       }
 
-      setCity(response.data);
+      const newCity = response.data;
 
       // Push new city into Cities
-      setCities((prevCities) => [...prevCities, city]);
+      // City daha önceden cities dizisinde bulunmuyorsa ekle
+      if (!cities.some((city) => city?.current?.dt === newCity.current.dt)) {
+        setCities((prevCities) => [...prevCities, newCity]);
 
-      // Save cities after set new city
-      localStorage.setItem(
-        "cities",
-        JSON.stringify([...cities, response.data])
-      );
+        // Save updated cities after adding new city
+        localStorage.setItem("cities", JSON.stringify([...cities, newCity]));
+      }
 
       console.log(cities);
     } catch (err) {
       console.log(err);
     }
   };
-
-  // useEffect(() => {
-  //   // GET cities from local storage (ComponentDidMount)
-  //   const storedCities = JSON.parse(localStorage.getItem("cities"));
-  //   if (storedCities) {
-  //     setCities(storedCities);
-  //   }
-  // }, []);
 
   useEffect(() => {
     getWeatherData();

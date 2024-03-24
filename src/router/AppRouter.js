@@ -11,6 +11,7 @@ export const AppRouter = () => [
       {
         path: "/",
         element: <Main />,
+        exact: true,
       },
       {
         path: "/weather",
