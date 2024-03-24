@@ -19,9 +19,6 @@ module.exports = {
           input: "#1E1E29",
         },
       },
-      fontFamily: {
-        sans: ["Nunito", "sans-serif"],
-      },
       fontSize: {
         hg: "96px",
         xl: "48px",

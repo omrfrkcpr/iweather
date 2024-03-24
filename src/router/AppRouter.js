@@ -6,7 +6,7 @@ import NotFound from "../components/NotFound";
 
 const AppRouter = () => {
   return (
-    <Router>
+    <Router className="font-sans">
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route path="/weather" element={<ShowWeather />} />
