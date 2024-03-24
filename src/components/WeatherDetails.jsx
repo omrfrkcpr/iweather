@@ -16,7 +16,7 @@ const WeatherDetails = () => {
             <ThermometerSimple size={32} className="text-base-500" />
             <p className="text-base-200">Thermal sensation</p>
           </div>
-          <div className="me-3">
+          <div className="me-3 text-base-100">
             <p>26°C</p>
           </div>
         </div>
@@ -28,7 +28,7 @@ const WeatherDetails = () => {
             <p className="text-base-200">Probability of rain</p>
           </div>
 
-          <div className="me-3">
+          <div className="me-3 text-base-100">
             <p>0%</p>
           </div>
         </div>
@@ -40,7 +40,7 @@ const WeatherDetails = () => {
             <p className="text-base-200">Wind speed</p>
           </div>
 
-          <div className="me-3">
+          <div className="me-3 text-base-100">
             <p>8 km/h</p>
           </div>
         </div>
@@ -52,7 +52,7 @@ const WeatherDetails = () => {
             <p className="text-base-200">Air humidity</p>
           </div>
 
-          <div className="me-3">
+          <div className="me-3 text-base-100">
             <p>40%</p>
           </div>
         </div>
@@ -64,7 +64,7 @@ const WeatherDetails = () => {
             <p className="text-base-200">UV Index</p>
           </div>
 
-          <div className="me-3">
+          <div className="me-3 text-base-100">
             <p>5</p>
           </div>
         </div>
