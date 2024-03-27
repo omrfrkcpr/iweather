@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import getFormattedWeatherData from "../services/AppService";
 
 export const WeatherContext = createContext();
@@ -15,19 +15,13 @@ const WeatherProvider = ({ children }) => {
     });
   };
 
-  useEffect(() => {
-    fetchWeather();
-  }, [query, units]);
+  fetchWeather();
 
   return (
     <WeatherContext.Provider value={{ query, setQuery, weather }}>
       {children}
     </WeatherContext.Provider>
   );
-};
-
-export const WeatherContextComp = () => {
-  return useContext(WeatherContext);
 };
 
 export default WeatherProvider;

@@ -1,11 +1,11 @@
-import React from "react";
-import { WeatherContextComp } from "../context/WeatherProvider";
+import React, { useContext } from "react";
+import { WeatherContext } from "../context/WeatherProvider";
 import Logo from "../components/Logo";
 import Messages from "../components/Messages";
 import Search from "../components/Search";
 
 const Main = () => {
-  const { query, setQuery } = WeatherContextComp();
+  const { query, setQuery } = useContext(WeatherContext);
   return (
     <div className="bg-main-container py-5 flex justify-center items-center h-screen">
       <div className="absolute top-0 left-0 w-full">

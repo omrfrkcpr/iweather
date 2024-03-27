@@ -1,19 +1,17 @@
 import { DateTime } from "luxon";
 
 const API_KEY = "19fadf383f77445c7ead85a8d7ccce88";
-const BASE_URL = "https://api.openweathermap.org/data";
+const BASE_URL = "https://api.openweathermap.org/data/2.5";
 
 const versionWeather = "2.5";
 const versionOneCall = "3.0";
 
-const getWeatherData = async (version, urlType, searchParams) => {
+const getWeatherData = (version, urlType, searchParams) => {
   const url = new URL(BASE_URL + "/" + version + "/" + urlType);
   url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
 
   try {
-    const response = await fetch(url);
-
-    return response.json();
+    return fetch(url).then((res) => res.json());
   } catch (error) {
     console.error("Error fetching weather data:", error);
     throw error; // Re-throw the error to be caught by the caller
@@ -58,8 +56,7 @@ const formatForecastWeather = (data) => {
   daily = daily.slice(1, 6).map((d) => {
     return {
       title: formatToLocalTime(d.dt, timezone, `ccc`),
-      min: d.temp.min,
-      max: d.temp.max,
+      temp: d.temp.day,
       icon: d.weather[0].icon,
     };
   });
@@ -67,6 +64,7 @@ const formatForecastWeather = (data) => {
   hourly = hourly.slice(1, 6).map((h) => {
     return {
       title: formatToLocalTime(h.dt, timezone, `hh:mm a`),
+      temp: h.temp,
       icon: h.weather[0].icon,
       uvi: h.uvi,
     };
@@ -80,7 +78,7 @@ const getFormattedWeatherData = async (searchParams) => {
     versionWeather,
     "weather",
     searchParams
-  ).then((data) => formatCurrentWeather(data));
+  ).then(formatCurrentWeather);
 
   const { lat, lon } = formattedCurrentWeather;
 

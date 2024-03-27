@@ -15,8 +15,8 @@ const GeneralInfos = ({
   },
 }) => {
   return (
-    <div className="bg-base-800 w-full p-4 text-lg rounded-12">
-      <div className="general-infos p-4 rounded-8">
+    <div className="bg-base-800 w-full p-2 text-lg rounded-12">
+      <div className="general-infos p-1 rounded-8">
         <div className="time-and-location mb-8 ms-8 mt-8">
           <div className="location flex flex-row gap-3 mb-3">
             <h1 className="mt-2">{`${name}, ${country}`}</h1>

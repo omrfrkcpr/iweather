@@ -16,14 +16,6 @@
   }
 }
 
-.bg-main-container {
-  background-image: url(./assets/Background.svg);
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
-
 .general-infos {
   background-image: url(./assets/bg-images/Few-Clouds_Night.svg);
   background-repeat: no-repeat;
