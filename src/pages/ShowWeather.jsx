@@ -17,7 +17,7 @@ const ShowWeather = () => {
           <GeneralInfos weather={weather} />
           <WeatherDetails weather={weather} />
           <Forecast title="daily forecast" items={weather.daily} />
-          {/* <Forecast title="hourly forecast"/> items={weather.hourly}*/}
+          {/* <Forecast title="hourly forecast" items={weather.hourly} /> */}
         </div>
       )}
     </>

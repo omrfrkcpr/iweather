@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import WeatherIcon from "../assets/weather-icons/Few-Clouds_Night.svg";
 import { formatToLocalTime } from "../services/AppService";
+import { WeatherContext } from "../context/WeatherProvider";
 
 const GeneralInfos = ({
   weather: {
@@ -14,9 +15,11 @@ const GeneralInfos = ({
     temp_max,
   },
 }) => {
+  const { formatBackground } = useContext(WeatherContext);
+
   return (
     <div className="bg-base-800 w-full p-2 text-lg rounded-12">
-      <div className="general-infos p-1 rounded-8">
+      <div className={`${formatBackground()} p-1 rounded-8`}>
         <div className="time-and-location mb-8 ms-8 mt-8">
           <div className="location flex flex-row gap-3 mb-3">
             <h1 className="mt-2">{`${name}, ${country}`}</h1>
