@@ -11,8 +11,13 @@ import { FaCity } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const ShowWeather = () => {
-  const { weather, iconSize } = useContext(WeatherContext);
+  const { weather, iconSize, setQuery } = useContext(WeatherContext);
   const navigate = useNavigate();
+
+  const handleGoHome = () => {
+    setQuery({ q: "" });
+    navigate("/");
+  };
 
   return (
     <div className="flex-col flex justify-start items-center h-screen">
@@ -27,7 +32,7 @@ const ShowWeather = () => {
           transition
           ease-out
           hover:scale-125"
-          onClick={() => navigate("/")}
+          onClick={handleGoHome}
         />
         <FaCity
           size={iconSize}
