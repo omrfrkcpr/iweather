@@ -25,8 +25,9 @@ import bgRainN from "../assets/bg-images/Rain_Night.svg";
 import bgStormD from "../assets/bg-images/Storm_Day.svg";
 import bgStormN from "../assets/bg-images/Storm_Night.svg";
 
-const API_KEY = "75b251ce9d3d5c7bf9e4f1832b237076";
 const BASE_URL = "https://api.openweathermap.org/data";
+
+console.log(process.env);
 
 const errorMessages = {
   400: "400 - Bad Request",
@@ -40,7 +41,10 @@ const errorMessages = {
 
 const getWeatherData = async (urlType, searchParams) => {
   const url = new URL(BASE_URL + "/" + urlType);
-  url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
+  url.search = new URLSearchParams({
+    ...searchParams,
+    appid: process.env.REACT_APP_API_KEY,
+  });
 
   try {
     const response = await axios.get(url);
