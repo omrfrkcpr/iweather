@@ -12,38 +12,41 @@ const WeatherProvider = ({ children }) => {
   const [error, setError] = useState(null);
 
   const fetchWeather = async () => {
-    setLoading(true);
+    // Fetch only if there is any query
+    if (query.q !== "") {
+      setLoading(true);
 
-    try {
-      const result = await getFormattedWeatherData({ ...query, units });
-      toast.success(
-        `Successfully fetched weather for ${result.name}, ${result.country}`,
-        {
+      try {
+        const result = await getFormattedWeatherData({ ...query, units });
+        toast.success(
+          `Successfully fetched weather for ${result.name}, ${result.country}`,
+          {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
+        setWeather(result);
+        setError(null);
+      } catch (error) {
+        toast.error(error.message, {
           position: "top-right",
-          autoClose: 2000,
+          autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
           theme: "colored",
-        }
-      );
-      setWeather(result);
-      setError(null);
-    } catch (error) {
-      toast.error(error.message, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-    } finally {
-      setLoading(false);
+        });
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
