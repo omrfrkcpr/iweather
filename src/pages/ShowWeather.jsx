@@ -24,7 +24,9 @@ const ShowWeather = () => {
             </div>
           </div>
         )}
-        <ToastContainer style={{ maxWidth: "50%" }} />
+        <ToastContainer
+          style={{ maxWidth: "50%", margin: ".5rem .5rem .5rem auto" }}
+        />
       </div>
     </div>
   );
