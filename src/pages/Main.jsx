@@ -6,24 +6,39 @@ import { ToastContainer } from "react-toastify";
 import { FaCity } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { WeatherContext } from "../context/WeatherProvider";
+import { House } from "@phosphor-icons/react";
 
 const Main = () => {
-  const { iconSize } = useContext(WeatherContext);
+  const { setQuery, iconSize } = useContext(WeatherContext);
   const navigate = useNavigate();
+
+  const handleGoHome = () => {
+    setQuery({ q: "" });
+    navigate("/");
+  };
 
   return (
     <div className="p-4 flex justify-center items-center h-screen">
       <div className="absolute top-3">
         <Logo />
       </div>
-      <div className="absolute top-10 right-10">
+      <div className="absolute flex space-x-4" style={{ top: "120px" }}>
+        <House
+          size={iconSize}
+          className=" text-product
+          cursor-pointer
+          transition
+          ease-out
+          hover:scale-125 border-b-2 border-product"
+          onClick={handleGoHome}
+        />
         <FaCity
           size={iconSize}
           className="text-product
           cursor-pointer
           transition
           ease-out
-          hover:scale-125"
+          hover:scale-125 border-b-2 border-product"
           onClick={() => navigate("/cities")}
         />
       </div>

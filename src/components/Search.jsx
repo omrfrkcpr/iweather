@@ -39,6 +39,14 @@ const Search = () => {
     }
   };
 
+  const handleWindowSize = () => {
+    if (window.innerWidth < 500) {
+      return "3rem";
+    } else {
+      return "5.5rem";
+    }
+  };
+
   return (
     <div className="my-6 flex flex-col justify-center items-center w-full">
       <div
@@ -61,7 +69,8 @@ const Search = () => {
           <img
             src={Loading}
             alt="loading-gif"
-            className="absolute right-20 lg:right-17"
+            className="absolute"
+            style={{ right: handleWindowSize() }}
           />
         )}
 

@@ -24,28 +24,27 @@ const ShowWeather = () => {
       <div className="absolute top-3">
         <Logo />
       </div>
-      <div className="absolute flex top-10 right-0 space-x-4 ">
+      <div className="absolute flex space-x-4" style={{ top: "120px" }}>
         <House
           size={iconSize}
-          className="my-auto text-product
+          className=" text-product
           cursor-pointer
           transition
           ease-out
-          hover:scale-125"
+          hover:scale-125 border-b-2 border-product"
           onClick={handleGoHome}
         />
         <FaCity
           size={iconSize}
-          style={{ marginRight: "2rem" }}
           className="text-product
           cursor-pointer
           transition
           ease-out
-          hover:scale-125"
+          hover:scale-125 border-b-2 border-product"
           onClick={() => navigate("/cities")}
         />
       </div>
-      <div className="max-[600]" style={{ marginTop: "5rem" }}>
+      <div className="max-[600]" style={{ marginTop: "10rem" }}>
         {weather && (
           <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
             <GeneralInfos />
