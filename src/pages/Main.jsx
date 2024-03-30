@@ -14,7 +14,9 @@ const Main = () => {
         <Messages />
         <Search />
       </div>
-      <ToastContainer />
+      <ToastContainer
+        style={{ maxWidth: "50%", margin: ".5rem .5rem .5rem auto" }}
+      />
     </div>
   );
 };
