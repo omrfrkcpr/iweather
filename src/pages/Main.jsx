@@ -10,7 +10,7 @@ const Main = () => {
       <div className="absolute top-0">
         <Logo />
       </div>
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-center w-4/5">
         <Messages />
         <Search />
       </div>

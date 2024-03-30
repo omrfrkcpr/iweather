@@ -14,9 +14,9 @@ const ShowWeather = () => {
       <div className="absolute top-0">
         <Logo />
       </div>
-      <div className="max-[600]">
+      <div className="max-[600] mt-20">
         {weather && (
-          <div className="gap-1 px-8 py-0 flex justify-center text-white flex-col md:flex-row mt-20 pt-10 ">
+          <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
             <GeneralInfos />
             <div className="p-1">
               <WeatherDetails />
@@ -24,7 +24,7 @@ const ShowWeather = () => {
             </div>
           </div>
         )}
-        <ToastContainer />
+        <ToastContainer style={{ maxWidth: "50%" }} />
       </div>
     </div>
   );

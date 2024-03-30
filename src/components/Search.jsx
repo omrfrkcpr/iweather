@@ -34,11 +34,12 @@ const Search = () => {
   };
 
   return (
-    <div className="my-6 flex flex-row justify-center w-100">
-      <div className="flex flex-row items-center justify-center space-x-4 relative w-96">
+    <div className="my-6 flex flex-row justify-center w-full">
+      <div className="flex flex-row items-center justify-center space-x-4  relative w-screen">
         <input
           type="text"
-          className="text-cl font-light px-3 py-2 w-50 shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
+          className="text-cl font-light px-3 py-2 w-1/2 shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
+          style={{ maxWidth: "600px" }}
           placeholder="Search location"
           autofocus
           value={city}
@@ -50,6 +51,7 @@ const Search = () => {
         {loading && (
           <img src={Loading} alt="loading-gif" className="absolute right-20" />
         )}
+
         <MagnifyingGlass
           className="text-product cursor-pointer transition ease-out hover:scale-125 "
           size={32}
