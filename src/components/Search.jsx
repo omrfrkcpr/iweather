@@ -81,7 +81,7 @@ const Search = () => {
       </div>
       <div
         className="flex items-center space-x-2"
-        style={{ fontSize: "1.5rem", marginTop: "1rem" }}
+        style={{ fontSize: "1.2rem", marginTop: "1rem" }}
       >
         <h1
           className={` cursor-pointer transition ease-out hover:scale-125 ${
