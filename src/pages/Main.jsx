@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../components/Logo";
 import Messages from "../components/Messages";
 import Search from "../components/Search";
 import { ToastContainer } from "react-toastify";
 import { FaCity } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { WeatherContext } from "../context/WeatherProvider";
 
 const Main = () => {
+  const { iconSize } = useContext(WeatherContext);
   const navigate = useNavigate();
 
   return (
@@ -16,7 +18,7 @@ const Main = () => {
       </div>
       <div className="absolute top-10 right-10">
         <FaCity
-          size={32}
+          size={iconSize}
           className="text-product
           cursor-pointer
           transition

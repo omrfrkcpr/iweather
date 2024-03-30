@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import GeneralInfos from "../components/GeneralInfos";
 import WeatherDetails from "../components/WeatherDetails";
 import Forecast from "../components/Forecast";
@@ -11,8 +11,9 @@ import { FaCity } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const ShowWeather = () => {
-  const { weather } = useContext(WeatherContext);
+  const { weather, iconSize } = useContext(WeatherContext);
   const navigate = useNavigate();
+
   return (
     <div className="flex-col flex justify-start items-center h-screen">
       <div className="absolute top-3">
@@ -20,7 +21,7 @@ const ShowWeather = () => {
       </div>
       <div className="absolute flex top-10 right-0 space-x-4 ">
         <House
-          size={32}
+          size={iconSize}
           className="my-auto text-product
           cursor-pointer
           transition
@@ -29,7 +30,7 @@ const ShowWeather = () => {
           onClick={() => navigate("/")}
         />
         <FaCity
-          size={32}
+          size={iconSize}
           style={{ marginRight: "2rem" }}
           className="text-product
           cursor-pointer

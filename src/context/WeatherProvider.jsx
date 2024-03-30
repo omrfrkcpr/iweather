@@ -10,6 +10,7 @@ const WeatherProvider = ({ children }) => {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [iconSize, setIconSize] = useState(32);
 
   const fetchWeather = async () => {
     // Fetch only if there is any query
@@ -51,7 +52,7 @@ const WeatherProvider = ({ children }) => {
       } finally {
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 2000);
       }
     }
   };
@@ -59,6 +60,23 @@ const WeatherProvider = ({ children }) => {
   useEffect(() => {
     fetchWeather();
   }, [query, units]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      let newSize = 32;
+      if (windowWidth < 500) {
+        newSize = 16;
+      } else if (windowWidth >= 500 && windowWidth < 900) {
+        newSize = 24;
+      }
+      setIconSize(newSize);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <WeatherContext.Provider
@@ -72,6 +90,7 @@ const WeatherProvider = ({ children }) => {
         setLoading,
         error,
         setError,
+        iconSize,
       }}
     >
       {children}
