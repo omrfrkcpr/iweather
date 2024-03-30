@@ -18,34 +18,40 @@ const WeatherProvider = ({ children }) => {
 
       try {
         const result = await getFormattedWeatherData({ ...query, units });
-        toast.success(
-          `Successfully fetched weather for ${result.name}, ${result.country}`,
-          {
+        setTimeout(() => {
+          toast.success(
+            `Successfully fetched weather for ${result.name}, ${result.country}`,
+            {
+              position: "top-right",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            }
+          );
+        }, 2000);
+        setWeather(result);
+        setError(null);
+      } catch (error) {
+        setTimeout(() => {
+          toast.error(error.message, {
             position: "top-right",
-            autoClose: 2000,
+            autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "colored",
-          }
-        );
-        setWeather(result);
-        setError(null);
-      } catch (error) {
-        toast.error(error.message, {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-        });
+          });
+        }, 2000);
       } finally {
-        setLoading(false);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
       }
     }
   };

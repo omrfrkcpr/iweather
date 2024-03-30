@@ -9,7 +9,7 @@ import React, { useContext } from "react";
 import { WeatherContext } from "../context/WeatherProvider";
 
 const WeatherDetails = () => {
-  const { weather } = useContext(WeatherContext);
+  const { weather, units } = useContext(WeatherContext);
 
   const { daily, feels_like, humidity, speed } = weather;
 
@@ -22,7 +22,9 @@ const WeatherDetails = () => {
             <p className="text-base-200">Thermal sensation</p>
           </div>
           <div className="me-3 text-base-100">
-            <p>{Math.trunc(feels_like)}°C</p>
+            <p>
+              {Math.trunc(feels_like)}°{units === "metric" ? "C" : "F"}
+            </p>
           </div>
         </div>
       </li>

@@ -7,7 +7,7 @@ import {
 import { WeatherContext } from "../context/WeatherProvider";
 
 const GeneralInfos = () => {
-  const { weather } = useContext(WeatherContext);
+  const { weather, units } = useContext(WeatherContext);
 
   const {
     icon,
@@ -42,10 +42,12 @@ const GeneralInfos = () => {
         </div>
         <div className="general-weather flex flex-row justify-between m-8 mb-4 ">
           <div className="w-1/2 flex flex-col justify-center ">
-            <h1 className="text-lg lg:text-xl">{Math.round(temp)}°c</h1>
-            <p className="text-md lg:text-lg">{`${Math.round(
-              temp_min
-            )}°c / ${Math.round(temp_max)}°c`}</p>
+            <h1 className="text-lg lg:text-xl">
+              {Math.round(temp)}°{units === "metric" ? "C" : "F"}
+            </h1>
+            <p className="text-md lg:text-lg">{`${Math.round(temp_min)}°${
+              units === "metric" ? "C" : "F"
+            } / ${Math.round(temp_max)}°${units === "metric" ? "C" : "F"}`}</p>
             <p className="text-md">
               {description.charAt(0).toUpperCase() + description.slice(1)}
             </p>
