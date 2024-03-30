@@ -7,7 +7,7 @@ import { ToastContainer } from "react-toastify";
 const Main = () => {
   return (
     <div className="p-4 flex justify-center items-center h-screen">
-      <div className="absolute p-4 top-0">
+      <div className="absolute top-0">
         <Logo />
       </div>
       <div className="flex flex-col items-center w-full">

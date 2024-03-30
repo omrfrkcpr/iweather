@@ -34,12 +34,13 @@ const Search = () => {
   };
 
   return (
-    <div className="search-box my-6 flex flex-row justify-center w-100">
+    <div className="my-6 flex flex-row justify-center w-100">
       <div className="flex flex-row items-center justify-center space-x-4 relative w-96">
         <input
           type="text"
-          className="text-cl font-light px-3 py-2 w-full shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize "
+          className="text-cl font-light px-3 py-2 w-50 shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
           placeholder="Search location"
+          autofocus
           value={city}
           onChange={(e) => setCity(e.target.value)}
           onKeyDown={(e) => {
