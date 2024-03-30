@@ -3,12 +3,23 @@ import Logo from "../components/Logo";
 import Messages from "../components/Messages";
 import Search from "../components/Search";
 import { ToastContainer } from "react-toastify";
+import { FaCity } from "react-icons/fa";
 
 const Main = () => {
   return (
     <div className="p-4 flex justify-center items-center h-screen">
-      <div className="absolute top-0">
+      <div className="absolute top-3">
         <Logo />
+      </div>
+      <div className="absolute top-10 right-10">
+        <FaCity
+          size={32}
+          className="text-product
+          cursor-pointer
+          transition
+          ease-out
+          hover:scale-125"
+        />
       </div>
       <div className="flex flex-col items-center w-4/5">
         <Messages />

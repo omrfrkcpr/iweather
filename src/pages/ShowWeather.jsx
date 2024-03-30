@@ -6,15 +6,38 @@ import { WeatherContext } from "../context/WeatherProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Logo from "../components/Logo";
+import { House } from "@phosphor-icons/react";
+import { FaCity } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ShowWeather = () => {
   const { weather } = useContext(WeatherContext);
+  const navigate = useNavigate();
   return (
-    <div className="flex-col flex justify-start items-center h-screen p-4">
-      <div className="absolute top-0">
+    <div className="flex-col flex justify-start items-center h-screen">
+      <div className="absolute top-3">
         <Logo />
       </div>
-      <div className="max-[600] mt-20">
+      <div className="absolute flex top-10 right-0 me-10 space-x-4">
+        <House
+          size={32}
+          className="my-auto text-product
+          cursor-pointer
+          transition
+          ease-out
+          hover:scale-125"
+          onClick={() => navigate("/")}
+        />
+        <FaCity
+          size={32}
+          className="text-product
+          cursor-pointer
+          transition
+          ease-out
+          hover:scale-125"
+        />
+      </div>
+      <div className="max-[600]" style={{ marginTop: "5rem" }}>
         {weather && (
           <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
             <GeneralInfos />
