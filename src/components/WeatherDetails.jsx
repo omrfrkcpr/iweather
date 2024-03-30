@@ -5,11 +5,14 @@ import {
   ThermometerSimple,
   Wind,
 } from "@phosphor-icons/react";
-import React from "react";
+import React, { useContext } from "react";
+import { WeatherContext } from "../context/WeatherProvider";
 
-const WeatherDetails = ({
-  weather: { hourly, feels_like, humidity, speed },
-}) => {
+const WeatherDetails = () => {
+  const { weather } = useContext(WeatherContext);
+
+  const { daily, feels_like, humidity, speed } = weather;
+
   return (
     <ul className="bg-base-800 py-2 rounded-12 ">
       <li className="justify-between px-1 py-2 rounded-t-12 ">
@@ -31,7 +34,7 @@ const WeatherDetails = ({
           </div>
 
           <div className="me-3 text-base-100">
-            <p>0%</p>
+            <p>{daily[0].pop}%</p>
           </div>
         </div>
       </li>
@@ -65,9 +68,8 @@ const WeatherDetails = ({
             <SunDim size={32} className="text-base-500" />
             <p className="text-base-200">UV Index</p>
           </div>
-
           <div className="me-3 text-base-100">
-            <p>{hourly[0].uvi}</p>
+            <p>{daily[0].uvi}</p>
           </div>
         </div>
       </li>

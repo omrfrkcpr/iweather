@@ -1,10 +1,16 @@
 import React, { useContext } from "react";
-import WeatherIcon from "../assets/weather-icons/Few-Clouds_Night.svg";
-import { formatToLocalTime } from "../services/AppService";
+import {
+  formatToLocalTime,
+  formatBackground,
+  iconUrlFromCode,
+} from "../services/AppService";
 import { WeatherContext } from "../context/WeatherProvider";
 
-const GeneralInfos = ({
-  weather: {
+const GeneralInfos = () => {
+  const { weather } = useContext(WeatherContext);
+
+  const {
+    icon,
     dt,
     timezone,
     name,
@@ -13,35 +19,42 @@ const GeneralInfos = ({
     temp,
     temp_min,
     temp_max,
-  },
-}) => {
-  const { formatBackground } = useContext(WeatherContext);
+  } = weather;
 
   return (
     <div className="bg-base-800 w-full p-2 text-lg rounded-12">
-      <div className={`${formatBackground()} p-1 rounded-8`}>
-        <div className="time-and-location mb-8 ms-8 mt-8">
+      <div
+        className="p-1 rounded-8 bg-cover h-full flex flex-col justify-between"
+        style={{ backgroundImage: `url(${formatBackground(icon)})` }}
+      >
+        <div className="time-and-location m-8">
           <div className="location flex flex-row gap-3 mb-3">
             <h1 className="mt-2">{`${name}, ${country}`}</h1>
             <img
               src={`https://flagsapi.com/${country}/flat/64.png`}
-              alt="country-flag"
+              alt={`${country}-flag`}
             />
           </div>
           <div className="time">
             <p className="text-md">{formatToLocalTime(dt, timezone)}</p>
           </div>
         </div>
-        <div className="general-weather flex flex-row justify-between">
-          <div className="w-1/2 flex flex-col justify-center ms-8">
-            <h1 className="text-xl">{Math.trunc(temp)}°C</h1>
-            <p>{`${Math.trunc(temp_min)}°C / ${Math.trunc(temp_max)}°C`}</p>
-            <p className="text-md">
+        <div className="general-weather flex flex-row justify-between m-8">
+          <div className="w-1/2 flex flex-col justify-center ">
+            <h1 className="text-lg lg:text-xl">{Math.round(temp)}°c</h1>
+            <p className="text-md lg:text-lg">{`${Math.round(
+              temp_min
+            )}°c / ${Math.round(temp_max)}°c`}</p>
+            <p className="text-md lg:text-lg">
               {description.charAt(0).toUpperCase() + description.slice(1)}
             </p>
           </div>
           <div className="w-1/2">
-            <img src={WeatherIcon} alt="" className="ms-auto" />
+            <img
+              src={iconUrlFromCode(icon)}
+              alt="weather-icon"
+              className="ms-auto h-100 w-100"
+            />
           </div>
         </div>
       </div>

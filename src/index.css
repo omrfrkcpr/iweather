@@ -16,8 +16,8 @@
   }
 }
 
-.general-infos {
-  background-image: url(./assets/bg-images/Few-Clouds_Night.svg);
-  background-repeat: no-repeat;
+body {
+  background-image: url(./assets/Background.svg);
+  background-repeat: repeat;
   background-size: cover;
 }

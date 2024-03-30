@@ -2,25 +2,34 @@ import React, { useContext, useState } from "react";
 import { MagnifyingGlass, MapPin } from "@phosphor-icons/react";
 import Loading from "../assets/Loading.svg";
 import { WeatherContext } from "../context/WeatherProvider";
-import { toast } from "react-toastify";
+// import { AsyncPaginate } from "react-select-async-paginate";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  const { query, setQuery, units, setUnits } = useContext(WeatherContext);
+  const { setQuery, loading, error, units, setUnits } =
+    useContext(WeatherContext);
   const [city, setCity] = useState("");
+  const navigate = useNavigate();
 
   const handleSearchClick = () => {
-    city && setQuery({ q: city });
+    if (city) {
+      setQuery({ q: city });
+      if (!error) {
+        navigate("/weather");
+      }
+    }
   };
 
   const handleLocationClick = () => {
     if (navigator.geolocation) {
-      toast.info("Fetching users location.");
       navigator.geolocation.getCurrentPosition((position) => {
-        toast.success("Location fetched!");
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
 
         setQuery({ lat, lon });
+        if (!error) {
+          navigate("/weather");
+        }
       });
     }
   };
@@ -34,8 +43,13 @@ const Search = () => {
           placeholder="Search location"
           value={city}
           onChange={(e) => setCity(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleSearchClick();
+          }}
         />
-        <img src={Loading} alt="loading-gif" className="absolute right-20" />
+        {loading && (
+          <img src={Loading} alt="loading-gif" className="absolute right-20" />
+        )}
         <MagnifyingGlass
           className="text-product cursor-pointer transition ease-out hover:scale-125 "
           size={32}

@@ -1,61 +1,70 @@
 import { DateTime } from "luxon";
-import { toast } from "react-toastify";
+import axios from "axios";
 
-const API_KEY = "19fadf383f77445c7ead85a8d7ccce88";
+// all weather icons
+import clearD from "../assets/weather-icons/Clear_Day.svg";
+import clearN from "../assets/weather-icons/Clear_Night.svg";
+import cloudyD from "../assets/weather-icons/Cloudy_Day.svg";
+import cloudyN from "../assets/weather-icons/Cloudy_Night.svg";
+import fewCloudsD from "../assets/weather-icons/Few-Clouds_Day.svg";
+import fewCloudsN from "../assets/weather-icons/Few-Clouds_Night.svg";
+import rainD from "../assets/weather-icons/Rain_Day.svg";
+import rainN from "../assets/weather-icons/Rain_Night.svg";
+import stormD from "../assets/weather-icons/Storm_Day.svg";
+import stormN from "../assets/weather-icons/Storm_Night.svg";
+
+// all weather backgrounds
+import bgClearD from "../assets/bg-images/Clear_Day.svg";
+import bgClearN from "../assets/bg-images/Clear_Night.svg";
+import bgCloudyD from "../assets/bg-images/Cloudy_Day.svg";
+import bgCloudyN from "../assets/bg-images/Cloudy_Night.svg";
+import bgFewCloudsD from "../assets/bg-images/Few-Clouds_Day.svg";
+import bgFewCloudsN from "../assets/bg-images/Few-Clouds_Night.svg";
+import bgRainD from "../assets/bg-images/Rain_Day.svg";
+import bgRainN from "../assets/bg-images/Rain_Night.svg";
+import bgStormD from "../assets/bg-images/Storm_Day.svg";
+import bgStormN from "../assets/bg-images/Storm_Night.svg";
+
+const API_KEY = "75b251ce9d3d5c7bf9e4f1832b237076";
 const BASE_URL = "https://api.openweathermap.org/data";
+
+// 75b251ce9d3d5c7bf9e4f1832b237076
 
 // const weatherURL =
 //   "https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=19fadf383f77445c7ead85a8d7ccce88";
 // const opencallURL =
 //   "https://api.openweathermap.org/data/3.0/onecall?lat=44.34&lon=10.99&exclude=current,minutely,alerts&appid=19fadf383f77445c7ead85a8d7ccce88";
 
-const getWeatherData = (urlType, searchParams) => {
+const errorMessages = {
+  400: "400 - Bad Request",
+  401: "401 - Unauthorized",
+  404: "404 - Not Found",
+  429: "429 - Account temporary blocked because of too many requests",
+  "5xx": "5xx - Unexpected Error",
+  default: "An unexpected error occurred",
+  requestError: "An unexpected error occurred: Request Error",
+};
+
+const getWeatherData = async (urlType, searchParams) => {
   const url = new URL(BASE_URL + "/" + urlType);
   url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
 
   try {
-    return fetch(url)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`HTTP error! status: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((data) => {
-        return data;
-      })
-      .catch((error) => {
-        if (error.message.includes("HTTP error! status: 400")) {
-          toast.error(
-            "Bad Request. You can get 400 error if either some mandatory parameters in the request are missing or some of request parameters have incorrect format or values out of allowed range. List of all parameters names that are missing or incorrect will be returned in `parameters` attribute of the `ErrorResponse` object."
-          );
-        } else if (error.message.includes("HTTP error! status: 401")) {
-          toast.error(
-            "Unauthorized. You can get 401 error if API token did not providen in the request or in case API token provided in the request does not grant access to this API. You must add API token with granted access to the product to the request before returning it"
-          );
-        } else if (error.message.includes("HTTP error! status: 404")) {
-          toast.error(
-            "Not Found. You can get 404 error if data with requested parameters (lat, lon, date etc) does not exist in service database. You must not retry the same request"
-          );
-        } else if (error.message.includes("HTTP error! status: 429")) {
-          toast.error(
-            "Too Many Requests. You can get 429 error if key quota of requests for provided API to this API was exceeded. You may retry request after some time or after extending your key quota"
-          );
-        } else if (
-          error.message.includes("HTTP error! status: 5") &&
-          error.message.length === 18
-        ) {
-          toast.error(
-            "Unexpected Error. You can get '5xx' error in case of other internal errors. Error Response code will be `5xx`. Please contact us and enclose an example of your API request that receives this error into your email to let us analyze it and find a solution for you promptly. You may retry the request which led to this error."
-          );
-        } else {
-          toast.error("An unexpected error occurred:", error.message);
-        }
-        throw error;
-      });
-  } catch (err) {
-    toast.error("Error fetching weather data:", err);
-    throw err;
+    const response = await axios.get(url);
+
+    const data = response.data;
+    return data;
+  } catch (error) {
+    let errorMessage = errorMessages.default;
+
+    if (error.response) {
+      const status = error.response.status;
+      errorMessage = errorMessages[status] || errorMessages.default;
+    } else if (error.request) {
+      errorMessage = errorMessages.requestError;
+    }
+
+    throw new Error(errorMessage);
   }
 };
 
@@ -93,7 +102,7 @@ const formatCurrentWeather = (data) => {
 };
 
 const formatForecastWeather = (data) => {
-  let { timezone, daily, hourly } = data;
+  let { timezone, daily } = data;
   daily = daily.slice(1, 6).map((d) => {
     return {
       title: formatToLocalTime(d.dt, timezone, `ccc`),
@@ -101,33 +110,26 @@ const formatForecastWeather = (data) => {
       min: d.temp.min,
       max: d.temp.max,
       icon: d.weather[0].icon,
+      uvi: d.uvi,
+      pop: d.pop,
     };
   });
-
-  hourly = hourly.slice(1, 6).map((h) => {
-    return {
-      title: formatToLocalTime(h.dt, timezone, `hh:mm a`),
-      temp: h.temp,
-      icon: h.weather[0].icon,
-    };
-  });
-
-  return { timezone, daily, hourly };
+  return { timezone, daily };
 };
 
 const getFormattedWeatherData = async (searchParams) => {
   const formattedCurrentWeather = await getWeatherData(
-    "/2.5/weather",
+    "2.5/weather",
     searchParams
   ).then(formatCurrentWeather);
 
   const { lat, lon } = formattedCurrentWeather;
 
-  const formattedForecastWeather = await getWeatherData("/3.0/onecall", {
+  const formattedForecastWeather = await getWeatherData("3.0/onecall", {
     lat,
     lon,
     exclude: "current, minutely, alerts",
-    units: searchParams.unit,
+    units: searchParams.units,
   }).then(formatForecastWeather);
 
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
@@ -139,16 +141,58 @@ const formatToLocalTime = (
   format = "cccc, LLL dd, yyyy' | Local time: 'hh:mm a"
 ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-const iconUrlFromCode = (code) => {
-  // if (code === "01d") {
-  //   return `../assets/weather-icons/Clear_Day.svg`;
-  // } else if (code === "01n") {
-  //   return `../assets/weather-icons/Clear_Night.svg`;
-  // } else if (code === "")
-
-  return `http://openweather.org/img/wn/${code}@2x.png`;
+const iconUrls = {
+  "01d": clearD,
+  "01n": clearN,
+  "02d": fewCloudsD,
+  "02n": fewCloudsN,
+  "03d": cloudyD,
+  "03n": cloudyN,
+  "04d": cloudyD,
+  "04n": cloudyN,
+  "09d": rainD,
+  "09n": rainN,
+  "10d": rainD,
+  "10n": rainN,
+  "11d": stormD,
+  "11n": stormN,
 };
 
-export { formatToLocalTime, iconUrlFromCode };
+const defaultIconUrl = "http://openweather.org/img/wn/";
+
+const iconUrlFromCode = (code) => {
+  if (iconUrls.hasOwnProperty(code)) {
+    return iconUrls[code];
+  } else {
+    return defaultIconUrl + `${code}@2x.png`;
+  }
+};
+
+const bgUrls = {
+  "01d": bgClearD,
+  "01n": bgClearN,
+  "02d": bgFewCloudsD,
+  "02n": bgFewCloudsN,
+  "03d": bgCloudyD,
+  "03n": bgCloudyN,
+  "04d": bgCloudyD,
+  "04n": bgCloudyN,
+  "09d": bgRainD,
+  "09n": bgRainN,
+  "10d": bgRainD,
+  "10n": bgRainN,
+  "11d": bgStormD,
+  "11n": bgStormN,
+};
+
+const formatBackground = (code) => {
+  if (bgUrls.hasOwnProperty(code)) {
+    return bgUrls[code];
+  } else {
+    return;
+  }
+};
 
 export default getFormattedWeatherData;
+
+export { formatToLocalTime, iconUrlFromCode, formatBackground };

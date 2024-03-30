@@ -5,38 +5,65 @@ import { toast } from "react-toastify";
 export const WeatherContext = createContext();
 
 const WeatherProvider = ({ children }) => {
-  const [query, setQuery] = useState({ q: "gottingen" });
+  const [query, setQuery] = useState({ q: "" });
   const [units, setUnits] = useState("metric"); // metric or imperial
   const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const fetchWeather = async () => {
-    const message = query.q ? query.q : "current location.";
+    setLoading(true);
 
-    toast.info("Fetching weather for " + message);
-    await getFormattedWeatherData({ ...query, units }).then((result) => {
+    try {
+      const result = await getFormattedWeatherData({ ...query, units });
       toast.success(
-        `Succesfully fetched weather for ${result.name}, ${result.country}`
+        `Successfully fetched weather for ${result.name}, ${result.country}`,
+        {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+        }
       );
-
       setWeather(result);
-      console.log(weather);
-    });
+      setError(null);
+    } catch (error) {
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchWeather();
   }, [query, units]);
 
-  const formatBackground = () => {
-    if (!weather) return `from-cyan-400 to-blue-400`;
-    const threshold = units === "metric" ? 20 : 60;
-    if (weather.temp <= threshold) return `from-cyan-400 to-blue-400`;
-    return `from-yellow-400 to-orange-400`;
-  };
-
   return (
     <WeatherContext.Provider
-      value={{ query, setQuery, units, setUnits, weather, formatBackground }}
+      value={{
+        query,
+        setQuery,
+        units,
+        setUnits,
+        weather,
+        loading,
+        setLoading,
+        error,
+        setError,
+      }}
     >
       {children}
     </WeatherContext.Provider>
