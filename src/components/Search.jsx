@@ -63,8 +63,7 @@ const Search = () => {
           <img
             src={Loading}
             alt="loading-gif"
-            className="absolute"
-            style={{ right: "17%" }}
+            className="absolute right-20 lg:right-17"
           />
         )}
 
