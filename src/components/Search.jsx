@@ -35,10 +35,10 @@ const Search = () => {
 
   return (
     <div className="my-6 flex flex-row justify-center w-full">
-      <div className="flex flex-row items-center justify-center space-x-4  relative w-screen">
+      <div className="flex flex-row items-center justify-center space-x-2  relative w-screen">
         <input
           type="text"
-          className="text-cl font-light px-3 py-2 w-1/2 shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
+          className="text-cl font-light px-3 py-2 w-2/3 shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
           style={{ maxWidth: "600px" }}
           placeholder="Search location"
           autofocus
