@@ -18,7 +18,7 @@ const ShowWeather = () => {
       <div className="absolute top-3">
         <Logo />
       </div>
-      <div className="absolute flex top-10 right-0 me-10 space-x-4">
+      <div className="absolute flex top-10 right-0 space-x-4 ">
         <House
           size={32}
           className="my-auto text-product
@@ -30,11 +30,13 @@ const ShowWeather = () => {
         />
         <FaCity
           size={32}
+          style={{ marginRight: "2rem" }}
           className="text-product
           cursor-pointer
           transition
           ease-out
           hover:scale-125"
+          onClick={() => navigate("/cities")}
         />
       </div>
       <div className="max-[600]" style={{ marginTop: "5rem" }}>

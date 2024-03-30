@@ -4,8 +4,11 @@ import Messages from "../components/Messages";
 import Search from "../components/Search";
 import { ToastContainer } from "react-toastify";
 import { FaCity } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="p-4 flex justify-center items-center h-screen">
       <div className="absolute top-3">
@@ -19,6 +22,7 @@ const Main = () => {
           transition
           ease-out
           hover:scale-125"
+          onClick={() => navigate("/cities")}
         />
       </div>
       <div className="flex flex-col items-center w-4/5">
