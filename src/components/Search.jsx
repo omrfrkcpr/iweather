@@ -6,8 +6,7 @@ import { WeatherContext } from "../context/WeatherProvider";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  const { setQuery, loading, error, units, setUnits } =
-    useContext(WeatherContext);
+  const { setQuery, loading, error } = useContext(WeatherContext);
   const [city, setCity] = useState("");
   const navigate = useNavigate();
 
@@ -15,7 +14,7 @@ const Search = () => {
     if (city) {
       setQuery({ q: city });
       if (!error) {
-        navigate("/weather");
+        navigate(`/${city}`);
       }
     }
   };
@@ -28,7 +27,7 @@ const Search = () => {
 
         setQuery({ lat, lon });
         if (!error) {
-          navigate("/weather");
+          navigate(`/${(lat, lon)}`);
         }
       });
     }
@@ -39,7 +38,7 @@ const Search = () => {
       <div className="flex flex-row items-center justify-center space-x-4 relative w-96">
         <input
           type="text"
-          className="text-cl font-light p-2 w-full shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize "
+          className="text-cl font-light px-3 py-2 w-full shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize "
           placeholder="Search location"
           value={city}
           onChange={(e) => setCity(e.target.value)}

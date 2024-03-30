@@ -28,21 +28,14 @@ import bgStormN from "../assets/bg-images/Storm_Night.svg";
 const API_KEY = "75b251ce9d3d5c7bf9e4f1832b237076";
 const BASE_URL = "https://api.openweathermap.org/data";
 
-// 75b251ce9d3d5c7bf9e4f1832b237076
-
-// const weatherURL =
-//   "https://api.openweathermap.org/data/2.5/weather?q=tokyo&appid=19fadf383f77445c7ead85a8d7ccce88";
-// const opencallURL =
-//   "https://api.openweathermap.org/data/3.0/onecall?lat=44.34&lon=10.99&exclude=current,minutely,alerts&appid=19fadf383f77445c7ead85a8d7ccce88";
-
 const errorMessages = {
   400: "400 - Bad Request",
   401: "401 - Unauthorized",
   404: "404 - Not Found",
-  429: "429 - Account temporary blocked because of too many requests",
+  429: "429 - Too many requests",
   "5xx": "5xx - Unexpected Error",
-  default: "An unexpected error occurred",
-  requestError: "An unexpected error occurred: Request Error",
+  default: "Unexpected Error",
+  requestError: "Request Error",
 };
 
 const getWeatherData = async (urlType, searchParams) => {

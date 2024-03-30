@@ -9,7 +9,7 @@ const AppRouter = () => {
     <Router className="font-sans">
       <Routes>
         <Route exact path="/" element={<Main />} />
-        <Route path="/weather" element={<ShowWeather />} />
+        <Route path="/:cityName" element={<ShowWeather />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
