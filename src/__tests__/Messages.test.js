@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Messages from "./Messages";
+import Messages from "../components/Messages";
 
 test("renders messages with correct content", () => {
   render(<Messages />);

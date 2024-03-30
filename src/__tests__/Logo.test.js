@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Logo from "./Logo";
+import Logo from "../components/Logo";
 
 describe("Logo component", () => {
   test("renders logo with correct initial width", () => {

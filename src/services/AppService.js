@@ -27,8 +27,6 @@ import bgStormN from "../assets/bg-images/Storm_Night.svg";
 
 const BASE_URL = "https://api.openweathermap.org/data";
 
-console.log(process.env);
-
 const errorMessages = {
   400: "400 - Bad Request",
   401: "401 - Unauthorized",

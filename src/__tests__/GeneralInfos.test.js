@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import GeneralInfos from "./GeneralInfos";
+import GeneralInfos from "../components/GeneralInfos";
 import { WeatherContext } from "../context/WeatherProvider";
 
 const mockWeatherContext = {

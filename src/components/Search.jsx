@@ -2,9 +2,7 @@ import React, { useContext, useState } from "react";
 import { MagnifyingGlass, MapPin } from "@phosphor-icons/react";
 import Loading from "../assets/Loading.svg";
 import { WeatherContext } from "../context/WeatherProvider";
-// import { AsyncPaginate } from "react-select-async-paginate";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 const Search = () => {
   const { setQuery, setUnits, loading, error } = useContext(WeatherContext);
@@ -52,7 +50,7 @@ const Search = () => {
           className="text-cl font-light px-3 py-2 w-full shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
           style={{ maxWidth: "600px" }}
           placeholder="Search location"
-          autofocus
+          autoFocus
           value={city}
           onChange={(e) => setCity(e.target.value)}
           onKeyDown={(e) => {

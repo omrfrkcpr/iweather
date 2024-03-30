@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import WeatherDetails from "./WeatherDetails";
+import WeatherDetails from "../components/WeatherDetails";
 import { WeatherContext } from "../context/WeatherProvider";
 
 // Mock WeatherContext
