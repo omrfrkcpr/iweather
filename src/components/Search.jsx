@@ -53,13 +53,11 @@ const Search = () => {
           }}
         />
         {loading && (
-          <div>
-            <img
-              src={Loading}
-              alt="loading-gif"
-              className="absolute left-[180px] -top-1 md:left-[210px] md:top-0 lg:left-[310px] lg:top-1 xl:left-[410px] xl:top-1"
-            />
-          </div>
+          <img
+            src={Loading}
+            alt="loading-gif"
+            className="absolute left-[175px] -top-1 md:left-[200px] md:top-0 lg:left-[300px] lg:top-1 xl:left-[400px] xl:top-0"
+          />
         )}
 
         <MagnifyingGlass
