@@ -5,9 +5,12 @@ import {
   iconUrlFromCode,
 } from "../services/AppService";
 import { WeatherContext } from "../context/WeatherProvider";
+import { useLocation } from "react-router-dom";
+import { Backspace } from "@phosphor-icons/react";
 
-const GeneralInfos = ({ item }) => {
+const GeneralInfos = ({ item, handleRemoveListItem }) => {
   const { units } = useContext(WeatherContext);
+  const location = useLocation();
 
   const {
     icon,
@@ -22,13 +25,21 @@ const GeneralInfos = ({ item }) => {
   } = item;
 
   return (
-    <div className="bg-base-800 w-full p-2 text-lg rounded-12 font-sans">
+    <div className="bg-base-800 w-full p-2 my-1 text-lg rounded-12 font-sans relative">
+      {location.pathname === "/cities" && (
+        <Backspace
+          size={32}
+          weight="fill"
+          className="icon-remove absolute top-5 right-5 z-50 "
+          onClick={() => handleRemoveListItem(dt)}
+        />
+      )}
       <div
         className="p-1 rounded-8 bg-cover h-full flex flex-col justify-between"
         style={{ backgroundImage: `url(${formatBackground(icon)})` }}
       >
         <div className="time-and-location m-8 ">
-          <div className="location flex flex-row gap-3 mb-3">
+          <div className="location flex flex-wrap flex-row gap-3 mb-3">
             <h1 className="mt-2 text-lg">{`${name}, ${country}`}</h1>
             <img
               src={`https://flagsapi.com/${country}/flat/64.png`}

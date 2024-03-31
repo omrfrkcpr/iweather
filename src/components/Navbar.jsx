@@ -6,13 +6,17 @@ import { useNavigate } from "react-router-dom";
 import { WeatherContext } from "../context/WeatherProvider";
 
 const Navbar = () => {
-  const { setQuery, iconSize, weatherList } = useContext(WeatherContext);
+  const { setQuery, weatherList } = useContext(WeatherContext);
   const [imgWidth, setImgWidth] = useState(300);
   const navigate = useNavigate();
 
   const handleGoHome = () => {
     setQuery({ q: "" });
     navigate("/");
+  };
+
+  const handleGoCities = () => {
+    weatherList.length && navigate("/cities");
   };
 
   useEffect(() => {
@@ -45,16 +49,12 @@ const Navbar = () => {
         />
       </div>
       <div className="center space-x-6">
-        <House
-          size={iconSize}
-          className="icon-underlined"
-          onClick={handleGoHome}
-        />
+        <House size={30} className="icon-underlined" onClick={handleGoHome} />
         <div className="relative hover:scale-125">
           <FaCity
-            size={iconSize}
+            size={30}
             className="icon-nohover-underlined"
-            onClick={() => navigate("/cities")}
+            onClick={handleGoCities}
           />
           <span
             className={`absolute top-5 left-5 text-black ${

@@ -18,7 +18,7 @@
 
 @layer components {
   .icon-remove {
-    @apply text-black cursor-pointer transition ease-out hover:text-base-900;
+    @apply text-product cursor-pointer transition ease-out hover:text-base-900;
   }
   .icon-colored {
     @apply text-product cursor-pointer transition ease-out hover:scale-125;

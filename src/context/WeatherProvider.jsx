@@ -34,8 +34,8 @@ const WeatherProvider = ({ children }) => {
               theme: "colored",
             }
           );
+          setWeatherList([result, ...weatherList]);
         }, 2000);
-        setWeatherList([result, ...weatherList]);
         setWeather(result);
         setError(null);
       } catch (error) {

@@ -3,43 +3,38 @@ import { WeatherContext } from "../context/WeatherProvider";
 import GeneralInfos from "../components/GeneralInfos";
 import WeatherDetails from "../components/WeatherDetails";
 import Forecast from "../components/Forecast";
-import { Backspace } from "@phosphor-icons/react";
+import { Carousel } from "@material-tailwind/react";
 
 const WeatherLists = () => {
   const { weatherList, setWeatherList } = useContext(WeatherContext);
 
-  const handleRemoveListItem = (index) => {
-    const updatedWeatherList = [
-      ...weatherList.slice(0, index),
-      ...weatherList.slice(index + 1),
-    ];
+  const handleRemoveListItem = (dt) => {
+    const updatedWeatherList = weatherList.filter((item) => item.dt !== dt);
     setWeatherList(updatedWeatherList);
   };
 
   return (
-    <div
-      className=" flex flex-col justify-start m-auto font-sans "
-      style={{ height: "80%", maxWidth: "900px" }}
+    <Carousel
+      transition={{ duration: 1 }}
+      className="rounded-xl m-auto font-sans h-[auto] md:h-[700px] max-h-[1200px] max-w-[1000px] my-8"
     >
-      {weatherList &&
+      {weatherList.length &&
         weatherList.map((listItem, index) => (
-          <div className="relative" key={index}>
-            <Backspace
-              size={32}
-              weight="fill"
-              className="icon-remove absolute top-11 right-11 "
-              onClick={() => handleRemoveListItem(index)}
+          <div
+            className="gap-1 p-2 my-8 mx-16 flex justify-center text-white bg-product flex-col md:flex-row rounded-12"
+            key={index}
+          >
+            <GeneralInfos
+              item={listItem}
+              handleRemoveListItem={handleRemoveListItem}
             />
-            <div className="gap-1 py-6 px-8 m-10 flex justify-center text-white bg-product flex-col lg:flex-row rounded-12">
-              <GeneralInfos item={listItem} />
-              <div className="p-1">
-                <WeatherDetails item={listItem} />
-                <Forecast item={listItem} />
-              </div>
+            <div className="p-1 flex flex-col justify-center">
+              <WeatherDetails item={listItem} />
+              <Forecast item={listItem} />
             </div>
           </div>
         ))}
-    </div>
+    </Carousel>
   );
 };
 
