@@ -14,7 +14,7 @@ const ShowWeather = () => {
       className="flex-col flex justify-start items-center font-sans"
       style={{ height: "calc(100vh - 145px)" }}
     >
-      <div className="max-[600]" style={{ marginTop: "10rem" }}>
+      <div className="max-[600]">
         {weather && (
           <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
             <GeneralInfos />

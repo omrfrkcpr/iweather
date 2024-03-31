@@ -8,6 +8,7 @@ const WeatherProvider = ({ children }) => {
   const [query, setQuery] = useState({ q: "" });
   const [units, setUnits] = useState("metric"); // metric or imperial
   const [weather, setWeather] = useState(null);
+  const [weatherList, setWeatherList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [iconSize, setIconSize] = useState(32);
@@ -34,6 +35,7 @@ const WeatherProvider = ({ children }) => {
             }
           );
         }, 2000);
+        setWeatherList([result, ...weatherList]);
         setWeather(result);
         setError(null);
       } catch (error) {
@@ -86,6 +88,8 @@ const WeatherProvider = ({ children }) => {
         units,
         setUnits,
         weather,
+        weatherList,
+        setWeatherList,
         loading,
         setLoading,
         error,

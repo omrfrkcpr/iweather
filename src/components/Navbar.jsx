@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { WeatherContext } from "../context/WeatherProvider";
 
 const Navbar = () => {
-  const { setQuery, iconSize } = useContext(WeatherContext);
+  const { setQuery, iconSize, weatherList } = useContext(WeatherContext);
   const [imgWidth, setImgWidth] = useState(300);
   const navigate = useNavigate();
 
@@ -50,11 +50,20 @@ const Navbar = () => {
           className="icon-underlined"
           onClick={handleGoHome}
         />
-        <FaCity
-          size={iconSize}
-          className="icon-underlined"
-          onClick={() => navigate("/cities")}
-        />
+        <div className="relative hover:scale-125">
+          <FaCity
+            size={iconSize}
+            className="icon-nohover-underlined"
+            onClick={() => navigate("/cities")}
+          />
+          <span
+            className={`absolute top-5 left-5 text-black ${
+              weatherList.length > 0 && "bg-white"
+            }  w-2/3 center rounded-12 h-2/3 `}
+          >
+            {weatherList.length > 0 && weatherList.length}
+          </span>
+        </div>
       </div>
     </div>
   );
