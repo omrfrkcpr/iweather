@@ -34,7 +34,7 @@ const WeatherLists = () => {
       {weatherList.length &&
         weatherList.map((listItem, index) => (
           <div
-            className="gap-1 py-1 px-2 my-8 mx-16 flex justify-center text-white bg-product flex-col md:flex-row rounded-12"
+            className="gap-1 py-0 px-1 my-8 mx-12 flex justify-center text-white bg-product flex-col md:flex-row rounded-12"
             key={index}
           >
             <GeneralInfos
