@@ -35,7 +35,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="m-3 flex flex-col justify-between space-y-8 mt-10 md:me-20 md:flex-row md:space-y-0">
+    <div className="font-sans m-3 flex flex-col justify-between space-y-8 mt-10 md:me-20 md:flex-row md:space-y-0">
       <div>
         <img
           src={IWeatherLogo}

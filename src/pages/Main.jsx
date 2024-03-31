@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 
 const Main = () => {
   return (
-    <div className="center" style={{ height: "calc(100vh - 145px)" }}>
+    <div className="center font-sans" style={{ height: "calc(100vh - 145px)" }}>
       <div className="center flex-col w-4/5">
         <Messages />
         <Search />

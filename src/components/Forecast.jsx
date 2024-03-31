@@ -8,7 +8,7 @@ const Forecast = () => {
   const items = weather.daily;
   // console.log(items);
   return (
-    <ul className="bg-base-800 p-2 mt-2 rounded-12 flex flex-row">
+    <ul className="bg-base-800 p-2 mt-2 rounded-12 flex flex-row font-sans">
       {items.map((item, index) => (
         <li className="p-3 flex flex-col text-center" key={index}>
           <p className="text-md text-base-200">{item.title}</p>

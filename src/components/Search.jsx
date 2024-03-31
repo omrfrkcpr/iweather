@@ -48,7 +48,7 @@ const Search = () => {
   };
 
   return (
-    <div className="my-4 flex-col center w-full">
+    <div className="my-4 flex-col center w-full font-sans">
       <div
         className=" flex-row center space-x-2 w-full relative "
         style={{ maxWidth: "700px" }}

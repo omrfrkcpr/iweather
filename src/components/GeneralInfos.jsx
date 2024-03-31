@@ -22,7 +22,7 @@ const GeneralInfos = () => {
   } = weather;
 
   return (
-    <div className="bg-base-800 w-full p-2 text-lg rounded-12">
+    <div className="bg-base-800 w-full p-2 text-lg rounded-12 font-sans">
       <div
         className="p-1 rounded-8 bg-cover h-full flex flex-col justify-between"
         style={{ backgroundImage: `url(${formatBackground(icon)})` }}

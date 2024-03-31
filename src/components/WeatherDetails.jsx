@@ -14,7 +14,7 @@ const WeatherDetails = () => {
   const { daily, feels_like, humidity, speed } = weather;
 
   return (
-    <ul className="bg-base-800 py-2 rounded-12 ">
+    <ul className="bg-base-800 py-2 rounded-12 font-sans">
       <li className="justify-between px-1 py-2 rounded-t-12 ">
         <div className="py-2 flex flex-row justify-between mx-3 border-b-2 border-base-700 leading-10">
           <div className="flex flex-row gap-3">
