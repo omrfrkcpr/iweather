@@ -16,6 +16,22 @@
   }
 }
 
+@layer components {
+  .icon-colored {
+    @apply text-product cursor-pointer transition ease-out hover:scale-125;
+  }
+  .icon-colorless {
+    @apply cursor-pointer transition ease-out hover:scale-125;
+  }
+  .icon-underlined {
+    @apply text-product cursor-pointer transition ease-out hover:scale-125 border-b-2 border-product;
+  }
+
+  .center {
+    @apply flex justify-center items-center;
+  }
+}
+
 body {
   background-image: url(./assets/Background.svg);
   background-repeat: repeat;

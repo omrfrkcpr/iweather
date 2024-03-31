@@ -48,9 +48,9 @@ const Search = () => {
   };
 
   return (
-    <div className="my-6 flex flex-col justify-center items-center w-full">
+    <div className="my-4 flex-col center w-full">
       <div
-        className=" flex flex-row items-center justify-center space-x-2 w-full  relative "
+        className=" flex-row center space-x-2 w-full relative "
         style={{ maxWidth: "700px" }}
       >
         <input
@@ -58,7 +58,6 @@ const Search = () => {
           className="text-cl font-light px-3 py-2 w-full shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
           style={{ maxWidth: "600px" }}
           placeholder="Search location"
-          autoFocus
           value={city}
           onChange={(e) => setCity(e.target.value)}
           onKeyDown={(e) => {
@@ -75,13 +74,13 @@ const Search = () => {
         )}
 
         <MagnifyingGlass
-          className="text-product cursor-pointer transition ease-out hover:scale-125 "
+          className="icon-colored"
           size={32}
           onClick={handleSearchClick}
         />
         <MapPin
           size={32}
-          className="text-product cursor-pointer transition ease-out hover:scale-125"
+          className="icon-colored"
           onClick={handleLocationClick}
         />
       </div>
@@ -90,7 +89,7 @@ const Search = () => {
         style={{ fontSize: "1.2rem", marginTop: "1rem" }}
       >
         <h1
-          className={` cursor-pointer transition ease-out hover:scale-125 ${
+          className={`icon-colorless ${
             selectedUnit === "metric" ? "text-white" : "text-product"
           }`}
           onClick={() => setSelectedUnit("metric")}
@@ -99,7 +98,7 @@ const Search = () => {
         </h1>
         <h1 className="text-product">|</h1>
         <h1
-          className={` cursor-pointer transition ease-out hover:scale-125 ${
+          className={` icon-colorless ${
             selectedUnit === "imperial" ? "text-white" : "text-product"
           }`}
           onClick={() => setSelectedUnit("imperial")}
