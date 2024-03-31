@@ -6,8 +6,8 @@ import {
 } from "../services/AppService";
 import { WeatherContext } from "../context/WeatherProvider";
 
-const GeneralInfos = () => {
-  const { weather, units } = useContext(WeatherContext);
+const GeneralInfos = ({ item }) => {
+  const { units } = useContext(WeatherContext);
 
   const {
     icon,
@@ -19,7 +19,7 @@ const GeneralInfos = () => {
     temp,
     temp_min,
     temp_max,
-  } = weather;
+  } = item;
 
   return (
     <div className="bg-base-800 w-full p-2 text-lg rounded-12 font-sans">

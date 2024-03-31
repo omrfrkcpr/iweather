@@ -15,22 +15,26 @@ const WeatherLists = () => {
     ];
     setWeatherList(updatedWeatherList);
   };
+
   return (
-    <div className="flex-col flex font-sans" style={{ height: "80%" }}>
+    <div
+      className=" flex flex-col justify-start m-auto font-sans "
+      style={{ height: "80%", maxWidth: "900px" }}
+    >
       {weatherList &&
-        weatherList.map((item, index) => (
-          <div className="max-[600]" key={index}>
+        weatherList.map((listItem, index) => (
+          <div className="relative" key={index}>
             <Backspace
               size={32}
               weight="fill"
-              className="cursor-pointer"
+              className="icon-remove absolute top-11 right-11 "
               onClick={() => handleRemoveListItem(index)}
             />
-            <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
-              <GeneralInfos item={item} />
+            <div className="gap-1 py-6 px-8 m-10 flex justify-center text-white bg-product flex-col lg:flex-row rounded-12">
+              <GeneralInfos item={listItem} />
               <div className="p-1">
-                <WeatherDetails item={item} />
-                <Forecast item={item} />
+                <WeatherDetails item={listItem} />
+                <Forecast item={listItem} />
               </div>
             </div>
           </div>

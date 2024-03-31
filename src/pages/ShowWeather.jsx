@@ -17,10 +17,10 @@ const ShowWeather = () => {
       <div className="max-[600]">
         {weather && (
           <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
-            <GeneralInfos />
+            <GeneralInfos item={weather} />
             <div className="p-1">
-              <WeatherDetails />
-              <Forecast />
+              <WeatherDetails item={weather} />
+              <Forecast item={weather} />
             </div>
           </div>
         )}

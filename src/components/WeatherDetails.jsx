@@ -8,10 +8,10 @@ import {
 import React, { useContext } from "react";
 import { WeatherContext } from "../context/WeatherProvider";
 
-const WeatherDetails = () => {
-  const { weather, units } = useContext(WeatherContext);
+const WeatherDetails = ({ item }) => {
+  const { units } = useContext(WeatherContext);
 
-  const { daily, feels_like, humidity, speed } = weather;
+  const { daily, feels_like, humidity, speed } = item;
 
   return (
     <ul className="bg-base-800 py-2 rounded-12 font-sans">
