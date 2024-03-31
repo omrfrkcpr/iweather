@@ -12,11 +12,11 @@ const ShowWeather = () => {
   return (
     <div
       className="flex-col flex justify-start items-center font-sans"
-      style={{ height: "calc(100vh - 145px)" }}
+      style={{ height: "calc(100vh - 168px)" }}
     >
-      <div className="max-[600]">
+      <div className="max-w-[1000px]">
         {weather && (
-          <div className="gap-1 p-8 flex justify-center text-white flex-col md:flex-row">
+          <div className="gap-1 p-4 flex justify-center text-white flex-col md:flex-row">
             <GeneralInfos item={weather} />
             <div className="p-1">
               <WeatherDetails item={weather} />

@@ -10,7 +10,7 @@ const Main = () => {
       className="center relative font-sans"
       style={{ height: "calc(100vh - 172px)" }}
     >
-      <div className="center flex-col w-4/5">
+      <div className="center flex-col w-[900px]">
         <Messages />
         <Search />
       </div>

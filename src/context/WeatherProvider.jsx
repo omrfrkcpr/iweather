@@ -66,11 +66,13 @@ const WeatherProvider = ({ children }) => {
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
-      let newSize = 32;
+      let newSize;
       if (windowWidth < 500) {
         newSize = 16;
       } else if (windowWidth >= 500 && windowWidth < 900) {
         newSize = 24;
+      } else if (windowWidth >= 900) {
+        newSize = 32;
       }
       setIconSize(newSize);
     };

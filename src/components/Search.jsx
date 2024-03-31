@@ -39,24 +39,12 @@ const Search = () => {
     }
   };
 
-  const handleWindowSize = () => {
-    if (window.innerWidth < 500) {
-      return "3rem";
-    } else {
-      return "5.5rem";
-    }
-  };
-
   return (
-    <div className="my-4 flex-col center w-full font-sans">
-      <div
-        className=" flex-row center space-x-2 w-full relative "
-        style={{ maxWidth: "700px" }}
-      >
+    <div className="my-4 flex-col center w-4/5 max-w-[900px] font-sans">
+      <div className=" flex-row center space-x-2 w-auto relative ">
         <input
           type="text"
-          className="text-cl font-light px-3 py-2 w-full shadow-xl sm:text-md bg-base-input text-white rounded-8 focus:outline-none capitalize "
-          style={{ maxWidth: "600px" }}
+          className="text-responsive font-light px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize max-w-[500px]"
           placeholder="Search location"
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -65,12 +53,13 @@ const Search = () => {
           }}
         />
         {loading && (
-          <img
-            src={Loading}
-            alt="loading-gif"
-            className="absolute"
-            style={{ right: handleWindowSize() }}
-          />
+          <div>
+            <img
+              src={Loading}
+              alt="loading-gif"
+              className="absolute left-[180px] -top-1 md:left-[210px] md:top-0 lg:left-[310px] lg:top-1 xl:left-[410px] xl:top-1"
+            />
+          </div>
         )}
 
         <MagnifyingGlass
@@ -89,16 +78,16 @@ const Search = () => {
         style={{ fontSize: "1.2rem", marginTop: "1rem" }}
       >
         <h1
-          className={`icon-colorless ${
+          className={`icon-colorless  ${
             selectedUnit === "metric" ? "text-white" : "text-product"
           }`}
           onClick={() => setSelectedUnit("metric")}
         >
           °C
         </h1>
-        <h1 className="text-product">|</h1>
+        <h1 className="text-product ">|</h1>
         <h1
-          className={` icon-colorless ${
+          className={` icon-colorless  ${
             selectedUnit === "imperial" ? "text-white" : "text-product"
           }`}
           onClick={() => setSelectedUnit("imperial")}

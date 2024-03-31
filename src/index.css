@@ -9,7 +9,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-weight: 600;
   }
   html {
     font-family: "Nunito", "sans-serif";
@@ -35,6 +34,13 @@
 
   .center {
     @apply flex justify-center items-center;
+  }
+
+  .text-responsive {
+    @apply text-xs sm:text-xs md:text-sm lg:text-md xl:text-md font-regular;
+  }
+  .header-responsive {
+    @apply text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg font-semibold;
   }
 }
 
