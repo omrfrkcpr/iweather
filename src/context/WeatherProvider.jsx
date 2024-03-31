@@ -8,7 +8,9 @@ const WeatherProvider = ({ children }) => {
   const [query, setQuery] = useState({ q: "" });
   const [units, setUnits] = useState("metric"); // metric or imperial
   const [weather, setWeather] = useState(null);
-  const [weatherList, setWeatherList] = useState([]);
+  const [weatherList, setWeatherList] = useState(
+    JSON.parse(localStorage.getItem("weatherList")) || []
+  );
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [iconSize, setIconSize] = useState(32);
@@ -35,7 +37,9 @@ const WeatherProvider = ({ children }) => {
             }
           );
           setWeatherList([result, ...weatherList]);
+          setLocalStorage();
         }, 2000);
+
         setWeather(result);
         setError(null);
       } catch (error) {
@@ -58,6 +62,14 @@ const WeatherProvider = ({ children }) => {
       }
     }
   };
+
+  const setLocalStorage = () => {
+    localStorage.setItem("weatherList", JSON.stringify(weatherList));
+  };
+
+  useEffect(() => {
+    setLocalStorage();
+  }, [fetchWeather]);
 
   useEffect(() => {
     fetchWeather();
