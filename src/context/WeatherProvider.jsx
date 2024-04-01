@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import getFormattedWeatherData from "../services/weatherService";
+import getFormattedWeatherData from "../services/weatherFormatters";
 import { toast } from "react-toastify";
 
 export const WeatherContext = createContext();

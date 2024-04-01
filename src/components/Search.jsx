@@ -10,6 +10,7 @@ const Search = () => {
   const navigate = useNavigate();
   const [selectedUnit, setSelectedUnit] = useState("metric");
 
+  
   const handleSearchClick = () => {
     if (city) {
       setQuery({ q: city });
@@ -44,7 +45,7 @@ const Search = () => {
       <div className=" flex-row center space-x-2 w-auto relative ">
         <input
           type="text"
-          className="text-responsive font-light px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize max-w-[500px]"
+          className="text-responsive px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize max-w-[500px]"
           placeholder="Search location"
           value={city}
           onChange={(e) => setCity(e.target.value)}
@@ -75,23 +76,23 @@ const Search = () => {
         className="flex items-center space-x-2"
         style={{ fontSize: "1.2rem", marginTop: "1rem" }}
       >
-        <h1
-          className={`icon-colorless  ${
+        <p
+          className={`icon-colorless ${
             selectedUnit === "metric" ? "text-white" : "text-product"
           }`}
           onClick={() => setSelectedUnit("metric")}
         >
           °C
-        </h1>
-        <h1 className="text-product ">|</h1>
-        <h1
+        </p>
+        <p className="text-product">|</p>
+        <p
           className={` icon-colorless  ${
             selectedUnit === "imperial" ? "text-white" : "text-product"
           }`}
           onClick={() => setSelectedUnit("imperial")}
         >
           °F
-        </h1>
+        </p>
       </div>
     </div>
   );

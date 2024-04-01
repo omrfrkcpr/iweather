@@ -42,6 +42,30 @@
   .header-responsive {
     @apply text-sm sm:text-sm md:text-md lg:text-lg xl:text-lg font-semibold;
   }
+
+  .weather-details-container {
+    @apply flex flex-row justify-between mx-3 border-b-2 border-base-700 leading-10 pb-3 pt-1;
+  }
+
+  .weather-details-label-container {
+    @apply flex flex-row gap-1 md:gap-2;
+  }
+
+  .weather-details-li {
+    @apply justify-between px-1 py-2;
+  }
+
+  .weather-details-icon {
+    @apply text-base-500 m-auto;
+  }
+
+  .weather-details-label {
+    @apply text-base-200 text-responsive;
+  }
+
+  .weather-details-value-container {
+    @apply me-3 text-base-100;
+  }
 }
 
 body {

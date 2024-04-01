@@ -38,7 +38,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
         className="p-1 rounded-8 bg-cover h-full flex flex-col justify-between"
         style={{ backgroundImage: `url(${formatBackground(icon)})` }}
       >
-        <div className="time-and-location me-4 ms-8 mb-4 mt-10">
+        <div className="me-4 ms-8 mb-4 mt-10">
           <div className="location flex flex-wrap flex-row gap-3 mb-3">
             <h1 className="mt-2 header-responsive">{`${name}, ${country}`}</h1>
             <img
@@ -51,7 +51,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
             <p className="text-responsive">{formatToLocalTime(dt, timezone)}</p>
           </div>
         </div>
-        <div className="general-weather flex flex-row justify-between me-8 ms-8 mb-4 ">
+        <div className="flex flex-row justify-between me-8 ms-8 mb-4 ">
           <div className="w-1/2 flex flex-col justify-center ">
             <h1 className="text-responsive">
               {Math.round(temp)}°{units === "metric" ? "C" : "F"}
