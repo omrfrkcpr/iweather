@@ -36,7 +36,10 @@ const WeatherProvider = ({ children }) => {
               theme: "colored",
             }
           );
-          setWeatherList([result, ...weatherList]);
+
+          isUniqueWeather(result, weatherList) &&
+            setWeatherList([result, ...weatherList]);
+
           setLocalStorage();
         }, 2000);
 
@@ -61,6 +64,10 @@ const WeatherProvider = ({ children }) => {
         }, 2000);
       }
     }
+  };
+
+  const isUniqueWeather = (newItem, array) => {
+    return !array.some((item) => item.name === newItem.name);
   };
 
   const setLocalStorage = () => {
