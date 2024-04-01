@@ -49,10 +49,10 @@ const Navbar = () => {
         />
       </div>
       <div className="center space-x-6">
-        <House size={30} className="icon-underlined" onClick={handleGoHome} />
+        <House size={28} className="icon-underlined" onClick={handleGoHome} />
         <div className="relative hover:scale-125">
           <FaCity
-            size={30}
+            size={28}
             className="icon-nohover-underlined"
             onClick={handleGoCities}
           />
