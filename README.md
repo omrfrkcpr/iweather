@@ -187,7 +187,7 @@ Development of a Single-Page Weather Application using ReactJS and TailwindCSS.
   const API_KEY = <OPENWEATHERMAP_API_KEY>;
   ```
 
-  **_Replace <<OPENWEATHERMAP_API_KEY>> with your personal api key that you get from openweathermap_**
+  **_Replace <OPENWEATHERMAP_API_KEY> with your personal api key that you get from openweathermap_**
 
 - Step 4 : Once all packages are successfully installed and api key is pasted, use the following command to start the project:
 
