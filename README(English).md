@@ -6,7 +6,7 @@
 
 ## Description
 
-This single-page react recipe application is a platform where users can find various recipes with detailed information and save their favorites after logging in to the site.
+WeatherApp is a web application that allows users to view instant weather information from around the world. Users can see the weather forecast for the cities they want, save their favorite cities and access detailed weather information. The application is designed with a modern and user-friendly interface, so users can quickly and easily access the weather information they want.
 
 ## Outcome
 
