@@ -3,7 +3,7 @@ import {
   formatToLocalTime,
   formatBackground,
   iconUrlFromCode,
-} from "../services/AppService";
+} from "../services/weatherFormatters";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useLocation } from "react-router-dom";
 import { Backspace } from "@phosphor-icons/react";

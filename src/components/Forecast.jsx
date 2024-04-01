@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { iconUrlFromCode } from "../services/AppService";
+import { iconUrlFromCode } from "../services/weatherFormatters";
 import { WeatherContext } from "../context/WeatherProvider";
 
 const Forecast = ({ item }) => {
