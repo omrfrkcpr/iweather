@@ -57,7 +57,7 @@ const Navbar = () => {
             onClick={handleGoCities}
           />
           <span
-            className={`absolute top-5 left-5 text-black ${
+            className={`absolute top-5 left-5 text-base-900 ${
               weatherList.length > 0 && "bg-white"
             }  w-2/3 center rounded-12 h-2/3 `}
           >

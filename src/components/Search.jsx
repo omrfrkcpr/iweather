@@ -10,7 +10,6 @@ const Search = () => {
   const navigate = useNavigate();
   const [selectedUnit, setSelectedUnit] = useState("metric");
 
-  
   const handleSearchClick = () => {
     if (city) {
       setQuery({ q: city });
@@ -45,7 +44,7 @@ const Search = () => {
       <div className=" flex-row center space-x-2 w-auto relative ">
         <input
           type="text"
-          className="text-responsive px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-input text-white rounded-8 focus:outline-none capitalize max-w-[500px]"
+          className="text-responsive px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-input text-white placeholder-base-400 rounded-8 focus:outline-none capitalize max-w-[500px]"
           placeholder="Search location"
           value={city}
           onChange={(e) => setCity(e.target.value)}
