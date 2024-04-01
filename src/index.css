@@ -44,7 +44,7 @@
   }
 
   .weather-details-container {
-    @apply flex flex-row justify-between mx-3 border-b-2 border-base-700 leading-10 pb-3 pt-1;
+    @apply flex flex-row justify-between mx-3 border-b-2 border-base-700 leading-10 pb-1 pt-0 md:pt-1 md:pb-3;
   }
 
   .weather-details-label-container {

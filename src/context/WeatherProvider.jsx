@@ -80,10 +80,8 @@ const WeatherProvider = ({ children }) => {
       const windowWidth = window.innerWidth;
       let newSize;
       if (windowWidth < 500) {
-        newSize = 16;
-      } else if (windowWidth >= 500 && windowWidth < 900) {
         newSize = 24;
-      } else if (windowWidth >= 900) {
+      } else if (windowWidth >= 500) {
         newSize = 32;
       }
       setIconSize(newSize);
