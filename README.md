@@ -2,11 +2,15 @@
 
 💻 https://iweather-app.vercel.app/
 
+![homepage](https://github.com/omrfrkcpr/iweather/assets/77440899/c4af7e87-09b1-4955-af5b-3ba3e225c579)![fetch-result](https://github.com/omrfrkcpr/iweather/assets/77440899/f8ba41ec-53de-4820-b29f-872ebf9936be)![all-saved-results](https://github.com/omrfrkcpr/iweather/assets/77440899/95061e57-dbb2-46c1-a6b8-fecbdea6634e)
+
 ## Description
 
 This single-page react recipe application is a platform where users can find various recipes with detailed information and save their favorites after logging in to the site.
 
 ## Outcome
+
+![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/04e2ff8c-8979-4148-81ce-6644f1bdfcec)
 
 ## Project Planning & Management
 
