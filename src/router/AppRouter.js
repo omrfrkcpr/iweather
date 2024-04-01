@@ -6,7 +6,7 @@ import {
   Outlet,
 } from "react-router-dom";
 import ShowWeather from "../pages/ShowWeather";
-import Main from "../pages/Main";
+import Home from "../pages/Home";
 import WeatherLists from "../pages/WeatherLists";
 import Navbar from "../components/Navbar";
 
@@ -16,7 +16,7 @@ const AppRouter = () => {
       <Navbar />
       <Outlet />
       <Routes>
-        <Route exact path="/" element={<Main />} />
+        <Route exact path="/" element={<Home />} />
         <Route path="/:cityName" element={<ShowWeather />} />
         <Route path="/cities" element={<WeatherLists />} />
       </Routes>

@@ -4,7 +4,7 @@ import Search from "../components/Search";
 import { ToastContainer } from "react-toastify";
 import Footer from "../components/Footer";
 
-const Main = () => {
+const Home = () => {
   return (
     <div
       className="center relative font-sans"
@@ -22,4 +22,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;
