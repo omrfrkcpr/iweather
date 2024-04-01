@@ -138,7 +138,7 @@ WeatherApp, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık 
 
 ## Proje Amacı
 
-ReactJS ve TailwindCSS kullanarak Tek Sayfalı Hava Durumu Uygulamasının Geliştirilmesi.
+Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulamasının geliştirilmesi. Bu vesileyle API kullanımı, asenkron veri işleme ve dinamik içerik yönetimi gibi konularda becerilerin geliştirilmesi amaçlanmaktadır.
 
 ### Proje sonunda aşağıdaki konular ele alınacaktır; 🎯
 
