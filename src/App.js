@@ -1,5 +1,4 @@
 import AppRouter from "./router/AppRouter";
-import "./App.css";
 import WeatherProvider from "./context/WeatherProvider";
 
 function App() {
