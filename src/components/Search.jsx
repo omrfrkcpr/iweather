@@ -62,11 +62,11 @@ const Search = () => {
 
         <MagnifyingGlass
           className="icon-colored"
-          size={32}
+          size={28}
           onClick={handleSearchClick}
         />
         <MapPin
-          size={32}
+          size={28}
           className="icon-colored"
           onClick={handleLocationClick}
         />
