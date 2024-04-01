@@ -6,7 +6,7 @@
 
 ## Description
 
-WeatherApp is a web application that allows users to view instant weather information from around the world. Users can see the weather forecast for the cities they want, save their favorite cities and access detailed weather information. The application is designed with a modern and user-friendly interface, so users can quickly and easily access the weather information they want.
+IWeather App is a single-page web application that allows users to view instant weather information from around the world. Users can see the weather forecast for the cities they want, save their favorite cities and access detailed weather information. The application is designed with a modern and user-friendly interface, so users can quickly and easily access the weather information they want.
 
 ## Outcome
 
@@ -138,7 +138,7 @@ WeatherApp is a web application that allows users to view instant weather inform
 
 ## Objective
 
-Development of a Single-Page Weather Application using ReactJS and TailwindCSS.
+With this project, a single-page Weather Application will be developed using ReactJS and TailwindCSS, and it is aimed to develop skills in subjects such as API usage, asynchronous data processing and dynamic content management.
 
 ### At the end of the project, following topics are to be covered; 🎯
 

@@ -6,7 +6,7 @@
 
 ## Proje Tanımı
 
-WeatherApp, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık olarak görmelerini sağlayan bir web uygulamasıdır. Kullanıcılar, istedikleri şehirlerin hava durumu tahminlerini görebilir, favori şehirlerini kaydedebilir ve detaylı hava durumu bilgilerine erişebilirler. Uygulama, modern ve kullanıcı dostu bir arayüzle tasarlanmıştır, böylece kullanıcılar hızlı ve kolay bir şekilde istedikleri hava durumu bilgilerine ulaşabilirler.
+IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık olarak görmelerini sağlayan bir web uygulamasıdır. Kullanıcılar, istedikleri şehirlerin hava durumu tahminlerini görebilir, favori şehirlerini kaydedebilir ve detaylı hava durumu bilgilerine erişebilirler. Uygulama, modern ve kullanıcı dostu bir arayüzle tasarlanmıştır, böylece kullanıcılar hızlı ve kolay bir şekilde istedikleri hava durumu bilgilerine ulaşabilirler.
 
 ## Proje Çıktısı
 
@@ -138,7 +138,7 @@ WeatherApp, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık 
 
 ## Proje Amacı
 
-Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulamasının geliştirilmesi. Bu vesileyle API kullanımı, asenkron veri işleme ve dinamik içerik yönetimi gibi konularda becerilerin geliştirilmesi amaçlanmaktadır.
+Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulamasının geliştirilecek ve bu vesileyle API kullanımı, asenkron veri işleme ve dinamik içerik yönetimi gibi konularda becerilerin geliştirilmesi amaçlanmaktadır.
 
 ### Proje sonunda aşağıdaki konular ele alınacaktır; 🎯
 
