@@ -126,6 +126,8 @@ IWeather App is a single-page web application that allows users to view instant 
 │    ┃       ┗ AppRouter.js
 |    ┃
 │    ┣ 📂services
+│    ┃       ┣ cityFormatters.js
+│    ┃       ┣ cityService.js
 │    ┃       ┣ constants.js
 │    ┃       ┣ weatherFormatters.js
 │    ┃       ┗ weatherService.js
@@ -134,7 +136,7 @@ IWeather App is a single-page web application that allows users to view instant 
 │    ┣ index.css
 │    ┗ index.js
 |
-├── .env
+├── example.env.local
 ├── .gitignore
 ├── iweather-app.gif
 ├── LICENSE

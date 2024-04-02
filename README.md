@@ -126,6 +126,8 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 │    ┃       ┗ AppRouter.js
 |    ┃
 │    ┣ 📂services
+│    ┃       ┣ cityFormatters.js
+│    ┃       ┣ cityService.js
 │    ┃       ┣ constants.js
 │    ┃       ┣ weatherFormatters.js
 │    ┃       ┗ weatherService.js
@@ -134,7 +136,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 │    ┣ index.css
 │    ┗ index.js
 |
-├── .env
+├── example.env.local
 ├── .gitignore
 ├── iweather-app.gif
 ├── LICENSE

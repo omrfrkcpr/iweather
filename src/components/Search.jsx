@@ -3,7 +3,7 @@ import { MagnifyingGlass, MapPin } from "@phosphor-icons/react";
 import Loading from "../assets/Loading.svg";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useNavigate } from "react-router-dom";
-import { selectMatchingCities } from "../services/cityFormatter";
+import { selectMatchingCities } from "../services/cityFormatters";
 
 const Search = () => {
   const { setQuery, setUnits, loading, error } = useContext(WeatherContext);
