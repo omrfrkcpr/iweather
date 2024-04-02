@@ -136,7 +136,7 @@ IWeather App is a single-page web application that allows users to view instant 
 │    ┣ index.css
 │    ┗ index.js
 |
-├── example.env.local
+├── example.env
 ├── .gitignore
 ├── iweather-app.gif
 ├── LICENSE
@@ -191,7 +191,7 @@ With this project, a single-page Weather Application will be developed using Rea
 
   **_This command will install the project's dependencies based on the list in the package.json file._**
 
-- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into your local .env file. You can check "example.env.local" file in project root directory.
+- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into your .env file. You can check "example.env" file in project root directory.
 
   ```
   REACT_APP_API_KEY=[YOUR_PERSONAL_OPENWEATHER_API_KEY]

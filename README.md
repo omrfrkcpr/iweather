@@ -136,7 +136,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 │    ┣ index.css
 │    ┗ index.js
 |
-├── example.env.local
+├── example.env
 ├── .gitignore
 ├── iweather-app.gif
 ├── LICENSE
@@ -191,7 +191,7 @@ Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulama
 
   **_Bu komut, package.json dosyasındaki listeye göre projenin bağımlılıklarını yükleyecektir._**
 
-- Adım 3: `https://home.openweathermap.org/users/sign_up` adresine kaydolun ve API anahtarını alın. Bundan sonra kişisel API anahtarınızı ".env.local" dosyanıza yapıştırın. Proje kök dizinindeki "example.env.local" dosyasını kontrol edebilirsiniz.
+- Adım 3: `https://home.openweathermap.org/users/sign_up` adresine kaydolun ve API anahtarını alın. Bundan sonra kişisel API anahtarınızı ".env" dosyanıza yapıştırın. Proje kök dizinindeki "example.env" dosyasını kontrol edebilirsiniz.
 
   ```
   REACT_APP_API_KEY=[YOUR_PERSONAL_OPENWEATHER_API_KEY]
