@@ -12,6 +12,9 @@
   }
   body {
     font-family: "Nunito", "sans-serif";
+    background-image: url(./assets/Background.svg);
+    background-repeat: repeat;
+    background-size: cover;
   }
 }
 
@@ -66,10 +69,4 @@
   .weather-details-value-container {
     @apply me-3 text-base-100;
   }
-}
-
-body {
-  background-image: url(./assets/Background.svg);
-  background-repeat: repeat;
-  background-size: cover;
 }
