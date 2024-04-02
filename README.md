@@ -209,6 +209,8 @@ Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulama
 ## Ek Veriler 📦
 
 - [Assets Dosyası](./src/assets/)
+- [AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)
+- [OPENWEATHERMAP_API](https://openweathermap.org/api/one-call-3#start)
 
 ## Katkı 🤝
 

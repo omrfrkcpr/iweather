@@ -209,6 +209,8 @@ With this project, a single-page Weather Application will be developed using Rea
 ## Additional Data 📦
 
 - [Assets Folder](./src/assets/)
+- [AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)
+- [OPENWEATHERMAP_API](https://openweathermap.org/api/one-call-3#start)
 
 ## Contributing 🤝
 
