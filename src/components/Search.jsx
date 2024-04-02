@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const Search = () => {
   const { setQuery, setUnits, loading, error } = useContext(WeatherContext);
   const [city, setCity] = useState("");
+  const [options, setOptions] = useState([]);
   const navigate = useNavigate();
   const [selectedUnit, setSelectedUnit] = useState("metric");
 
@@ -52,6 +53,9 @@ const Search = () => {
             if (e.key === "Enter") handleSearchClick();
           }}
         />
+        <div className=" absolute -bottom-20 left-0 bg-base-input px-3 py-2 text-white w-[220px]">
+          selam
+        </div>
         {loading && (
           <img
             src={Loading}
