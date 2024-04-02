@@ -87,6 +87,14 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
   **Görev-2 =** Context sağlayıcısı içindeki state leri güncellemek için state değişkenlerini ve ilgili fonksiyonları tanımlayın.<br>
   **Görev-3 =** State lere erişmek ve gerektiğinde onları dinamik olarak güncellemek için ilgili componentleri, context sağlayıcı kapsamına alın.
 
+9️⃣ **API ile Şehir Önerileri Alın:**
+
+- 🥇 Kullanıcı olarak, şehir ararken filtreleyerek bana şehir önermesini istiyorum.
+- 🥈 Kullanıcı olarak, şehir önerilerini dropdown olarak görmek istiyorum.
+
+  **Görev-1 =** Kullanıcı şehir girişi yaparken, şehir önerilerini göstermek için bir fonksiyon yazın.<br>
+  **Görev-2 =** Şehir önerilerini almak için Axios kullanarak ücretsiz bir API'yi ([AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)) kullanın ve kullanıcıya TailwindCSS ile dropdown tasarlayarak sunun.
+
 ## Proje İskeleti 🩻
 
 ```
@@ -181,13 +189,13 @@ Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulama
 
   **_Bu komut, package.json dosyasındaki listeye göre projenin bağımlılıklarını yükleyecektir._**
 
-- Adım 3: `https://home.openweathermap.org/users/sign_up` adresine kaydolun ve API anahtarını alın. Bundan sonra kişisel API anahtarınızı weatherService.js dosyasında asağıdaki gibi yapıştırın.
+- Adım 3: `https://home.openweathermap.org/users/sign_up` adresine kaydolun ve API anahtarını alın. Bundan sonra kişisel API anahtarınızı ".env.local" dosyanıza yapıştırın. Proje kök dizinindeki "example.env.local" dosyasını kontrol edebilirsiniz.
 
   ```
-  const API_KEY = <OPENWEATHERMAP_API_KEY>;
+  REACT_APP_API_KEY=[YOUR_PERSONAL_OPENWEATHER_API_KEY]
   ```
 
-  **_<OPENWEATHERMAP_API_KEY> öğesini Openweathermap'ten aldığınız kişisel API anahtarınızla değiştirin._**
+  **_[YOUR_PERSONAL_OPENWEATHER_API_KEY] öğesini Openweathermap'ten aldığınız kişisel API anahtarınızla değiştirin._**
 
 - Adım 4 : Tüm paketler başarıyla yüklendikten ve API anahtarı yapıştırıldıktan sonra projeyi başlatmak için aşağıdaki komutu kullanın:
 

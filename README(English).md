@@ -87,6 +87,14 @@ IWeather App is a single-page web application that allows users to view instant 
   **_Task-2 =_** Define state variables and functions to update state within the context provider.<br>
   **_Task-3 =_** Wrap relevant components with the context provider to access state and update it as needed.<br>
 
+9️⃣ **Get City Suggestions from an API:**
+
+- 🥇 As a user, I want city suggestions to be filtered as I type in the city input field.
+- 🥈 As a user, I want to see city suggestions in a dropdown format.
+
+  **_Task-1 =_** Write a function to display city suggestions as the user enters the city input.<br>
+  **_Task-2 =_** Use a free API ([AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)) with Axios to fetch city suggestions and present them to the user in a dropdown format that you styled with TailwindCSS.
+
 ## Project Skeleton 🩻
 
 ```
@@ -181,13 +189,13 @@ With this project, a single-page Weather Application will be developed using Rea
 
   **_This command will install the project's dependencies based on the list in the package.json file._**
 
-- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into weatherService.js file
+- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into your local .env file. You can check "example.env.local" file in project root directory.
 
   ```
-  const API_KEY = <OPENWEATHERMAP_API_KEY>;
+  REACT_APP_API_KEY=[YOUR_PERSONAL_OPENWEATHER_API_KEY]
   ```
 
-  **_Replace <OPENWEATHERMAP_API_KEY> with your personal api key that you get from openweathermap_**
+  **_Replace [YOUR_PERSONAL_OPENWEATHER_API_KEY] with your personal api key that you get from openweathermap_**
 
 - Step 4 : Once all packages are successfully installed and api key is pasted, use the following command to start the project:
 
