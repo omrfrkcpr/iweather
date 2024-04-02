@@ -12,17 +12,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
   const { units, iconSize } = useContext(WeatherContext);
   const location = useLocation();
 
-  const {
-    icon,
-    dt,
-    timezone,
-    name,
-    country,
-    description,
-    temp,
-    temp_min,
-    temp_max,
-  } = item;
+  const { daily, icon, dt, timezone, name, country, description, temp } = item;
 
   return (
     <div className="bg-base-800 w-full p-2 my-1 text-responsive rounded-12 relative">
@@ -56,9 +46,11 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
             <h1 className="header-responsive">
               {Math.round(temp)}°{units === "metric" ? "C" : "F"}
             </h1>
-            <p className="text-responsive">{`${Math.round(temp_min)}°${
+            <p className="text-responsive">{`${Math.round(daily[0].min)}°${
               units === "metric" ? "C" : "F"
-            } / ${Math.round(temp_max)}°${units === "metric" ? "C" : "F"}`}</p>
+            } / ${Math.round(daily[0].max)}°${
+              units === "metric" ? "C" : "F"
+            }`}</p>
             <p className="text-responsive">
               {description.charAt(0).toUpperCase() + description.slice(1)}
             </p>

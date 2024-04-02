@@ -56,7 +56,7 @@ const WeatherDetails = ({ item }) => {
         </div>
       </li>
       <li className="weather-details-li">
-        <div className="weather-details-container ">
+        <div className="weather-details-container">
           <div className="weather-details-label-container">
             <Drop size={iconSize} className="weather-details-icon" />
             <p className="weather-details-label">Air humidity</p>
@@ -68,7 +68,7 @@ const WeatherDetails = ({ item }) => {
         </div>
       </li>
       <li className="weather-details-li  rounded-b-12">
-        <div className="weather-details-container ">
+        <div className="weather-details-container border-b-0 pb-0 md:pb-2">
           <div className="weather-details-label-container">
             <SunDim size={iconSize} className="weather-details-icon" />
             <p className="weather-details-label">UV Index</p>

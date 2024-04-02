@@ -12,28 +12,37 @@ const Search = () => {
   const navigate = useNavigate();
   const [selectedUnit, setSelectedUnit] = useState("metric");
 
-  const handleSearchClick = () => {
-    if (city) {
-      setQuery({ q: city });
+  const handleSearch = async (searchValue) => {
+    // Determine the search value to use
+    const queryValue = searchValue || city;
+
+    if (queryValue) {
+      // Set the city state
+      await setCity(queryValue);
+
+      // Set the query and units based on the search value
+      setQuery({ q: queryValue });
       setUnits(selectedUnit);
       setOptions([]);
+
       if (!error) {
         setTimeout(() => {
-          navigate(`/${city}`);
-        }, 2000);
+          navigate(`/${queryValue}`);
+        }, 1000);
       }
     }
   };
 
   const handleSearchChange = async (e) => {
-    setCity(e.target.value);
-    if (e.target.value) {
-      const matchingCities = await selectMatchingCities(3, e.target.value);
+    const searchValue = e.target.value;
+    setCity(searchValue);
+    if (searchValue) {
+      const matchingCities = await selectMatchingCities(3, searchValue);
       setOptions(matchingCities);
     } else {
       setOptions([]);
     }
-    // console.log("options", options);
+    console.log("options", options);
   };
 
   const handleLocationClick = () => {
@@ -53,9 +62,12 @@ const Search = () => {
     }
   };
 
-  const handleCityOptionClick = (selectedOption) => {
-    setCity(selectedOption);
-    handleSearchClick();
+  const handleCityOptionClick = async (selectedOption) => {
+    await handleSearch(selectedOption);
+  };
+
+  const handleSearchClick = () => {
+    handleSearch();
   };
 
   return (
@@ -98,7 +110,7 @@ const Search = () => {
                   className="hover:text-product cursor-pointer text-responsive px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-500 capitalize max-w-[500px]"
                   onClick={() => handleCityOptionClick(option.cityName)}
                 >
-                  {`${option.cityName}, ${option.country}`}
+                  {`${option.cityName} - ${option.country}`}
                 </p>
               </div>
             ))}

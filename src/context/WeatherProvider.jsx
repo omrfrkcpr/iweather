@@ -41,7 +41,7 @@ const WeatherProvider = ({ children }) => {
             setWeatherList([result, ...weatherList]);
 
           setLocalStorage();
-        }, 2000);
+        }, 1000);
 
         setWeather(result);
         setError(null);
@@ -57,7 +57,7 @@ const WeatherProvider = ({ children }) => {
             progress: undefined,
             theme: "colored",
           });
-        }, 2000);
+        }, 1000);
       } finally {
         setTimeout(() => {
           setLoading(false);
