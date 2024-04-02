@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 import { iconUrls, bgUrls } from "./constants";
-import getWeatherData from "./weatherService";
+import fetchWeatherData from "./weatherService";
 
 const formatCurrentWeather = (data) => {
   const {
@@ -52,14 +52,14 @@ const formatForecastWeather = (data) => {
 };
 
 const getFormattedWeatherData = async (searchParams) => {
-  const formattedCurrentWeather = await getWeatherData(
+  const formattedCurrentWeather = await fetchWeatherData(
     "2.5/weather",
     searchParams
   ).then(formatCurrentWeather);
 
   const { lat, lon } = formattedCurrentWeather;
 
-  const formattedForecastWeather = await getWeatherData("3.0/onecall", {
+  const formattedForecastWeather = await fetchWeatherData("3.0/onecall", {
     lat,
     lon,
     exclude: "current, minutely, alerts",

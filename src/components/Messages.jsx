@@ -2,7 +2,7 @@ import React from "react";
 
 const Messages = () => {
   return (
-    <div className="text-center my-6 font-sans">
+    <div className="text-center my-6">
       <h1 className="text-base-100 header-responsive ">
         Welcome to <span className="text-product">TypeWeather</span>
       </h1>

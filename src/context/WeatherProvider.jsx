@@ -15,8 +15,8 @@ const WeatherProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [iconSize, setIconSize] = useState(32);
 
-  const fetchWeather = async () => {
-    // Fetch only if there is any query
+  const getWeatherData = async () => {
+    // Get fetched weather data only if there is any query
     if (query.q !== "") {
       setLoading(true);
 
@@ -75,12 +75,12 @@ const WeatherProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    setLocalStorage();
-  }, [fetchWeather]);
+    getWeatherData();
+  }, [query, units]);
 
   useEffect(() => {
-    fetchWeather();
-  }, [query, units]);
+    setLocalStorage();
+  }, [getWeatherData]);
 
   useEffect(() => {
     const handleResize = () => {

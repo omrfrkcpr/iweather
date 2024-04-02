@@ -29,7 +29,7 @@ const WeatherLists = () => {
   return (
     <Carousel
       transition={{ duration: 0.5 }}
-      className="rounded-xl m-auto font-sans h-[auto] md:h-[700px] max-h-[1200px] max-w-[1000px] my-8"
+      className="rounded-xl m-auto h-[auto] md:h-[700px] max-h-[1200px] max-w-[1000px] my-8"
     >
       {weatherList.length &&
         weatherList.map((listItem, index) => (

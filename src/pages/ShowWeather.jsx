@@ -11,7 +11,7 @@ const ShowWeather = () => {
 
   return (
     <div
-      className="flex-col flex justify-start items-center font-sans"
+      className="flex-col flex justify-start items-center"
       style={{ height: "calc(100vh - 168px)" }}
     >
       <div className="max-w-[1000px]">

@@ -25,7 +25,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
   } = item;
 
   return (
-    <div className="bg-base-800 w-full p-2 my-1 text-responsive rounded-12 font-sans relative">
+    <div className="bg-base-800 w-full p-2 my-1 text-responsive rounded-12 relative">
       {location.pathname === "/cities" && (
         <Backspace
           size={32}
