@@ -3,7 +3,7 @@ import { MagnifyingGlass, MapPin } from "@phosphor-icons/react";
 import Loading from "../assets/Loading.svg";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useNavigate } from "react-router-dom";
-import { selectMatchingCities } from "../services/cityDataHelper";
+import { selectMatchingCities } from "../services/cityFormatter";
 
 const Search = () => {
   const { setQuery, setUnits, loading, error } = useContext(WeatherContext);
@@ -25,10 +25,11 @@ const Search = () => {
     }
   };
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = async (e) => {
     setCity(e.target.value);
     if (e.target.value) {
-      setOptions(selectMatchingCities(3, e.target.value));
+      const matchingCities = await selectMatchingCities(3, e.target.value);
+      setOptions(matchingCities);
     } else {
       setOptions([]);
     }
@@ -95,9 +96,9 @@ const Search = () => {
               <div key={index}>
                 <p
                   className="hover:text-product cursor-pointer text-responsive px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-500 capitalize max-w-[500px]"
-                  onClick={() => handleCityOptionClick(option)}
+                  onClick={() => handleCityOptionClick(option.cityName)}
                 >
-                  {option}
+                  {`${option.cityName}, ${option.country}`}
                 </p>
               </div>
             ))}
