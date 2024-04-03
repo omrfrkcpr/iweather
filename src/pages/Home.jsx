@@ -1,7 +1,6 @@
 import React from "react";
 import Messages from "../components/Messages";
 import Search from "../components/Search";
-import { ToastContainer } from "react-toastify";
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -12,9 +11,7 @@ const Home = () => {
         <Search />
       </div>
       <Footer />
-      <ToastContainer
-        style={{ maxWidth: "50%", margin: ".5rem .5rem .5rem auto" }}
-      />
+
     </div>
   );
 };

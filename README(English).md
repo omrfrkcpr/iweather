@@ -117,6 +117,9 @@ IWeather App is a single-page web application that allows users to view instant 
 │    ┣ 📂context
 |    ┃    ┗ WeatherProvider.js
 |    ┃
+│    ┣ 📂helpers
+|    ┃    ┗ toastNotify.js
+|    ┃
 │    ┣ 📂pages
 │    ┃       ┣ Home.js
 │    ┃       ┣ ShowWeather.js

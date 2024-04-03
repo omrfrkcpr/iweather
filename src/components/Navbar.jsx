@@ -4,7 +4,7 @@ import { House } from "@phosphor-icons/react";
 import { FaCity } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { WeatherContext } from "../context/WeatherProvider";
-import { toast } from "react-toastify";
+import { toastInfoNotify } from "../helpers/toastNotify";
 
 const Navbar = () => {
   const { setQuery, weatherList } = useContext(WeatherContext);
@@ -19,18 +19,8 @@ const Navbar = () => {
   const handleGoCities = () => {
     weatherList.length
       ? navigate("/cities")
-      : toast.info(
-          "Please inquire about the weather forecast for any city first.",
-          {
-            position: "top-right",
-            autoClose: 4000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          }
+      : toastInfoNotify(
+          "Please inquire about the weather forecast for any city first."
         );
   };
 

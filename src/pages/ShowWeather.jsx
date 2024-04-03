@@ -3,8 +3,6 @@ import GeneralInfos from "../components/GeneralInfos";
 import WeatherDetails from "../components/WeatherDetails";
 import Forecast from "../components/Forecast";
 import { WeatherContext } from "../context/WeatherProvider";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const ShowWeather = () => {
   const { weather } = useContext(WeatherContext);
@@ -24,9 +22,6 @@ const ShowWeather = () => {
             </div>
           </div>
         )}
-        <ToastContainer
-          style={{ maxWidth: "50%", margin: ".5rem .5rem .5rem auto" }}
-        />
       </div>
     </div>
   );

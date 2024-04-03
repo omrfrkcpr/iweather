@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import getFormattedWeatherData from "../services/weatherFormatters";
-import { toast } from "react-toastify";
+import { toastErrorNotify, toastSuccessNotify } from "../helpers/toastNotify";
+import errorMessages from "../services/constants";
 
 export const WeatherContext = createContext();
 
@@ -23,20 +24,9 @@ const WeatherProvider = ({ children }) => {
       try {
         const result = await getFormattedWeatherData({ ...query, units });
         setTimeout(() => {
-          toast.success(
-            `Successfully fetched weather for ${result.name}, ${result.country}`,
-            {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-            }
+          toastSuccessNotify(
+            `Successfully fetched weather for ${result.name}, ${result.country}`
           );
-
           isUniqueWeather(result, weatherList) &&
             setWeatherList([result, ...weatherList]);
 
@@ -47,16 +37,7 @@ const WeatherProvider = ({ children }) => {
         setError(null);
       } catch (error) {
         setTimeout(() => {
-          toast.error(error.message, {
-            position: "top-right",
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-          });
+          toastErrorNotify(errorMessages);
         }, 1000);
       } finally {
         setTimeout(() => {

@@ -117,6 +117,9 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 │    ┣ 📂context
 |    ┃    ┗ WeatherProvider.js
 |    ┃
+│    ┣ 📂helpers
+|    ┃    ┗ toastNotify.js
+|    ┃
 │    ┣ 📂pages
 │    ┃       ┣ Home.js
 │    ┃       ┣ ShowWeather.js
