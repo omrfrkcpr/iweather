@@ -6,7 +6,7 @@
 
 ## Proje Tanımı
 
-IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık olarak görmelerini sağlayan bir web uygulamasıdır. Kullanıcılar, istedikleri şehirlerin hava durumu tahminlerini görebilir, favori şehirlerini kaydedebilir ve detaylı hava durumu bilgilerine erişebilirler. Uygulama, modern ve kullanıcı dostu bir arayüzle tasarlanmıştır, böylece kullanıcılar hızlı ve kolay bir şekilde istedikleri hava durumu bilgilerine ulaşabilirler.
+IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık olarak görmelerini sağlayan bir web uygulamasıdır. Kullanıcılar, istedikleri şehirlerin hava durumu tahminlerini görebilir, çoklu şehir hava durumlarını görüntüleyebilir ve detaylı hava durumu bilgilerine erişebilirler. Uygulama, modern ve kullanıcı dostu bir arayüzle tasarlanmıştır, böylece kullanıcılar hızlı ve kolay bir şekilde istedikleri hava durumu bilgilerine ulaşabilirler.
 
 ## Proje Çıktısı
 
