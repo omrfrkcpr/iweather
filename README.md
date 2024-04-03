@@ -46,22 +46,30 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
   **Görev-1 =** TailwindCSS kullanarak tasarımı farklı ekran boyutlarına duyarlı hale getirin.<br>
   **Görev-2 =** Mobil cihazlar, tabletler ve masaüstü cihazlar için TailwindCSS'yi kullanarak uygulamaya stil verin.
 
-4️⃣ **Hava Durumu Bilgilerini Localde Saklayın:**
+4️⃣ **Hava Drumu Bilgilerini Favorilere Ekleme/Çıkarma:**
 
-- 🥇 Kullanıcı olarak daha önce aranan şehirlere ait hava durumu bilgilerinin local olarak saklanabilmesini istiyorum.
-- 🥈 Kullanıcı olarak birden fazla şehrin hava durumu bilgisini depolamak istiyorum.
+- 🥇 Kullanıcı olarak istediğim hava durum bilgisini favori şehirlerime ekleyip, çıkarabilmeliyim.
+- 🥈 Kullanıcı olarak favorilerim arasından ekleme ve çıkarma yaptığımda bunun gerçekleştiğini iconlardan ve bildirimlerden görmeliyim.
 
-  **Görev-1 =** Hava durumu bilgilerini depolamak ve almak için "Local Storage" kullanın.<br>
+  **Görev-1 =** Favoriye hava durumu bilgisi eklenildiğin ve çıkarıldığında kalp icon ı dinamik olarak değişmeli.<br>
+  **Görev-2 =** Favori durumları ile alakalı her aşamada kullanıcı bildirim almalı.
+
+5️⃣ **Favori Hava Durumu Bilgilerini Localde Saklayın:**
+
+- 🥇 Kullanıcı olarak daha önce favorilere eklenen şehirlere ait hava durumu bilgilerinin local olarak saklanabilmesini istiyorum.
+- 🥈 Kullanıcı olarak birden fazla favori şehrin hava durumu bilgisini depolamak istiyorum.
+
+  **Görev-1 =** Favori hava durumu bilgilerini depolamak ve almak için "Local Storage" kullanın.<br>
   **Görev-2 =** Birden fazla şehir için depolanan hava durumu bilgilerini "Carousel" formatında görüntüleyin.
 
-5️⃣ **Hava Durumu Bilgilerini "Carousel" Stilinde Görüntüleme:**
+6️⃣ **Hava Durumu Bilgilerini "Carousel" Stilinde Görüntüleme:**
 
 - 🥇 Kullanıcı olarak, depolanan hava durumu bilgilerini "Carousel" tarzı bir ekranda (Material Tailwind) görüntülemek istiyorum.
 - 🥈 Kullanıcı olarak farklı şehirlerin hava durumu bilgileri arasında kolaylıkla geçiş yapmak istiyorum.
 
   **Görev-1 =** Carousel Component ini, Material Tailwind den alarak implemente edin.<br>
 
-6️⃣ **Hata ve Başarı Bildirimleri:**
+7️⃣ **Hata ve Başarı Bildirimleri:**
 
 - 🥇 Kullanıcı olarak hava durumu bilgisi alımı başarılı olduğunda bilgilendirilmek istiyorum.
 - 🥈 Bir kullanıcı olarak uygun bildirimlerin hataları göstermesini ve neyin yanlış gittiği konusunda bana yol göstermesini istiyorum.
@@ -69,7 +77,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
   **Görev-1 =** Axios isteklerinin durumuna göre uygun bildirimleri görüntüleyecek fonksiyonları yazın.<br>
   **Görev-2 =** Bildirimler için React Toastify paketini entegre edin.
 
-7️⃣ **React Router'ı Kullanarak Sayfalar Arasında Gezinme:**
+8️⃣ **React Router'ı Kullanarak Sayfalar Arasında Gezinme:**
 
 - 🥇 Kullanıcı olarak onClick olaylarını kullanarak sayfalar arasında gezinmek istiyorum.
 - 🥈 Kullanıcı olarak sayfa navigasyonu için React Router'ı kullanmak istiyorum.
@@ -78,7 +86,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
   **Görev-2 =** Uygulamanın farklı bölümleri için ayrı sayfalar/componentler oluşturun (örneğin, ana sayfa, hava durumu ayrıntıları sayfası).<br>
   **Görev-3 =** Sayfalar arasında gezinmek için onClick olay işleyicilerini uygulayın.
 
-8️⃣ **React Context API Kullanarak Global State Yönetimi:**
+9️⃣ **React Context API Kullanarak Global State Yönetimi:**
 
 - 🥇 Kullanıcı olarak state yönetiminin React Context kullanılarak yapılmasını istiyorum.
 - 🥈 Kullanıcı olarak component ler arasında bağlamı kullanarak kesintisiz iletişim sağlamak istiyorum.
@@ -87,7 +95,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
   **Görev-2 =** Context sağlayıcısı içindeki state leri güncellemek için state değişkenlerini ve ilgili fonksiyonları tanımlayın.<br>
   **Görev-3 =** State lere erişmek ve gerektiğinde onları dinamik olarak güncellemek için ilgili componentleri, context sağlayıcı kapsamına alın.
 
-9️⃣ **API ile Şehir Önerileri Alın:**
+1️⃣0️⃣ **API ile Şehir Önerileri Alın:**
 
 - 🥇 Kullanıcı olarak, şehir ararken filtreleyerek bana şehir önermesini istiyorum.
 - 🥈 Kullanıcı olarak, şehir önerilerini dropdown olarak görmek istiyorum.

@@ -46,7 +46,15 @@ IWeather App is a single-page web application that allows users to view instant 
   **_Task-1 =_** Make the design responsive to different screen sizes with using TailwindCSS.<br>
   **_Task-2 =_** Style the application using TailwindCSS for mobile, tablet, and desktop devices.<br>
 
-4️⃣ **Store Local Weather Information:**
+4️⃣ **Adding/Removing Weather Information to Favorites:**
+
+- 🥇 As a user, I should be able to add and remove any weather information I want from my favorite cities.
+- 🥈 As a user, when I add or remove items from my favorites, I should see this from the icons and notifications.
+
+  **_Task-1 =_** The heart icon should change dynamically when weather information is added or removed from the favorite.<br>
+  **_Task-2 =_** The user should receive notifications at every stage regarding their favorite status.<br>
+
+5️⃣ **Store Local Weather Information:**
 
 - 🥇 As a user, I want the ability to store weather information for previously searched cities locally.
 - 🥈 As a user, I want to store weather information for multiple cities.
@@ -54,14 +62,14 @@ IWeather App is a single-page web application that allows users to view instant 
   **_Task-1 =_** Use Local Storage to store and retrieve weather information.<br>
   **_Task-2 =_** Display stored weather information for multiple cities in a carousel format.<br>
 
-5️⃣ **View Weather Informations in Carousel Style:**
+6️⃣ **View Weather Informations in Carousel Style:**
 
 - 🥇 As a user, I want to view stored weather information in a carousel-style display (Material Tailwind).
 - 🥈 As a user, I want to easily switch between different cities' weather information.
 
   **_Task-1 =_** Implement Carousel Component from Material Tailwind<br>
 
-6️⃣ **Error and Success Notifications:**
+7️⃣ **Error and Success Notifications:**
 
 - 🥇 As a user, I want to be notified when weather information retrieval is successful.
 - 🥈 As a user, I want appropriate notifications to indicate errors and guide me on what went wrong.
@@ -69,7 +77,7 @@ IWeather App is a single-page web application that allows users to view instant 
   **_Task-1 =_** Write functions to display appropriate notifications based on the status of Axios requests.<br>
   **_Task-2 =_** Integrate React Toastify package for notifications.<br>
 
-7️⃣ **Navigate Between Pages Using React Router:**
+8️⃣ **Navigate Between Pages Using React Router:**
 
 - 🥇 As a user, I want to navigate between pages using onClick events.
 - 🥈 As a user, I want to use React Router for page navigation.
@@ -78,7 +86,7 @@ IWeather App is a single-page web application that allows users to view instant 
   **_Task-2 =_** Create separate pages/components for different sections of the application (e.g., home page, weather details page).<br>
   **_Task-3 =_** Implement onClick event handlers to navigate between pages.<br>
 
-8️⃣ **Global State Management Using React Context API:**
+9️⃣ **Global State Management Using React Context API:**
 
 - 🥇 As a user, I want state management to be handled using React Context.
 - 🥈 As a user, I want to ensure seamless communication between components using context.
@@ -87,7 +95,7 @@ IWeather App is a single-page web application that allows users to view instant 
   **_Task-2 =_** Define state variables and functions to update state within the context provider.<br>
   **_Task-3 =_** Wrap relevant components with the context provider to access state and update it as needed.<br>
 
-9️⃣ **Get City Suggestions from an API:**
+1️⃣0️⃣ **Get City Suggestions from an API:**
 
 - 🥇 As a user, I want city suggestions to be filtered as I type in the city input field.
 - 🥈 As a user, I want to see city suggestions in a dropdown format.
