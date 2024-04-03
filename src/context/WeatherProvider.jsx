@@ -35,9 +35,23 @@ const WeatherProvider = ({ children }) => {
         setWeather(result);
         setError(null);
       } catch (err) {
+        const errorMessages = {
+          400: "Bad Request",
+          401: "Unauthorized",
+          404: "Not Found",
+          429: "Too Many Requests",
+        };
+
+        // Get the status code from the error message
+        const statusCode = parseInt(err.message.match(/\d+/)?.[0]) || 500;
+
+        const errorMessage = `Error ${statusCode} - ${
+          errorMessages[statusCode] || "Unexpected Error"
+        }`;
+        setError(errorMessage);
+
         setTimeout(() => {
-          setError(err.message);
-          toastErrorNotify(err.message);
+          toastErrorNotify(errorMessage);
         }, 1000);
       } finally {
         setTimeout(() => {
