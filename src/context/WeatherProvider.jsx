@@ -48,9 +48,9 @@ const WeatherProvider = ({ children }) => {
         const errorMessage = `Error ${statusCode} - ${
           errorMessages[statusCode] || "Unexpected Error"
         }`;
-        setError(errorMessage);
 
         setTimeout(() => {
+          setError(err.message);
           toastErrorNotify(errorMessage);
         }, 1000);
       } finally {
