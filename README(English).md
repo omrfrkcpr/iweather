@@ -2,7 +2,7 @@
 
 💻 https://iweather-app.vercel.app/
 
-![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/1f7a1f29-2ddd-4a25-ba67-3436c979058d)
+![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/7db44af1-a27f-4337-b4f6-4ea0761359a8)
 
 ## Description
 
@@ -10,7 +10,7 @@ IWeather App is a single-page web application that allows users to view instant 
 
 ## Outcome
 
-![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/04e2ff8c-8979-4148-81ce-6644f1bdfcec)
+![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/fc8d35cd-347d-4b3a-8849-447f39d8a8c4)
 
 ## Project Planning & Management
 
