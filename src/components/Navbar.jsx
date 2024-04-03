@@ -44,8 +44,9 @@ const Navbar = () => {
         <img
           src={IWeatherLogo}
           alt="iweather-logo"
-          className="mx-auto"
+          className="mx-auto cursor-pointer"
           style={{ width: `${imgWidth}px` }}
+          onClick={() => navigate("/")}
         />
       </div>
       <div className="center space-x-6">
