@@ -13,71 +13,58 @@ const WeatherDetails = ({ item }) => {
 
   const { daily, feels_like, humidity, speed } = item;
 
+  const weatherDetails = [
+    {
+      label: "Thermal sensation",
+      icon: <ThermometerSimple size={iconSize} />,
+      value: `${Math.trunc(feels_like)}°${units === "metric" ? "C" : "F"}`,
+    },
+    {
+      label: "Probability of rain",
+      icon: <CloudRain size={iconSize} />,
+      value: `${daily[0].pop}%`,
+    },
+    {
+      label: "Wind speed",
+      icon: <Wind size={iconSize} />,
+      value: `${Math.trunc(speed)} km/h`,
+    },
+    {
+      label: "Air humidity",
+      icon: <Drop size={iconSize} />,
+      value: `${humidity}%`,
+    },
+    {
+      label: "UV Index",
+      icon: <SunDim size={iconSize} />,
+      value: `${daily[0].uvi}`,
+    },
+  ];
+
   return (
     <ul className="bg-base-800 md:p-2 rounded-12">
-      <li className="weather-details-li rounded-t-12 ">
-        <div className="weather-details-container ">
-          <div className="weather-details-label-container">
-            <ThermometerSimple
-              size={iconSize}
-              className="weather-details-icon"
-            />
-            <p className="weather-details-label">Thermal sensation</p>
+      {weatherDetails.map((detail, index) => (
+        <li
+          key={index}
+          className={`weather-details-li${
+            index === weatherDetails.length - 1 ? " rounded-b-12" : ""
+          }`}
+        >
+          <div
+            className={`weather-details-container ${
+              index === 4 && "border-b-0 pb-0 md:pb-2"
+            }`}
+          >
+            <div className="weather-details-label-container">
+              {detail.icon}
+              <p className="weather-details-label">{detail.label}</p>
+            </div>
+            <div className="weather-details-value-container">
+              <p className="text-responsive">{detail.value}</p>
+            </div>
           </div>
-          <div className="weather-details-value-container">
-            <p className="text-responsive">
-              {Math.trunc(feels_like)}°{units === "metric" ? "C" : "F"}
-            </p>
-          </div>
-        </div>
-      </li>
-      <li className="weather-details-li">
-        <div className="weather-details-container ">
-          <div className="weather-details-label-container">
-            <CloudRain size={iconSize} className="weather-details-icon" />
-            <p className="weather-details-label">Probability of rain</p>
-          </div>
-
-          <div className="weather-details-value-container">
-            <p className="text-responsive">{daily[0].pop}%</p>
-          </div>
-        </div>
-      </li>
-      <li className="weather-details-li">
-        <div className="weather-details-container ">
-          <div className="weather-details-label-container">
-            <Wind size={iconSize} className="weather-details-icon" />
-            <p className="weather-details-label">Wind speed</p>
-          </div>
-
-          <div className="weather-details-value-container">
-            <p className="text-responsive">{Math.trunc(speed)} km/h</p>
-          </div>
-        </div>
-      </li>
-      <li className="weather-details-li">
-        <div className="weather-details-container">
-          <div className="weather-details-label-container">
-            <Drop size={iconSize} className="weather-details-icon" />
-            <p className="weather-details-label">Air humidity</p>
-          </div>
-
-          <div className="weather-details-value-container">
-            <p className="text-responsive">{humidity}%</p>
-          </div>
-        </div>
-      </li>
-      <li className="weather-details-li  rounded-b-12">
-        <div className="weather-details-container border-b-0 pb-0 md:pb-2">
-          <div className="weather-details-label-container">
-            <SunDim size={iconSize} className="weather-details-icon" />
-            <p className="weather-details-label">UV Index</p>
-          </div>
-          <div className="weather-details-value-container">
-            <p className="text-responsive">{daily[0].uvi}</p>
-          </div>
-        </div>
-      </li>
+        </li>
+      ))}
     </ul>
   );
 };

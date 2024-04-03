@@ -4,8 +4,7 @@ import Loading from "../assets/Loading.svg";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useNavigate } from "react-router-dom";
 import { selectMatchingCities } from "../services/cityFormatters";
-import { toast } from "react-toastify";
-import { toastInfoNotify, toastSuccessNotify } from "../helpers/toastNotify";
+import { toastInfoNotify } from "../helpers/toastNotify";
 
 const Search = () => {
   const { setQuery, setUnits, loading, error } = useContext(WeatherContext);
@@ -19,7 +18,6 @@ const Search = () => {
     const queryValue = searchValue || city;
 
     if (queryValue) {
-      // Set the city state
       await setCity(queryValue);
 
       // Set the query and units based on the search value
