@@ -18,7 +18,7 @@ const AppRouter = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/:cityName" element={<ShowWeather />} />
-        <Route path="/cities" element={<WeatherLists />} />
+        <Route path="/favorites" element={<WeatherLists />} />
       </Routes>
     </Router>
   );

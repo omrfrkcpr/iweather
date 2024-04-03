@@ -16,11 +16,11 @@ const Navbar = () => {
     navigate("/");
   };
 
-  const handleGoCities = () => {
+  const handleGoFavorites = () => {
     weatherList.length
-      ? navigate("/cities")
+      ? navigate("/favorites")
       : toastInfoNotify(
-          "Please inquire about the weather forecast for any city first."
+          "You don't have any favorite city. Please add your favorite city first."
         );
   };
 
@@ -60,7 +60,7 @@ const Navbar = () => {
           <FaCity
             size={28}
             className="icon-nohover-underlined"
-            onClick={handleGoCities}
+            onClick={handleGoFavorites}
           />
           <span
             className={`absolute top-5 left-5 text-base-900 ${

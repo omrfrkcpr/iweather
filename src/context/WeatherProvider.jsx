@@ -1,6 +1,10 @@
 import React, { createContext, useEffect, useState } from "react";
 import getFormattedWeatherData from "../services/weatherFormatters";
-import { toastErrorNotify, toastSuccessNotify } from "../helpers/toastNotify";
+import {
+  toastErrorNotify,
+  toastSuccessNotify,
+  toastWarnNotify,
+} from "../helpers/toastNotify";
 import errorMessages from "../services/constants";
 
 export const WeatherContext = createContext();
@@ -27,10 +31,6 @@ const WeatherProvider = ({ children }) => {
           toastSuccessNotify(
             `Successfully fetched weather for ${result.name}, ${result.country}`
           );
-          isUniqueWeather(result, weatherList) &&
-            setWeatherList([result, ...weatherList]);
-
-          setLocalStorage();
         }, 1000);
 
         setWeather(result);
@@ -45,6 +45,23 @@ const WeatherProvider = ({ children }) => {
         }, 2000);
       }
     }
+  };
+
+  const handleAddFavorite = (item) => {
+    if (isUniqueWeather(item, weatherList)) {
+      setWeatherList([item, ...weatherList]);
+      setLocalStorage();
+      toastSuccessNotify(`Added ${item.name}, ${item.country}  to favorites`);
+    }
+  };
+
+  const handleRemoveFavorite = (item) => {
+    const updatedWeatherList = weatherList.filter(
+      (weatherItem) => weatherItem.dt !== item.dt
+    );
+    setWeatherList(updatedWeatherList);
+    setLocalStorage();
+    toastWarnNotify(`Removed ${item.name}, ${item.country} from favorites`);
   };
 
   const isUniqueWeather = (newItem, array) => {
@@ -94,6 +111,8 @@ const WeatherProvider = ({ children }) => {
     error,
     setError,
     iconSize,
+    handleAddFavorite,
+    handleRemoveFavorite,
   };
 
   return (

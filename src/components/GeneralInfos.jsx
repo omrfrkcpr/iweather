@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   formatToLocalTime,
   formatBackground,
@@ -6,22 +6,58 @@ import {
 } from "../services/weatherFormatters";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useLocation } from "react-router-dom";
-import { Backspace } from "@phosphor-icons/react";
+import { Backspace, Heart } from "@phosphor-icons/react";
 
 const GeneralInfos = ({ item, handleRemoveListItem }) => {
-  const { units, iconSize } = useContext(WeatherContext);
+  const {
+    units,
+    iconSize,
+    weatherList,
+    handleAddFavorite,
+    handleRemoveFavorite,
+  } = useContext(WeatherContext);
   const location = useLocation();
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const { daily, icon, dt, timezone, name, country, description, temp } = item;
 
+  const checkFavoriteItem = (dt) => {
+    const isFavoriteItem = weatherList.some(
+      (weatherItem) => weatherItem.dt === dt
+    );
+    setIsFavorite(isFavoriteItem);
+  };
+
+  useEffect(() => {
+    checkFavoriteItem(item.dt);
+  }, [item.dt, weatherList]);
+
+  const handleFavorite = () => {
+    if (isFavorite) {
+      handleRemoveFavorite(item);
+      setIsFavorite(false);
+    } else {
+      handleAddFavorite(item);
+      setIsFavorite(true);
+    }
+  };
+
   return (
     <div className="bg-base-800 w-full p-2 my-1 text-responsive rounded-12 relative">
-      {location.pathname === "/cities" && (
+      {location.pathname === "/favorites" ? (
         <Backspace
           size={32}
           weight="fill"
           className="icon-remove absolute top-5 right-5 z-50 "
-          onClick={() => handleRemoveListItem(dt)}
+          onClick={() => handleRemoveListItem(item)}
+        />
+      ) : (
+        <Heart
+          size={32}
+          weight="fill"
+          color={isFavorite ? "red" : "white"}
+          className="icon-remove absolute top-6 right-6 z-50 "
+          onClick={handleFavorite}
         />
       )}
       <div

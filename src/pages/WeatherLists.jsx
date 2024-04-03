@@ -5,20 +5,27 @@ import WeatherDetails from "../components/WeatherDetails";
 import Forecast from "../components/Forecast";
 import { Carousel } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
+import { toastInfoNotify, toastWarnNotify } from "../helpers/toastNotify";
 
 const WeatherLists = () => {
   const { weatherList, setWeatherList } = useContext(WeatherContext);
   const navigate = useNavigate();
 
-  const handleRemoveListItem = (dt) => {
-    const updatedWeatherList = weatherList.filter((item) => item.dt !== dt);
+  const handleRemoveListItem = (item) => {
+    const updatedWeatherList = weatherList.filter(
+      (weather) => weather.dt !== item.dt
+    );
     setWeatherList(updatedWeatherList);
+    toastWarnNotify(
+      `Removed ${item.name}, ${item.country} from your favorites.`
+    );
     handleHomeNavigate();
   };
 
   const handleHomeNavigate = () => {
     if (!weatherList.length) {
       navigate("/");
+      toastInfoNotify(`You no longer have any favorite cities.`);
     }
   };
 
