@@ -9,6 +9,8 @@ import rainD from "../assets/weather-icons/Rain_Day.svg";
 import rainN from "../assets/weather-icons/Rain_Night.svg";
 import stormD from "../assets/weather-icons/Storm_Day.svg";
 import stormN from "../assets/weather-icons/Storm_Night.svg";
+import snowy from "../assets/weather-icons/Snowy.svg";
+import mist from "../assets/weather-icons/Mist.png";
 
 // for getting dynamic weather backgrounds
 import bgClearD from "../assets/bg-images/Clear_Day.svg";
@@ -21,6 +23,8 @@ import bgRainD from "../assets/bg-images/Rain_Day.svg";
 import bgRainN from "../assets/bg-images/Rain_Night.svg";
 import bgStormD from "../assets/bg-images/Storm_Day.svg";
 import bgStormN from "../assets/bg-images/Storm_Night.svg";
+import bgMist from "../assets/bg-images/Mist.jpg";
+import bgSnowy from "../assets/bg-images/Snowy.jpg";
 
 const errorMessages = {
   400: "400 - Bad Request",
@@ -47,6 +51,10 @@ const iconUrls = {
   "10n": rainN,
   "11d": stormD,
   "11n": stormN,
+  "13d": snowy,
+  "13n": snowy,
+  "50d": mist,
+  "50n": mist,
 };
 
 const bgUrls = {
@@ -64,6 +72,10 @@ const bgUrls = {
   "10n": bgRainN,
   "11d": bgStormD,
   "11n": bgStormN,
+  "50d": bgMist,
+  "50n": bgMist,
+  "13d": bgSnowy,
+  "13n": bgSnowy,
 };
 
 export default errorMessages;

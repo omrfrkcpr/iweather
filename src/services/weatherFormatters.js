@@ -75,13 +75,13 @@ const formatToLocalTime = (
   format = "cccc, LLL dd, yyyy' | Local time: 'hh:mm a"
 ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-const defaultIconUrl = "http://openweather.org/img/wn/";
+const defaultIconUrl = "https://openweathermap.org/img/wn/";
 
 const iconUrlFromCode = (code) => {
   if (iconUrls.hasOwnProperty(code)) {
     return iconUrls[code];
   } else {
-    return defaultIconUrl + `${code}@2x.png`;
+    return `${defaultIconUrl}${code}@4x.png`;
   }
 };
 
