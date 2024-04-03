@@ -4,6 +4,8 @@ import Loading from "../assets/Loading.svg";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useNavigate } from "react-router-dom";
 import { selectMatchingCities } from "../services/cityFormatters";
+import { toast } from "react-toastify";
+import { toastInfoNotify, toastSuccessNotify } from "../helpers/toastNotify";
 
 const Search = () => {
   const { setQuery, setUnits, loading, error } = useContext(WeatherContext);
@@ -47,10 +49,10 @@ const Search = () => {
 
   const handleLocationClick = () => {
     if (navigator.geolocation) {
+      toastInfoNotify("Location found successfully");
       navigator.geolocation.getCurrentPosition((position) => {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
-
         setQuery({ lat, lon });
         setUnits(selectedUnit);
         if (!error) {
