@@ -202,7 +202,7 @@ With this project, a single-page Weather Application will be developed using Rea
 
   **_This command will install the project's dependencies based on the list in the package.json file._**
 
-- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into your .env file. You can check "example.env" file in project root directory.
+- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into your .env file (like example.env file) that you will create in your project root directory. You can check "example.env" file in project root directory.
 
   ```
   REACT_APP_API_KEY=[YOUR_PERSONAL_OPENWEATHER_API_KEY]
