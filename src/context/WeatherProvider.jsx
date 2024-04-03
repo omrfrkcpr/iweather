@@ -80,25 +80,24 @@ const WeatherProvider = ({ children }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // WeatherProvider values
+  const values = {
+    query,
+    setQuery,
+    units,
+    setUnits,
+    weather,
+    weatherList,
+    setWeatherList,
+    loading,
+    setLoading,
+    error,
+    setError,
+    iconSize,
+  };
+
   return (
-    <WeatherContext.Provider
-      value={{
-        query,
-        setQuery,
-        units,
-        setUnits,
-        weather,
-        weatherList,
-        setWeatherList,
-        loading,
-        setLoading,
-        error,
-        setError,
-        iconSize,
-      }}
-    >
-      {children}
-    </WeatherContext.Provider>
+    <WeatherContext.Provider value={values}>{children}</WeatherContext.Provider>
   );
 };
 
