@@ -51,13 +51,13 @@ const Search = () => {
 
   const handleLocationClick = () => {
     if (navigator.geolocation) {
-      toastInfoNotify("Location found successfully");
       navigator.geolocation.getCurrentPosition((position) => {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
         setQuery({ lat, lon });
         setUnits(selectedUnit);
         if (!error) {
+          toastInfoNotify("Location found successfully");
           setTimeout(() => {
             navigate(`/${(lat, lon)}`);
           }, 2000);
