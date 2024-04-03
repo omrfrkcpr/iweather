@@ -5,7 +5,6 @@ import {
   toastSuccessNotify,
   toastWarnNotify,
 } from "../helpers/toastNotify";
-import errorMessages from "../services/constants";
 
 export const WeatherContext = createContext();
 
@@ -35,9 +34,10 @@ const WeatherProvider = ({ children }) => {
 
         setWeather(result);
         setError(null);
-      } catch (error) {
+      } catch (err) {
         setTimeout(() => {
-          toastErrorNotify(errorMessages);
+          setError(err.message);
+          toastErrorNotify(err.message);
         }, 1000);
       } finally {
         setTimeout(() => {

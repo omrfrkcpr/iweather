@@ -26,17 +26,7 @@ import bgStormN from "../assets/bg-images/Storm_Night.svg";
 import bgMist from "../assets/bg-images/Mist.jpg";
 import bgSnowy from "../assets/bg-images/Snowy.jpg";
 
-const errorMessages = {
-  400: "400 - Bad Request",
-  401: "401 - Unauthorized",
-  404: "404 - Not Found",
-  429: "429 - Too many requests",
-  "5xx": "5xx - Unexpected Error",
-  default: "Unexpected Error",
-  requestError: "Request Error",
-};
-
-const iconUrls = {
+export const iconUrls = {
   "01d": clearD,
   "01n": clearN,
   "02d": fewCloudsD,
@@ -57,7 +47,7 @@ const iconUrls = {
   "50n": mist,
 };
 
-const bgUrls = {
+export const bgUrls = {
   "01d": bgClearD,
   "01n": bgClearN,
   "02d": bgFewCloudsD,
@@ -77,7 +67,3 @@ const bgUrls = {
   "13d": bgSnowy,
   "13n": bgSnowy,
 };
-
-export default errorMessages;
-
-export { iconUrls, bgUrls, errorMessages };

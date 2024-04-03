@@ -29,6 +29,10 @@ const Search = () => {
         setTimeout(() => {
           navigate(`/${queryValue}`);
         }, 1000);
+      } else {
+        setTimeout(() => {
+          setCity("");
+        }, 1000);
       }
     }
   };
@@ -42,7 +46,7 @@ const Search = () => {
     } else {
       setOptions([]);
     }
-    console.log("options", options);
+    // console.log("options", options);
   };
 
   const handleLocationClick = () => {
