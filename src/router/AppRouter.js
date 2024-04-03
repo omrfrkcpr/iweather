@@ -12,7 +12,7 @@ import Navbar from "../components/Navbar";
 
 const AppRouter = () => {
   return (
-    <Router>
+    <>
       <Navbar />
       <Outlet />
       <Routes>
@@ -20,7 +20,7 @@ const AppRouter = () => {
         <Route path="/:cityName" element={<ShowWeather />} />
         <Route path="/favorites" element={<WeatherLists />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 

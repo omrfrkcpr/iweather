@@ -19,21 +19,11 @@ const Search = () => {
 
     if (queryValue) {
       await setCity(queryValue);
-      console.log(error, "error");
+
       // Set the query and units based on the search value
       setQuery({ q: queryValue });
       setUnits(selectedUnit);
       setOptions([]);
-
-      if (!error) {
-        setTimeout(() => {
-          navigate(`/${queryValue}`);
-        }, 1000);
-      } else {
-        setTimeout(() => {
-          setCity("");
-        }, 1000);
-      }
     }
   };
 

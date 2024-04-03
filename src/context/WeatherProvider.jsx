@@ -5,6 +5,7 @@ import {
   toastSuccessNotify,
   toastWarnNotify,
 } from "../helpers/toastNotify";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const WeatherContext = createContext();
 
@@ -19,6 +20,8 @@ const WeatherProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [iconSize, setIconSize] = useState(32);
 
+  const navigate = useNavigate();
+
   const getWeatherData = async () => {
     // Get fetched weather data only if there is any query
     if (query.q !== "") {
@@ -26,7 +29,9 @@ const WeatherProvider = ({ children }) => {
 
       try {
         const result = await getFormattedWeatherData({ ...query, units });
+
         setTimeout(() => {
+          navigate(`/${query.q}`);
           toastSuccessNotify(
             `Successfully fetched weather for ${result.name}, ${result.country}`
           );
@@ -50,7 +55,7 @@ const WeatherProvider = ({ children }) => {
         }`;
 
         setTimeout(() => {
-          setError(err.message);
+          setError(errorMessage);
           toastErrorNotify(errorMessage);
         }, 1000);
       } finally {
