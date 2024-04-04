@@ -97,7 +97,7 @@ const Search = () => {
             className="icon-colored"
             onClick={handleLocationClick}
           />
-          <div className="absolute top-[43px] md:top-[47px] lg:top-[55px] -left-2 bg inherit rounded-8 overflow-hidden text-white space-y-[1px]">
+          <div className="absolute top-[43px] md:top-[47px] lg:top-[55px] -left-2 bg inherit rounded-8 overflow-hidden text-white space-y-[1px] z-50">
             {options?.map((option, index) => (
               <div key={index}>
                 <p
