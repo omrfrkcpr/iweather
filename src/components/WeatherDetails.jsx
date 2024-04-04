@@ -22,7 +22,7 @@ const WeatherDetails = ({ item }) => {
     {
       label: "Probability of rain",
       icon: <CloudRain size={iconSize} />,
-      value: `${daily[0].pop}%`,
+      value: `${daily[0].pop * 100}%`,
     },
     {
       label: "Wind speed",
