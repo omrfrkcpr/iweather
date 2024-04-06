@@ -9,28 +9,26 @@ import { useLocation } from "react-router-dom";
 import { Backspace, Heart } from "@phosphor-icons/react";
 
 const GeneralInfos = ({ item, handleRemoveListItem }) => {
-  const {
-    units,
-    iconSize,
-    weatherList,
-    handleAddFavorite,
-    handleRemoveFavorite,
-  } = useContext(WeatherContext);
+  const { iconSize, weatherList, handleAddFavorite, handleRemoveFavorite } =
+    useContext(WeatherContext);
   const location = useLocation();
   const [isFavorite, setIsFavorite] = useState(false);
 
-  const { daily, icon, dt, timezone, name, country, description, temp } = item;
+  const { daily, icon, dt, timezone, name, country, description, temp, unit } =
+    item;
 
-  const checkFavoriteItem = (dt) => {
-    const isFavoriteItem = weatherList.some(
-      (weatherItem) => weatherItem.dt === dt
-    );
-    setIsFavorite(isFavoriteItem);
-  };
+  console.log(item);
 
   useEffect(() => {
+    const checkFavoriteItem = (dt) => {
+      const isFavoriteItem = weatherList.some(
+        (weatherItem) => weatherItem.dt === dt
+      );
+      setIsFavorite(isFavoriteItem);
+    };
+
     checkFavoriteItem(item.dt);
-  }, [item.dt, weatherList]);
+  }, [item, item.dt, weatherList]);
 
   const handleFavorite = () => {
     if (isFavorite) {
@@ -80,12 +78,12 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
         <div className="flex flex-row justify-between me-8 ms-8 mb-0 md:mb-4 ">
           <div className="w-1/2 flex flex-col justify-center ">
             <h1 className="header-responsive">
-              {Math.round(temp)}°{units === "metric" ? "C" : "F"}
+              {Math.round(temp)}°{unit === "metric" ? "C" : "F"}
             </h1>
             <p className="text-responsive">{`${Math.round(daily[0].min)}°${
-              units === "metric" ? "C" : "F"
+              unit === "metric" ? "C" : "F"
             } / ${Math.round(daily[0].max)}°${
-              units === "metric" ? "C" : "F"
+              unit === "metric" ? "C" : "F"
             }`}</p>
             <p className="text-responsive">
               {description.charAt(0).toUpperCase() + description.slice(1)}

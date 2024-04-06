@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { WeatherContext } from "../context/WeatherProvider";
 import GeneralInfos from "../components/GeneralInfos";
 import WeatherDetails from "../components/WeatherDetails";
@@ -19,19 +19,11 @@ const WeatherLists = () => {
     toastWarnNotify(
       `Removed ${item.name}, ${item.country} from your favorites.`
     );
-    handleHomeNavigate();
-  };
-
-  const handleHomeNavigate = () => {
-    if (!weatherList.length) {
+    if (!updatedWeatherList.length) {
       navigate("/");
       toastInfoNotify(`You no longer have any favorite cities.`);
     }
   };
-
-  useEffect(() => {
-    handleHomeNavigate();
-  }, [handleRemoveListItem]);
 
   return (
     <Carousel

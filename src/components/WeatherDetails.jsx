@@ -9,15 +9,15 @@ import React, { useContext } from "react";
 import { WeatherContext } from "../context/WeatherProvider";
 
 const WeatherDetails = ({ item }) => {
-  const { units, iconSize } = useContext(WeatherContext);
+  const { iconSize } = useContext(WeatherContext);
 
-  const { daily, feels_like, humidity, speed } = item;
+  const { daily, feels_like, humidity, speed, unit } = item;
 
   const weatherDetails = [
     {
       label: "Thermal sensation",
       icon: <ThermometerSimple size={iconSize} />,
-      value: `${Math.trunc(feels_like)}°${units === "metric" ? "C" : "F"}`,
+      value: `${Math.trunc(feels_like)}°${unit === "metric" ? "C" : "F"}`,
     },
     {
       label: "Probability of rain",

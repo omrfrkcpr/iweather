@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import { iconUrlFromCode } from "../services/weatherFormatters";
-import { WeatherContext } from "../context/WeatherProvider";
 
 const Forecast = ({ item }) => {
-  const { units } = useContext(WeatherContext);
-
   const days = item.daily;
   // console.log(days);
   return (
@@ -14,10 +11,10 @@ const Forecast = ({ item }) => {
           <p className="text-responsive text-base-200">{day.title}</p>
           <img src={iconUrlFromCode(day.icon)} alt="" width="100%" />
           <p className="text-base-100 text-responsive">
-            {`${Math.round(day.max)}`}°{units === "metric" ? "C" : "F"}
+            {`${Math.round(day.max)}`}°{item.unit === "metric" ? "C" : "F"}
           </p>
           <p className="text-base-400 text-responsive">
-            {`${Math.round(day.min)}`}°{units === "metric" ? "C" : "F"}
+            {`${Math.round(day.min)}`}°{item.unit === "metric" ? "C" : "F"}
           </p>
         </li>
       ))}

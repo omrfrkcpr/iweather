@@ -11,7 +11,7 @@ export const WeatherContext = createContext();
 
 const WeatherProvider = ({ children }) => {
   const [query, setQuery] = useState({ q: "" });
-  const [units, setUnits] = useState("metric"); // metric or imperial
+  const [unit, setUnit] = useState("metric"); // metric or imperial
   const [weather, setWeather] = useState(null);
   const [weatherList, setWeatherList] = useState(
     JSON.parse(localStorage.getItem("weatherList")) || []
@@ -28,8 +28,9 @@ const WeatherProvider = ({ children }) => {
       setLoading(true);
 
       try {
-        const result = await getFormattedWeatherData({ ...query, units });
+        const result = await getFormattedWeatherData({ ...query, units: unit });
 
+        // Just for displaying loading gif
         setTimeout(() => {
           navigate(`/${query.q}`);
           toastSuccessNotify(
@@ -37,7 +38,7 @@ const WeatherProvider = ({ children }) => {
           );
         }, 1000);
 
-        setWeather(result);
+        setWeather({ ...result, unit });
         setError(null);
       } catch (err) {
         const errorMessages = {
@@ -93,7 +94,7 @@ const WeatherProvider = ({ children }) => {
 
   useEffect(() => {
     getWeatherData();
-  }, [query, units]);
+  }, [query, unit]);
 
   useEffect(() => {
     setLocalStorage();
@@ -120,8 +121,8 @@ const WeatherProvider = ({ children }) => {
   const values = {
     query,
     setQuery,
-    units,
-    setUnits,
+    units: unit,
+    setUnits: setUnit,
     weather,
     weatherList,
     setWeatherList,
