@@ -1,4 +1,4 @@
-// for getting dynamic weather icons
+// to dynamically retrieve weather icons
 import clearD from "../assets/weather-icons/Clear_Day.svg";
 import clearN from "../assets/weather-icons/Clear_Night.svg";
 import cloudyD from "../assets/weather-icons/Cloudy_Day.svg";
@@ -12,7 +12,7 @@ import stormN from "../assets/weather-icons/Storm_Night.svg";
 import snowy from "../assets/weather-icons/Snowy.svg";
 import mist from "../assets/weather-icons/Mist.png";
 
-// for getting dynamic weather backgrounds
+// to dynamically retrieve weather backgrounds
 import bgClearD from "../assets/bg-images/Clear_Day.svg";
 import bgClearN from "../assets/bg-images/Clear_Night.svg";
 import bgCloudyD from "../assets/bg-images/Cloudy_Day.svg";

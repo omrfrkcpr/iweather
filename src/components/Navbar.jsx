@@ -52,6 +52,7 @@ const Navbar = () => {
           className="mx-auto cursor-pointer"
           style={{ width: `${imgWidth}px` }}
           onClick={() => navigate("/")}
+          loading="lazy"
         />
       </div>
       <div className="center space-x-6">
@@ -64,10 +65,10 @@ const Navbar = () => {
           />
           <span
             className={`absolute top-5 left-5 text-base-900 ${
-              weatherList.length > 0 && "bg-white"
+              weatherList.length && "bg-white"
             }  w-2/3 center rounded-12 h-2/3 `}
           >
-            {weatherList.length > 0 && weatherList.length}
+            {weatherList.length}
           </span>
         </div>
       </div>

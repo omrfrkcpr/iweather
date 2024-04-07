@@ -30,7 +30,7 @@ const WeatherProvider = ({ children }) => {
       try {
         const result = await getFormattedWeatherData({ ...query, units: unit });
 
-        // Just for displaying loading gif
+        // Just for displaying loading gif before navigating
         setTimeout(() => {
           navigate(`/${query.q}`);
           toastSuccessNotify(

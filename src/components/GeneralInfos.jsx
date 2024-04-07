@@ -17,6 +17,8 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
   const { daily, icon, dt, timezone, name, country, description, temp, unit } =
     item;
 
+  const tempUnit = unit === "metric" ? "C" : "F";
+
   console.log(item);
 
   useEffect(() => {
@@ -63,28 +65,27 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
         style={{ backgroundImage: `url(${formatBackground(icon)})` }}
       >
         <div className="me-4 ms-8 mb-0 mt-5 md:mt-10">
-          <div className="location flex flex-wrap flex-row gap-3 mb-0 md:mb-3">
+          <div className="flex flex-wrap flex-row gap-3 mb-0 md:mb-3">
             <h1 className="mt-2 header-responsive">{`${name}, ${country}`}</h1>
             <img
               src={`https://flagsapi.com/${country}/flat/${iconSize}.png`}
               alt={`${country}-flag`}
               className="h-fit w-fit mt-1"
+              loading="lazy"
             />
           </div>
-          <div className="time">
+          <div>
             <p className="text-responsive">{formatToLocalTime(dt, timezone)}</p>
           </div>
         </div>
         <div className="flex flex-row justify-between me-8 ms-8 mb-0 md:mb-4 ">
           <div className="w-1/2 flex flex-col justify-center ">
             <h1 className="header-responsive">
-              {Math.round(temp)}°{unit === "metric" ? "C" : "F"}
+              {Math.round(temp)}°{tempUnit}
             </h1>
-            <p className="text-responsive">{`${Math.round(daily[0].min)}°${
-              unit === "metric" ? "C" : "F"
-            } / ${Math.round(daily[0].max)}°${
-              unit === "metric" ? "C" : "F"
-            }`}</p>
+            <p className="text-responsive">{`${Math.round(
+              daily[0].min
+            )}°${tempUnit} / ${Math.round(daily[0].max)}°${tempUnit}`}</p>
             <p className="text-responsive">
               {description.charAt(0).toUpperCase() + description.slice(1)}
             </p>
@@ -94,6 +95,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
               src={iconUrlFromCode(icon)}
               alt="weather-icon"
               className="ms-auto h-fit w-fit"
+              loading="lazy"
             />
           </div>
         </div>

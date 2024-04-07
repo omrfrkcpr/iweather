@@ -15,35 +15,35 @@ const WeatherDetails = ({ item }) => {
 
   const weatherDetails = [
     {
-      label: "Thermal sensation",
       icon: <ThermometerSimple size={iconSize} />,
+      label: "Thermal sensation",
       value: `${Math.trunc(feels_like)}°${unit === "metric" ? "C" : "F"}`,
     },
     {
-      label: "Probability of rain",
       icon: <CloudRain size={iconSize} />,
+      label: "Probability of rain",
       value: `${daily[0].pop * 100}%`,
     },
     {
-      label: "Wind speed",
       icon: <Wind size={iconSize} />,
+      label: "Wind speed",
       value: `${Math.trunc(speed)} km/h`,
     },
     {
-      label: "Air humidity",
       icon: <Drop size={iconSize} />,
+      label: "Air humidity",
       value: `${humidity}%`,
     },
     {
-      label: "UV Index",
       icon: <SunDim size={iconSize} />,
+      label: "UV Index",
       value: `${daily[0].uvi}`,
     },
   ];
 
   return (
     <ul className="bg-base-800 md:p-2 rounded-12">
-      {weatherDetails.map((detail, index) => (
+      {weatherDetails.map(({ icon, label, value }, index) => (
         <li
           key={index}
           className={`weather-details-li${
@@ -56,11 +56,11 @@ const WeatherDetails = ({ item }) => {
             }`}
           >
             <div className="weather-details-label-container">
-              {detail.icon}
-              <p className="weather-details-label">{detail.label}</p>
+              {icon}
+              <p className="weather-details-label">{label}</p>
             </div>
             <div className="weather-details-value-container">
-              <p className="text-responsive">{detail.value}</p>
+              <p className="text-responsive">{value}</p>
             </div>
           </div>
         </li>
