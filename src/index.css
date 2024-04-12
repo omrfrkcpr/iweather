@@ -34,6 +34,9 @@
   .icon-nohover-underlined {
     @apply text-product cursor-pointer transition ease-out border-b-2 border-product;
   }
+  .icon-hover {
+    @apply text-product cursor-pointer transition ease-out hover:scale-125;
+  }
 
   .center {
     @apply flex justify-center items-center;

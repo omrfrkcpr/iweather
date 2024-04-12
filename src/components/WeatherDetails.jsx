@@ -15,27 +15,27 @@ const WeatherDetails = ({ item }) => {
 
   const weatherDetails = [
     {
-      icon: <ThermometerSimple size={iconSize} />,
+      icon: <ThermometerSimple size={iconSize} className="mt-[7px]" />,
       label: "Thermal sensation",
       value: `${Math.trunc(feels_like)}°${unit === "metric" ? "C" : "F"}`,
     },
     {
-      icon: <CloudRain size={iconSize} />,
+      icon: <CloudRain size={iconSize} className="mt-[7px]" />,
       label: "Probability of rain",
       value: `${daily[0].pop * 100}%`,
     },
     {
-      icon: <Wind size={iconSize} />,
+      icon: <Wind size={iconSize} className="mt-[7px]" />,
       label: "Wind speed",
       value: `${Math.trunc(speed)} km/h`,
     },
     {
-      icon: <Drop size={iconSize} />,
+      icon: <Drop size={iconSize} className="mt-[7px]" />,
       label: "Air humidity",
       value: `${humidity}%`,
     },
     {
-      icon: <SunDim size={iconSize} />,
+      icon: <SunDim size={iconSize} className="mt-[7px]" />,
       label: "UV Index",
       value: `${daily[0].uvi}`,
     },
@@ -53,7 +53,7 @@ const WeatherDetails = ({ item }) => {
           <div
             className={`weather-details-container ${
               index === 4 && "border-b-0 pb-0 md:pb-2"
-            }`}
+            } ${index === 0 && "pt-2 md:pb-2"}`}
           >
             <div className="weather-details-label-container">
               {icon}

@@ -9,17 +9,35 @@ import { useLocation } from "react-router-dom";
 import { Backspace, Heart } from "@phosphor-icons/react";
 
 const GeneralInfos = ({ item, handleRemoveListItem }) => {
-  const { iconSize, weatherList, handleAddFavorite, handleRemoveFavorite } =
-    useContext(WeatherContext);
+  const {
+    iconSize,
+    weatherList,
+    handleAddFavorite,
+    handleRemoveFavorite,
+    query,
+  } = useContext(WeatherContext);
   const location = useLocation();
   const [isFavorite, setIsFavorite] = useState(false);
 
   const { daily, icon, dt, timezone, name, country, description, temp, unit } =
     item;
 
+  const [localTime, setLocalTime] = useState(formatToLocalTime(dt, timezone));
+
   const tempUnit = unit === "metric" ? "C" : "F";
 
   console.log(item);
+
+  // to set the color of the heart icon, check every time the query changes if the item is already in the favorite weather list
+  useEffect(() => {
+    setIsFavorite(
+      weatherList.some((weatherItem) => weatherItem.name === item.name)
+    );
+  }, [item, weatherList, query]);
+
+  useEffect(() => {
+    setLocalTime(formatToLocalTime(dt, timezone));
+  }, [dt, timezone, weatherList]);
 
   useEffect(() => {
     const checkFavoriteItem = (dt) => {
@@ -75,7 +93,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
             />
           </div>
           <div>
-            <p className="text-responsive">{formatToLocalTime(dt, timezone)}</p>
+            <p className="text-responsive">{localTime}</p>
           </div>
         </div>
         <div className="flex flex-row justify-between me-8 ms-8 mb-0 md:mb-4 ">
