@@ -1,15 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import IWeatherLogo from "../assets/iWeather-Logo.svg";
-import { House } from "@phosphor-icons/react";
+import { House, ArrowClockwise } from "@phosphor-icons/react";
 import { FaCity } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { WeatherContext } from "../context/WeatherProvider";
-import { toastInfoNotify } from "../helpers/toastNotify";
+import { toastErrorNotify, toastInfoNotify } from "../helpers/toastNotify";
+import getFormattedWeatherData from "../services/weatherFormatters";
 
 const Navbar = () => {
-  const { setQuery, weatherList } = useContext(WeatherContext);
+  const { setQuery, weatherList, setWeatherList } = useContext(WeatherContext);
   const [imgWidth, setImgWidth] = useState(300);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleGoHome = () => {
     setQuery({ q: "" });
@@ -24,6 +26,28 @@ const Navbar = () => {
         );
   };
 
+  const handleRefresh = async () => {
+    try {
+      const promises = weatherList.map(async (weather) => {
+        const result = await getFormattedWeatherData({
+          q: weather.name,
+          units: weather.unit,
+        });
+        return { ...result, unit: weather.unit };
+      });
+
+      const updatedList = await Promise.all(promises);
+
+      setWeatherList(updatedList);
+      localStorage.setItem("weatherList", JSON.stringify(updatedList));
+
+      toastInfoNotify(
+        "Weather data has been successfully updated for all your favorite cities.🌥️"
+      );
+    } catch (error) {
+      toastErrorNotify(error.message);
+    }
+  };
   useEffect(() => {
     const handleResize = () => {
       const windowWidth = window.innerWidth;
@@ -71,6 +95,13 @@ const Navbar = () => {
             {weatherList.length}
           </span>
         </div>
+        {location.pathname === "/favorites" && (
+          <ArrowClockwise
+            size={32}
+            className="icon-hover"
+            onClick={handleRefresh}
+          />
+        )}
       </div>
     </div>
   );
