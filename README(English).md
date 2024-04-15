@@ -2,7 +2,7 @@
 
 💻 https://iweather-app.vercel.app/
 
-![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/7db44af1-a27f-4337-b4f6-4ea0761359a8)
+![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/1202de4e-9a6b-47f8-b5af-5e2617f352a6)
 
 ## Description
 
