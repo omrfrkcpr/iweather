@@ -8,12 +8,13 @@ import { WeatherContext } from "../context/WeatherProvider";
 import { useLocation } from "react-router-dom";
 import { Backspace, Heart } from "@phosphor-icons/react";
 
-const GeneralInfos = ({ item, handleRemoveListItem }) => {
+const GeneralInfos = ({ item }) => {
   const {
     iconSize,
     weatherList,
     handleAddFavorite,
     handleRemoveFavorite,
+    handleRemoveListItem,
     query,
   } = useContext(WeatherContext);
   const location = useLocation();
@@ -67,7 +68,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
           size={32}
           weight="fill"
           className="icon-remove absolute top-5 right-5 z-50 "
-          onClick={() => handleRemoveListItem(item)}
+          onClick={() => handleRemoveListItem({ dt, name, country })}
         />
       ) : (
         <Heart
