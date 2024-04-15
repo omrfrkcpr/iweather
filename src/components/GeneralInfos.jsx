@@ -74,7 +74,7 @@ const GeneralInfos = ({ item, handleRemoveListItem }) => {
           size={32}
           weight="fill"
           color={isFavorite ? "red" : "white"}
-          className="icon-remove absolute top-6 right-6 z-50 "
+          className="cursor-pointer transition ease-out absolute top-6 right-6 z-50 "
           onClick={handleFavorite}
         />
       )}
