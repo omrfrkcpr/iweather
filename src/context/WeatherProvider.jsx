@@ -4,6 +4,7 @@ import {
   toastErrorNotify,
   toastSuccessNotify,
   toastWarnNotify,
+  toastInfoNotify,
 } from "../helpers/toastNotify";
 import { useNavigate } from "react-router-dom";
 
@@ -76,9 +77,9 @@ const WeatherProvider = ({ children }) => {
   };
 
   const handleRemoveFavorite = (item) => {
-    const updatedWeatherList = weatherList.filter(
-      (weatherItem) => weatherItem.dt !== item.dt
-    );
+    const updatedWeatherList = (
+      JSON.parse(localStorage.getItem("weatherList")) || weatherList
+    ).filter((weatherItem) => weatherItem.name !== item.name);
     setWeatherList(updatedWeatherList);
     setLocalStorage();
     toastWarnNotify(`Removed ${item.name}, ${item.country} from favorites`);
@@ -86,6 +87,19 @@ const WeatherProvider = ({ children }) => {
 
   const isUniqueWeather = (newItem, array) => {
     return !array.some((item) => item.name === newItem.name);
+  };
+
+  const handleRemoveListItem = ({ dt, name, country }) => {
+    const removedWeatherList = (
+      JSON.parse(localStorage.getItem("weatherList")) || weatherList
+    ).filter((weather) => weather.dt !== dt);
+    setWeatherList(removedWeatherList);
+    setLocalStorage();
+    toastWarnNotify(`Removed ${name}, ${country} from your favorites.`);
+    if (!removedWeatherList.length) {
+      navigate("/");
+      toastInfoNotify(`You no longer have any favorite cities.`);
+    }
   };
 
   const setLocalStorage = () => {
@@ -133,6 +147,7 @@ const WeatherProvider = ({ children }) => {
     iconSize,
     handleAddFavorite,
     handleRemoveFavorite,
+    handleRemoveListItem,
   };
 
   return (
