@@ -10,7 +10,7 @@ IWeather App is a single-page web application that allows users to view instant 
 
 ## Outcome
 
-![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/fc8d35cd-347d-4b3a-8849-447f39d8a8c4)
+![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/fc87933a-f20b-4f82-af1e-c973f652e414)
 
 ## Project Planning & Management
 
