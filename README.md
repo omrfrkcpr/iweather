@@ -2,7 +2,7 @@
 
 💻 https://iweather-app.vercel.app/
 
-![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/8f7b4695-aa91-432f-8d8c-3b61cf08f83a)
+![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/1202de4e-9a6b-47f8-b5af-5e2617f352a6)
 
 ## Proje Tanımı
 
