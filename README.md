@@ -10,7 +10,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 
 ## Proje Çıktısı
 
-![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/2c85c951-4bbc-4853-8246-1b5cb920e3b7)
+![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/fc87933a-f20b-4f82-af1e-c973f652e414)
 
 ## Proje Plan ve Yönetimi
 
