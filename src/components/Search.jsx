@@ -73,6 +73,7 @@ const Search = () => {
             id="searchInput"
             className="text-responsive px-3 py-2 w-[220px] md:w-[250px] lg:w-[350px] xl:w-[450px] shadow-xl bg-base-input text-white placeholder-base-400 rounded-8 focus:outline-none capitalize max-w-[500px]"
             placeholder="Search location"
+            autoComplete="off"
             value={city}
             onChange={handleSearchChange}
             onKeyDown={(e) => {

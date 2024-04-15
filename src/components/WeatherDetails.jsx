@@ -22,7 +22,7 @@ const WeatherDetails = ({ item }) => {
     {
       icon: <CloudRain size={iconSize} className="mt-[7px]" />,
       label: "Probability of rain",
-      value: `${daily[0].pop * 100}%`,
+      value: `${Math.trunc(daily[0].pop * 100)}%`,
     },
     {
       icon: <Wind size={iconSize} className="mt-[7px]" />,
@@ -32,12 +32,12 @@ const WeatherDetails = ({ item }) => {
     {
       icon: <Drop size={iconSize} className="mt-[7px]" />,
       label: "Air humidity",
-      value: `${humidity}%`,
+      value: `${Math.trunc(humidity)}%`,
     },
     {
       icon: <SunDim size={iconSize} className="mt-[7px]" />,
       label: "UV Index",
-      value: `${daily[0].uvi}`,
+      value: `${daily[0].uvi.toFixed(2)}`,
     },
   ];
 
