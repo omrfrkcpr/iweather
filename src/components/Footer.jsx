@@ -8,7 +8,7 @@ const Footer = () => {
       <h1 className="text-responsive">
         Copyright &copy; {new Date().getFullYear()}{" "}
       </h1>
-      <a href="https://github.com/omrfrkcpr" target="blank">
+      <a href="https://github.com/omrfrkcpr/iweather" target="blank">
         <FaGithubSquare size={28} className="hover:text-black hover:bg-white" />
       </a>
       <a href="https://www.linkedin.com/in/omrfrkcpr/" target="blank">
