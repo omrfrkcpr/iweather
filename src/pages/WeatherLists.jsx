@@ -22,7 +22,6 @@ const WeatherLists = () => {
           onClick={() => {
             handlePrev();
             console.log("myPrevFunction");
-            // burada api istegi atan ve karttaki goruntuyu guncelleyen bir fonksiyon olmali
           }}
           className="!absolute top-2/4 left-4 -translate-y-2/4"
         >
@@ -50,7 +49,6 @@ const WeatherLists = () => {
           onClick={() => {
             handleNext();
             console.log("myNextFunction");
-            // burada api istegi atan ve karttaki goruntuyu guncelleyen bir fonksiyon olmali
           }}
           className="!absolute top-2/4 !right-4 -translate-y-2/4"
         >
