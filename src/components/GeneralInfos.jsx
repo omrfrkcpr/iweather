@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import {
   formatToLocalTime,
+  formatToDate,
   formatBackground,
   iconUrlFromCode,
+  getFormattedUpdatedTime,
 } from "../services/weatherFormatters";
 import { WeatherContext } from "../context/WeatherProvider";
 import { useLocation } from "react-router-dom";
@@ -24,6 +26,10 @@ const GeneralInfos = ({ item }) => {
     item;
 
   const [localTime, setLocalTime] = useState(formatToLocalTime(dt, timezone));
+  const [localDate, setLocalDate] = useState(formatToDate(dt, timezone));
+  const [lastUpdatedTime, setLastUpdatedTime] = useState(
+    getFormattedUpdatedTime()
+  );
 
   const tempUnit = unit === "metric" ? "C" : "F";
 
@@ -38,6 +44,8 @@ const GeneralInfos = ({ item }) => {
 
   useEffect(() => {
     setLocalTime(formatToLocalTime(dt, timezone));
+    setLocalDate(formatToDate(dt, timezone));
+    setLastUpdatedTime(getFormattedUpdatedTime());
   }, [dt, timezone, weatherList]);
 
   useEffect(() => {
@@ -93,8 +101,12 @@ const GeneralInfos = ({ item }) => {
               loading="lazy"
             />
           </div>
-          <div>
-            <p className="text-responsive">{localTime}</p>
+          <div className="flex flex-col flex-nowrap">
+            <p className="text-responsive">{localDate}</p>
+            <p className="text-[10px] md:text-[12px]">{localTime}</p>
+            <p className="text-[10px] md:text-[12px]">
+              Last updated time: {lastUpdatedTime}
+            </p>
           </div>
         </div>
         <div className="flex flex-row justify-between me-8 ms-8 mb-0 md:mb-4 ">
