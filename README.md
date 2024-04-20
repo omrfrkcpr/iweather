@@ -2,7 +2,7 @@
 
 💻 https://iweather-app.vercel.app/
 
-![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/1202de4e-9a6b-47f8-b5af-5e2617f352a6)
+![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/f1d505af-0de6-478a-bfce-205371fe9da2)
 
 ## Proje Tanımı
 
@@ -10,7 +10,7 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 
 ## Proje Çıktısı
 
-![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/fc87933a-f20b-4f82-af1e-c973f652e414)
+![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/a9065e42-f90f-489e-9abd-e7e506bde445)
 
 ## Proje Plan ve Yönetimi
 
