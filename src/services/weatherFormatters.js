@@ -51,6 +51,19 @@ const formatForecastWeather = (data) => {
   return { timezone, daily };
 };
 
+const getFormattedUpdatedTime = () => {
+  const currentDate = new Date();
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth() + 1; // Months are zero indexed, so we add 1
+  const year = currentDate.getFullYear();
+  const hours = currentDate.getHours();
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+
+  const formattedDate = `${day}/${month}/${year}-${hours}:${minutes}:${seconds}`;
+  return formattedDate;
+};
+
 const getFormattedWeatherData = async (searchParams) => {
   const formattedCurrentWeather = await fetchWeatherData(
     "2.5/weather",
@@ -69,11 +82,14 @@ const getFormattedWeatherData = async (searchParams) => {
   return { ...formattedCurrentWeather, ...formattedForecastWeather };
 };
 
+const formatToDate = (secs, zone, formatDate = "cccc, LLL dd, yyyy") =>
+  DateTime.fromSeconds(secs).setZone(zone).toFormat(formatDate);
+
 const formatToLocalTime = (
   secs,
   zone,
-  format = "cccc, LLL dd, yyyy' | Local time: 'hh:mm a"
-) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
+  formatLocalTime = "'Local time: 'hh:mm a"
+) => DateTime.fromSeconds(secs).setZone(zone).toFormat(formatLocalTime);
 
 const defaultIconUrl = "https://openweathermap.org/img/wn/";
 
@@ -95,4 +111,10 @@ const formatBackground = (code) => {
 
 export default getFormattedWeatherData;
 
-export { formatToLocalTime, iconUrlFromCode, formatBackground };
+export {
+  getFormattedUpdatedTime,
+  formatToDate,
+  formatToLocalTime,
+  iconUrlFromCode,
+  formatBackground,
+};
