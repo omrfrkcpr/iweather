@@ -1,118 +1,118 @@
-# IWeather Uygulaması ©️
+# IWeather App ©️
 
 💻 https://iweather-app.vercel.app/
 
 ![iweather-screenshots](https://github.com/omrfrkcpr/iweather/assets/77440899/f1d505af-0de6-478a-bfce-205371fe9da2)
 
-## Proje Tanımı
+## Description
 
-IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgilerini anlık olarak görmelerini sağlayan bir web uygulamasıdır. Kullanıcılar, istedikleri şehirlerin hava durumu tahminlerini görebilir, çoklu şehir hava durumlarını görüntüleyebilir ve detaylı hava durumu bilgilerine erişebilirler. Uygulama, modern ve kullanıcı dostu bir arayüzle tasarlanmıştır, böylece kullanıcılar hızlı ve kolay bir şekilde istedikleri hava durumu bilgilerine ulaşabilirler.
+IWeather App is a single-page web application that allows users to view instant weather information from around the world. Users can see the weather forecast for the cities they want, save their favorite cities and access detailed weather information. The application is designed with a modern and user-friendly interface, so users can quickly and easily access the weather information they want.
 
-## Proje Çıktısı
+## Outcome
 
 ![iweather-app](https://github.com/omrfrkcpr/iweather/assets/77440899/a9065e42-f90f-489e-9abd-e7e506bde445)
 
-## Proje Plan ve Yönetimi
+## Project Planning & Management
 
-**Epic Kullanıcı Hikayesi:** Hava durumu uygulamasının bir kullanıcısı olarak, çeşitli konumlar için güncel hava durumu bilgilerine zahmetsizce erişmek, sık görüntülenen konumları hızlı erişim için kaydetmek, birden fazla gün için ayrıntılı hava durumu tahminlerini görüntülemek ve uygulamanın farklı bölümleri arasında sorunsuz bir şekilde gezinmek istiyorum. 🌤️
+**Epic User Story:** As a user of the weather app, I want to effortlessly access current weather information for various locations, save frequently viewed locations for quick access, view detailed weather forecasts for multiple days, and seamlessly navigate between different sections of the app. 🌤️
 
-**Kullanıcı Hikayeleri:**
+**User Stories:**
 
-1️⃣ **Güncel Hava Durumu Bilgilerini Görüntüle:**
+1️⃣ **View Current Weather Information:**
 
-- 🥇 Kullanıcı olarak şehir adı girerek güncel hava durumu bilgisini görmek istiyorum.
-- 🥈 Hava durumunu uygun simgeler ve arka plan görselleri ile görselleştirmek istiyorum.
+- 🥇 As a user, I want to see the current weather information by entering a city name.
+- 🥈 I want to visualize the weather with appropriate icons and background images.
 
-  **Görev-1 =** Kullanıcı arayüzü oluşturun (şehir giriş alanı ve hava durumu görüntüleme alanı)<br>
-  **Görev-2 =** OpenWeatherMap API'sini kullanarak hava durumu bilgilerini getirecek bir fonksiyon yazın.<br>
-  **Görev-3 =** Axios'u kullanarak API çağrısı yapın ve döndürülen verileri işleyin.<br>
-  **Görev-4 =** Belirli URL uç noktasıyla hava durumu bilgilerini kullanıcıya otomatik olarak görüntüleyin.<br>
-  **Görev-5 =** Hava koşullarına göre simgeleri ve arka plan resimlerini değiştirin.
+  **_Task-1 =_** Create user interface (city input field and weather display area).<br>
+  **_Task-2 =_** Write a function to fetch weather information using the OpenWeatherMap API.<br>
+  **_Task-3 =_** Make API call using Axios and process the returned data.<br>
+  **_Task-4 =_** Display weather information automatically to the user with specific URL endpoint.<br>
+  **_Task-5 =_** Change icons and background images based on weather conditions.<br>
 
-2️⃣ **5 Günlük Hava Durumu Ayrıntılarını Görüntüle:**
+2️⃣ **View 5 Days Weather Details:**
 
-- 🥇 Kullanıcı olarak girilen şehrin 5 günlük hava tahminini görmek istiyorum.
-- 🥈 Kullanıcı olarak her gün için minimum ve maksimum sıcaklıklarla birlikte detaylı hava durumu bilgisi istiyorum.
+- 🥇 As a user, I want to see the 5-day weather forecast for the entered city.
+- 🥈 As a user, I want detailed weather information with min and max temperatures for each day.
 
-  **Görev-1 =** Günlük hava durumu ayrıntılarını görüntülemek için bir Forecast componenti oluşturun.<br>
-  **Görev-2 =** OpenWeatherMap API'sini kullanarak 5 günlük hava durumu tahminini almak için bir biçimlendirici fonksiyonu yazın.<br>
-  **Görev-3 =** Biçimlendirilmiş günlük hava durumu tahminini kullanıcıya görüntüleyin.
+  **_Task-1 =_** Create a Forecast component to display daily weather details.<br>
+  **_Task-2 =_** Write a formatter functions to get the 5-day weather forecast using the OpenWeatherMap API.<br>
+  **_Task-3 =_** Display the formatted daily weather forecast to the user.
 
-3️⃣ **Responsive Tasarım:**
+3️⃣ **Responsive Design:**
 
-- 🥇 Bir kullanıcı olarak farklı ekran boyutlarına duyarlı bir tasarım istiyorum.
-- 🥈 Kullanıcı olarak uygulamanın mobil, tablet ve masaüstü cihazlarda kullanılabilir olmasını istiyorum.
+- 🥇 As a user, I want a design that is responsive across different screen sizes.
+- 🥈 As a user, I want the application to be usable on mobile, tablet, and desktop devices.
 
-  **Görev-1 =** TailwindCSS kullanarak tasarımı farklı ekran boyutlarına duyarlı hale getirin.<br>
-  **Görev-2 =** Mobil cihazlar, tabletler ve masaüstü cihazlar için TailwindCSS'yi kullanarak uygulamaya stil verin.
+  **_Task-1 =_** Make the design responsive to different screen sizes with using TailwindCSS.<br>
+  **_Task-2 =_** Style the application using TailwindCSS for mobile, tablet, and desktop devices.<br>
 
-4️⃣ **Hava Drumu Bilgilerini Favorilere Ekleme/Çıkarma:**
+4️⃣ **Adding/Removing Weather Information to Favorites:**
 
-- 🥇 Kullanıcı olarak istediğim hava durum bilgisini favori şehirlerime ekleyip, çıkarabilmeliyim.
-- 🥈 Kullanıcı olarak favorilerim arasından ekleme ve çıkarma yaptığımda bunun gerçekleştiğini iconlardan ve bildirimlerden görmeliyim.
+- 🥇 As a user, I should be able to add and remove any weather information I want from my favorite cities.
+- 🥈 As a user, when I add or remove items from my favorites, I should see this from the icons and notifications.
 
-  **Görev-1 =** Favoriye hava durumu bilgisi eklenildiğin ve çıkarıldığında kalp icon ı dinamik olarak değişmeli.<br>
-  **Görev-2 =** Favori durumları ile alakalı her aşamada kullanıcı bildirim almalı.
+  **_Task-1 =_** The heart icon should change dynamically when weather information is added or removed from the favorite.<br>
+  **_Task-2 =_** The user should receive notifications at every stage regarding their favorite status.<br>
 
-5️⃣ **Favori Hava Durumu Bilgilerini Localde Saklayın:**
+5️⃣ **Store Local Weather Information:**
 
-- 🥇 Kullanıcı olarak daha önce favorilere eklenen şehirlere ait hava durumu bilgilerinin local olarak saklanabilmesini istiyorum.
-- 🥈 Kullanıcı olarak birden fazla favori şehrin hava durumu bilgisini depolamak istiyorum.
+- 🥇 As a user, I want the ability to store weather information for previously searched cities locally.
+- 🥈 As a user, I want to store weather information for multiple cities.
 
-  **Görev-1 =** Favori hava durumu bilgilerini depolamak ve almak için "Local Storage" kullanın.<br>
-  **Görev-2 =** Birden fazla şehir için depolanan hava durumu bilgilerini "Carousel" formatında görüntüleyin.
+  **_Task-1 =_** Use Local Storage to store and retrieve weather information.<br>
+  **_Task-2 =_** Display stored weather information for multiple cities in a carousel format.<br>
 
-6️⃣ **Hava Durumu Bilgilerini "Carousel" Stilinde Görüntüleme:**
+6️⃣ **View Weather Informations in Carousel Style:**
 
-- 🥇 Kullanıcı olarak, depolanan hava durumu bilgilerini "Carousel" tarzı bir ekranda (Material Tailwind) görüntülemek istiyorum.
-- 🥈 Kullanıcı olarak farklı şehirlerin hava durumu bilgileri arasında kolaylıkla geçiş yapmak istiyorum.
+- 🥇 As a user, I want to view stored weather information in a carousel-style display (Material Tailwind).
+- 🥈 As a user, I want to easily switch between different cities' weather information.
 
-  **Görev-1 =** Carousel Component ini, Material Tailwind den alarak implemente edin.<br>
+  **_Task-1 =_** Implement Carousel Component from Material Tailwind<br>
 
-7️⃣ **Hata ve Başarı Bildirimleri:**
+7️⃣ **Error and Success Notifications:**
 
-- 🥇 Kullanıcı olarak hava durumu bilgisi alımı başarılı olduğunda bilgilendirilmek istiyorum.
-- 🥈 Bir kullanıcı olarak uygun bildirimlerin hataları göstermesini ve neyin yanlış gittiği konusunda bana yol göstermesini istiyorum.
+- 🥇 As a user, I want to be notified when weather information retrieval is successful.
+- 🥈 As a user, I want appropriate notifications to indicate errors and guide me on what went wrong.
 
-  **Görev-1 =** Axios isteklerinin durumuna göre uygun bildirimleri görüntüleyecek fonksiyonları yazın.<br>
-  **Görev-2 =** Bildirimler için React Toastify paketini entegre edin.
+  **_Task-1 =_** Write functions to display appropriate notifications based on the status of Axios requests.<br>
+  **_Task-2 =_** Integrate React Toastify package for notifications.<br>
 
-8️⃣ **React Router'ı Kullanarak Sayfalar Arasında Gezinme:**
+8️⃣ **Navigate Between Pages Using React Router:**
 
-- 🥇 Kullanıcı olarak onClick olaylarını kullanarak sayfalar arasında gezinmek istiyorum.
-- 🥈 Kullanıcı olarak sayfa navigasyonu için React Router'ı kullanmak istiyorum.
+- 🥇 As a user, I want to navigate between pages using onClick events.
+- 🥈 As a user, I want to use React Router for page navigation.
 
-  **Görev-1 =** Sayfalar arası navigasyonu sağlamak için React Router yapısını kurun.<br>
-  **Görev-2 =** Uygulamanın farklı bölümleri için ayrı sayfalar/componentler oluşturun (örneğin, ana sayfa, hava durumu ayrıntıları sayfası).<br>
-  **Görev-3 =** Sayfalar arasında gezinmek için onClick olay işleyicilerini uygulayın.
+  **_Task-1 =_** Set up React Router for page navigation.<br>
+  **_Task-2 =_** Create separate pages/components for different sections of the application (e.g., home page, weather details page).<br>
+  **_Task-3 =_** Implement onClick event handlers to navigate between pages.<br>
 
-9️⃣ **React Context API Kullanarak Global State Yönetimi:**
+9️⃣ **Global State Management Using React Context API:**
 
-- 🥇 Kullanıcı olarak state yönetiminin React Context kullanılarak yapılmasını istiyorum.
-- 🥈 Kullanıcı olarak component ler arasında bağlamı kullanarak kesintisiz iletişim sağlamak istiyorum.
+- 🥇 As a user, I want state management to be handled using React Context.
+- 🥈 As a user, I want to ensure seamless communication between components using context.
 
-  **Görev-1 =** Uygulama state lerini yönetmek için bir context sağlayıcı (context provider) oluşturun.<br>
-  **Görev-2 =** Context sağlayıcısı içindeki state leri güncellemek için state değişkenlerini ve ilgili fonksiyonları tanımlayın.<br>
-  **Görev-3 =** State lere erişmek ve gerektiğinde onları dinamik olarak güncellemek için ilgili componentleri, context sağlayıcı kapsamına alın.
+  **_Task-1 =_** Create a context provider to manage the application state.<br>
+  **_Task-2 =_** Define state variables and functions to update state within the context provider.<br>
+  **_Task-3 =_** Wrap relevant components with the context provider to access state and update it as needed.<br>
 
-1️⃣0️⃣ **API ile Şehir Önerileri Alın:**
+1️⃣0️⃣ **Get City Suggestions from an API:**
 
-- 🥇 Kullanıcı olarak, şehir ararken filtreleyerek bana şehir önermesini istiyorum.
-- 🥈 Kullanıcı olarak, şehir önerilerini dropdown olarak görmek istiyorum.
+- 🥇 As a user, I want city suggestions to be filtered as I type in the city input field.
+- 🥈 As a user, I want to see city suggestions in a dropdown format.
 
-  **Görev-1 =** Kullanıcı şehir girişi yaparken, şehir önerilerini göstermek için bir fonksiyon yazın.<br>
-  **Görev-2 =** Şehir önerilerini almak için Axios kullanarak ücretsiz bir API'yi ([AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)) kullanın ve kullanıcıya TailwindCSS ile dropdown tasarlayarak sunun.
+  **_Task-1 =_** Write a function to display city suggestions as the user enters the city input.<br>
+  **_Task-2 =_** Use a free API ([AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)) with Axios to fetch city suggestions and present them to the user in a dropdown format that you styled with TailwindCSS.
 
-## Proje İskeleti 🩻
+## Project Skeleton 🩻
 
 ```
-📖IWeather App (dosya)
+📖IWeather App (folder)
 |
 ├── 📁public
 │     └── index.html
 ├── 📁src
 │    ┣ 📂assets
-│    ┃       ┗ [resimler ve ikonlar]
+│    ┃       ┗ [images and icons]
 │    ┣ 📂components
 │    ┃       ┣ Footer.jsx
 │    ┃       ┣ Forecast.jsx
@@ -157,11 +157,11 @@ IWeather Uygulaması, kullanıcıların dünya genelindeki hava durumu bilgileri
 └── tailwind.config.js
 ```
 
-## Proje Amacı
+## Objective
 
-Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulamasının geliştirilecek ve bu vesileyle API kullanımı, asenkron veri işleme ve dinamik içerik yönetimi gibi konularda becerilerin geliştirilmesi amaçlanmaktadır.
+With this project, a single-page Weather Application will be developed using ReactJS and TailwindCSS, and it is aimed to develop skills in subjects such as API usage, asynchronous data processing and dynamic content management.
 
-### Proje sonunda aşağıdaki konular ele alınacaktır; 🎯
+### At the end of the project, following topics are to be covered; 🎯
 
 - HTML & CSS & JS & ReactJS
 
@@ -171,66 +171,66 @@ Bu proje ile ReactJS ve TailwindCSS kullanarak tek sayfalı Hava Durumu Uygulama
 
 - React-Router & React-Context API
 
-### Proje sonunda; 💪
+### At the end of the project, will be able to; 💪
 
-- HTML ve CSS (TailwindCSS) ile JS ve ReactJS kodlama becerileri geliştirilmiş olacak.
+- improve coding skills within HTML & CSS (TailwindCSS) & JS & ReactJS.
 
-- Git komutlarını (Push, pull, commit, add vb.) ve Versiyon Kontrol Sistemi (Github) etkin bir şekilde kullanılmış olacak.
+- use git commands (push, pull, commit, add etc.) and Github as Version Control System.
 
-## Adım Adım Proje Kılavuzu
+## Step-By-Step Project Guide
 
-- Adım 1: Depoyu Localinizde Klonlayın:
+- Step 1: Clone the Repository to Your Local Machine:
 
-  **_Proje deposunun URL'sini GitHub'dan veya benzer bir platformdan kopyalayın._**
-  **_Terminalinizi veya komut isteminizi açın ve projeyi depolamak istediğiniz dizine gidin._**
-  **_Depoyu klonlamak için aşağıdaki komutu kullanın:_**
+  **_Copy the URL of the project repository from GitHub or a similar platform._**
+  **_Open your terminal or command prompt and navigate to the directory where you want to store the project._**
+  **_Use the following command to clone the repository:_**
 
   ```
   git clone <repository_url>
   ```
 
-  **_<repository_url> kısmını kopyaladığınız proje deposunun URL'si ile değiştirin._**
+  **_Replace <repository_url> with the URL of the project repository you copied._**
 
-- Adım 2: Node Package Manager Yükleyin:
+- Step 2: Install Node Package Manager:
 
-  **_Terminalinizde veya komut isteminizde projenin kök dizinine gidin._**
-  **_Npm paketlerini yüklemek için aşağıdaki komutu kullanın:_**
+  **_Navigate to the root directory of the project in your terminal or command prompt._**
+  **_Use the following command to install npm packages:_**
 
   ```
   npm install
   ```
 
-  **_Bu komut, package.json dosyasındaki listeye göre projenin bağımlılıklarını yükleyecektir._**
+  **_This command will install the project's dependencies based on the list in the package.json file._**
 
-- Adım 3: `https://home.openweathermap.org/users/sign_up` adresine kaydolun ve API anahtarını alın. Bundan sonra kişisel API anahtarınızı, proje kök dizininizde oluşturacağınız ".env" dosyanıza (example.env dosyasındaki gibi) yapıştırın. Proje kök dizinindeki "example.env" dosyasını kontrol edebilirsiniz.
+- Step 3: Signup `https://home.openweathermap.org/users/sign_up` and get api key. After that, paste your personal api key into your .env file (like example.env file) that you will create in your project root directory. You can check "example.env" file in project root directory.
 
   ```
   REACT_APP_API_KEY=[YOUR_PERSONAL_OPENWEATHER_API_KEY]
   ```
 
-  **_[YOUR_PERSONAL_OPENWEATHER_API_KEY] öğesini Openweathermap'ten aldığınız kişisel API anahtarınızla değiştirin._**
+  **_Replace [YOUR_PERSONAL_OPENWEATHER_API_KEY] with your personal api key that you get from openweathermap_**
 
-- Adım 4 : Tüm paketler başarıyla yüklendikten ve API anahtarı yapıştırıldıktan sonra projeyi başlatmak için aşağıdaki komutu kullanın:
+- Step 4 : Once all packages are successfully installed and api key is pasted, use the following command to start the project:
 
   ```
   npm start
   ```
 
-  **_Bu komut, geliştirme sunucusunu başlatacak ve varsayılan web tarayıcınızda projenin canlı önizlemesini açacaktır._**
-  **_Tarayıcı otomatik olarak açılmazsa http://localhost:3000 adresine giderek projeyi görüntüleyebilirsiniz._**
+  **_This command will start the development server and open a live preview of the project in your default web browser._**
+  **_If the browser doesn't open automatically, you can view the project by navigating to http://localhost:3000._**
 
-## Ek Veriler 📦
+## Additional Data 📦
 
-- [Assets Dosyası](./src/assets/)
+- [Assets Folder](./src/assets/)
 - [AllCities_API_URL](https://countriesnow.space/api/v0.1/countries)
 - [OPENWEATHERMAP_API](https://openweathermap.org/api/one-call-3#start)
 
-## Katkı 🤝
+## Contributing 🤝
 
-Görüşleriniz ve katkılarınız projelerimi büyük ölçüde zenginleştiriyor! İster yeni proje konseptleriyle dolu olun ister mevcut konseptleri geliştirecek fikirleriniz olsun, katkınız benim çok değerlidir. Düşünceleriniz hakkında bir sohbet başlatmak için bir konu açmaktan çekinmeyin veya önerdiğiniz değişiklikleri içeren bir request isteği gönderin. Her katkı büyümemde ve gelişimimde hayati bir rol oynuyor; Şimdiden teşekkür ederim!
+Your insights and contributions greatly enrich my projects! Whether you're bursting with fresh project concepts or have ideas to enhance existing ones, your input is invaluable. Feel free to open an issue to initiate a dialogue about your thoughts, or submit a pull request with your proposed modifications. Every contribution plays a vital role in my growth and improvement, so thank you for being an integral part of my community!
 
-## Lisans 🪪
+## LICENSE 🪪
 
-Bu depo MIT Lisansı kapsamında lisanslanmıştır. Ayrıntılar için MIT lisans dosyasına bakın. Daha fazla bilgi için lütfen [MIT Lisansını](https://tlo.mit.edu/understand-ip/exploring-mit-open-source-license-comprehensive-guide) ziyaret edin.
+This repository is licensed under the MIT License. See the MIT licence file for details. For more information please visit [MIT License](https://tlo.mit.edu/understand-ip/exploring-mit-open-source-license-comprehensive-guide)
 
-**<p align="center">&#9786; Mutlu Kodlamalar &#9997;</p>**
+**<p align="center">&#9786; Happy Coding &#9997;</p>**
